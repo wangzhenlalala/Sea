@@ -1,0 +1,34 @@
+stroe的enhencer的签名
+enhancer 功能增强
+增强谁呢？？？ 怎么增强？？？
+增强store的能力，
+1.可以通过自己为store创建新的功能，添加新的方法，属性
+2.通过包装store原有的方法，来增强其原有方法的功能 例如applyMiddleWare就是一个增强器，包装了store自身的dispatch方法
+createStroe => (reducer, preloadedState) => store
+
+enhacer的签名;
+    createStore => (reducer, preloadedState) => store
+
+middleware的签名：
+    store => next => action => {}
+
+
+subscriber and unsubscribe：
+    如果isDispatching 则不允许添加
+    防止unsubscribe多次调用
+
+
+
+dispatch:
+    如果isDiapatching 则不允许再dispatch
+
+    nested `dispatch()` ??? 
+isDispathcing:
+    while the reducer is executing
+
+    try {
+        isDispatching = true;
+        currentState = currentReducer(currentState, action);
+    } finally {
+        isDispatching = false;
+    }

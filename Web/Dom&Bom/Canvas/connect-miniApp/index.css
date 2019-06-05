@@ -1,0 +1,41 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+canvas{
+    cursor: pointer;
+}
+
+.other-container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.other-container .btns{
+
+}
+.other-container .btns div{
+    width: 150px;
+    margin: 10px ;
+    text-align: center;
+    line-height: 1.5;
+    border: 1px solid blue;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.lines-cols {
+    width: 200px;
+}
+.lines-cols label{
+    margin: 10px 0;
+}
+
+.desc{
+    margin-top: 30px;
+}
+.desc p{
+    width: 70%;
+    margin: 0 auto;
+}

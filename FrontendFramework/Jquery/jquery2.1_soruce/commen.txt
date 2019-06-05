@@ -1,0 +1,24 @@
+1. disable()  lock()的作用都是，freeze当前的对象状态，
+    当时disable更为严格：
+         1.不允许在触发该回调对象，
+         2.不允许再向回调对象中添加 回调函数
+    lock 稍微宽松一些:
+         1. 不允许在触发该回调对象，
+         2. 允许向该回调对象中添加 回调函数，但是在添加完之后，立即执行，并且把上次fire(args),中的args传给新添加进来的回调函数。
+
+2. firingIndex指的是 list回调函数队列中的，上一次执行fire()函数后，最有一个被执行的回调的索引。所以下一次fire()时，应该首先执行 ++firingIndex 处的回调。
+
+3.  
+    locked = queue = [], 把locked设置为true, 并且清空queue， 他们两个控制着是否还可以  fire()
+    list = memory = "", 把list设置为false,memory设置为false,  他们两个控制着是否还可以 add(),以及add()的行为（memory有关）
+
+4. 即使在创建Callbacks实例的时候，指定了 memory, 在执行过一次fire(),之前 add可正常的添加回调函数，且他们在第一次调用fire()的时候被调用。而不会add时，立即被调用
+
+5. queue中的元素都是一个数组 [ context, arguments] 在fireWith()包装的;  memory = queuq.shift();
+6. memory 的作用，只有设置了memory选项后，才不会在每次执行完fire后被设置为false(forget the data) ,只有在 调用了lock()函数之后，才会被使用。
+
+7. 如果在fire()中，正在调用回调队列的过程中能够，又调用了 disbale() or lock()，（在回调函数内部调用),则 当前的回调函数可以选择立即终止自己的执行，然后，list = [], 之后的回调不会
+    再被执行。
+
+8. 如果没有设置memory，而只是调用了lock（）效果和直接调用 disable（）是一样的。
+9. memory 的值被初始化（第一次被赋值），是在第一次调用fire()函数的时候，

@@ -1,0 +1,59 @@
+递归的问题：可以将原问题 A 分解成n(n>=1)个子问题 Ai，且子问题 Ai和 和原问题A的解，具有相同的结构；
+
+递归的数据结构：
+    数据A,中包含和数据A具有相同结构的数据 Ai
+
+递归的过程：
+    (1) 确定什么条件下不再递归展开， 此时到达了递归树的叶节点。
+    (2) 将原问题分解成若干个具有相同结构的子问题, 解子问题
+    (3) 根据子问题的解 得到 原问题的解
+
+
+
+
+
+递归和数学归纳法 好相似的啊
+数学归纳法的步骤：
+    (1) 证明f(1)....f(k) 成立
+    (2) 假设f(n) (n>=k) 成立，利用(1)，中的已证明的结论。 证明  f(n+1)成立
+    (3) 归纳，对于任意的n  f(n) 都成立
+
+function recursive(parentNode){
+
+    //when to stop 
+    if(someLeafNodeCondition){
+        //数学归纳法的(1)
+        return process(parentNode)  //使用process处理, 和下面的相同
+    }
+
+    //recursive down 
+    //break the parentNode into serval childNodes 
+    childNodes = splitParentNode( parentNode );
+    childResult = recursive( childNodes );
+
+    // take one step further, combine childResult to form parnetResult
+    //数学归纳法的(2)
+    parentResult = process( childResult );  //使用process处理, 和上面的相同
+
+    //数学归纳法的(3)
+    return parentResult
+}
+
+deepClone 中，
+deepCline(data) 这里的data应该理解成 data 是一个 JSDATATYPE 类型的数据，
+JSDATATYPE 类型的数据，可取的值为
+Set type {
+    js type:       =>>>>     typeof data
+  -----------------------------------------
+    undefined,                  'undefined'
+    null,                       'object'
+    boolean,                    'boolean'
+    number,                     'number'
+    string,                     'string'
+    function,                   'function'
+    regexp,                     'object'
+    date,                       'object'
+    array,                      'object'
+    object,                     'object'
+}
+中的元素；

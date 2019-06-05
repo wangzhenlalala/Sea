@@ -1,0 +1,12 @@
+/* 如果不能写less的话，很是难受啊 */
+/* 如何自动化配置 less,自动编译less文件*/
+.vue{
+    width: 1000px;
+    height: 618px;
+    margin: 0 auto;
+    border: solid 1px black;
+}
+.vue img{
+    width: 100%;
+    height: 100%;
+}

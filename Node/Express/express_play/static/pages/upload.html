@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Multipart Form Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>
+    <form action="/upload"   method="post" enctype="multipart/form-data" name="profile" >
+        <label for="file">choose one image</label>
+        <input id="file" type="file" name="avatar" />
+        <input type="submit" value="提交"/>
+    </form> 
+    <!-- 
+        GET http://localhost:9999/scripts/upload 404 (Not Found)
+        <script src="scripts/upload"></script>  
+    -->
+    <script src="scripts/upload.js"></script> 
+</body>
+</html>

@@ -1,0 +1,97 @@
+body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.calendar{
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+.container{
+    width: 252px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: #333;
+}
+.month{
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.month-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    margin: 3px 0;
+}
+
+.item{
+    width: 30px;
+    height: 30px;
+    margin: 3px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+/* 表头的样式 */
+.thead{
+    font-weight: bold;
+    background: rgb(68, 68, 241);
+    color: #fff;
+}
+
+/* 第一行的空格的样式*/
+.empty{
+    background: none;
+}
+
+
+.colorA{
+    background: rgb(245, 118, 135);
+}
+.colorB{
+    background: rgb(245, 216, 85);
+}
+/* 正常显示的日期的 hover样式*/
+.item.weekday:hover{
+    background: rgb(125, 241, 72);
+    cursor: pointer;
+}
+
+
+.container > .weekday:nth-child(7n+6) {
+    background: rgb(231, 217, 217);
+}
+.container > .weekday:nth-child(7n){
+    background: rgb(231, 217, 217);
+}
+
+.controls{
+    width: 200px;
+    height: 400px;
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.addOneMonth{
+    padding: 5px 10px;
+    margin-top: 10px;
+    border: 1px solid rgb(245, 220, 220);
+    border-radius: 15px;
+    cursor: pointer;
+    background: rgb(153, 247, 153);
+}
+
+.addOneMonth:hover{
+    background: rgb(88, 248, 88);
+}

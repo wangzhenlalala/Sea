@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="index.css"/>
+	<script src="connect.js"></script> <!-- 计算路径的逻辑 -->
+	<script src="render.js"></script>  <!-- canvas渲染的逻辑-->
+</head>
+<body>
+	<canvas id="app"></canvas>
+	<div class="other-container">
+		<div class="lines-cols">
+			<label>
+				行数：
+				<input id="lines" />
+			</label>
+			<label>
+				列数：
+				<input id="cols" />
+			</label>
+		</div>
+		<div class="btns">
+			<div id="beginCal">开始寻找路径</div>
+			<div id="clearCal">清除结果</div>
+		</div>
+	</div>
+	<div class="desc">
+		<p>1. 设置游戏中小方块的行数和列数</p>
+		<p>2. 设置起始的小方块: 鼠标放在小方块上面，右(right)键单击一下，使其变成绿色</p>
+		<p>3. 设置不可以走过的小方块: 鼠标放在小方块上面， 左(left)键单击一下, 使其消失。(如果在单击一下，小方块就会出现)</p>
+		<p>4. 单击下方的按钮：开始寻找路径。(如果行数和列数很大的话，计算时间就会很长)</p>
+	</div>
+	<script src="index.js"></script>
+</body>
+</html>
