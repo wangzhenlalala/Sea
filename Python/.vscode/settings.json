@@ -1,0 +1,10 @@
+{
+<<<<<<< HEAD
+    "python.pythonPath": "/usr/local/bin/python3",
+    "python.jediEnabled": false,
+    "python.linting.pylintEnabled": true
+=======
+    "python.pythonPath": "D:\\python3.5\\python.exe",
+    "python.jediEnabled": false
+>>>>>>> 35f624aa1acd540685cb6a332d07bcc251ec118a
+}

@@ -1,0 +1,275 @@
+#!/bin/bash
+#this shell is a practice 
+
+cd_title=""
+menu_choice=""
+title_file="title.cdb"
+tracks_file="tracks.cdb"
+#if you specify the temp_file like below , the file must be exist already ! or errors will occur
+#temp_file="wangzheell_scripts/linux_cd_program/temp.cdb"
+temp_file="temp.cdb"
+trap 'rm -f $temp_file' EXIT
+set_menu_choice(){
+           
+	clear
+	printf "this is my small practice !!!\n\n"
+
+	        printf "\n"
+		printf "please give your choice.\n"
+		echo 
+		printf "		a)  \033[0;31mA\033[0mdd a new record\n\n"
+		printf "		f)  \033[0;31mF\033[0mind a CD\n\n"
+		printf "		c)  \033[0;31mC\033[0mount the CDs and tracks in the catelog\n\n"
+
+		if [ x"$cd_title" != x ] ; then
+			printf "			l)  \033[0;31mL\033[0mist tracks on CD : \033[7m$cdtitle\033[0m\n\n"
+                        printf "			r)  \033[0;31mR\033[0memove CD : \033[7m$cdtitle\033[0m\n\n"
+			printf "			u)  \033[0;31mU\033[0mpdate tracks information for  CD :  \033[7m$cdtitle\033[0m\n\n"
+		fi
+		printf "		q)  \033[0;31mQ\033[0muit\n\n"
+		echo
+	        printf "your choice is :"	
+
+         	read "menu_choice"
+
+		return 0
+
+}
+
+get_valid_input(){
+	
+	while true ; do
+	      local param="$1"
+	      local temp=""
+	      local mytemp=""
+	      read mytemp
+	      temp="${mytemp%%,*}"
+              eval $param="'${temp}'"
+	      [ "$mytemp" = "$temp" ] && return || echo "sorry! invalid input. please try it again "
+	done
+
+}
+
+
+get_confirmed(){
+
+   printf "Are You Sure(Y/y|N/n) ???\n"
+   while true ; do
+	read confirmation
+	case $confirmation in 
+		y|Y)  return 0;;
+		N|n)  
+			printf "you quit !!!"
+			return 1;;
+		*)    printf "sorry ! wrong answer.\n";;
+	esac
+   done
+
+}
+
+
+insert_cd(){
+
+	echo $* >> "$title_file"
+	return 0
+
+}
+
+insert_cd_tracks(){
+
+	echo $* >> "$tracks_file"
+	return 0
+
+}
+
+add_cd_tracks(){
+
+	printf "now add tracks for CD: $cd_title\n"
+	printf "when no more tracks to add,please enter 'q'\n "
+	cd_track_number=1
+	cd_track_title=""
+	while true ; do
+		printf "please input track number $cd_track_number:"
+		get_valid_input cd_track_title
+
+       		if [ "$cd_track_title" = "q" ] ; then
+	        	let cd_track_number--
+			printf "you've inputed $cd_track_number tracks. Mission Accomplished !!!\n"
+			return 0
+		fi
+		insert_cd_tracks $cd_catalog_number,$cd_track_number,$cd_track_title		
+		let cd_track_number++
+	done
+	sleep 3
+
+}
+
+add_records(){
+      
+     printf "********************now you are going to add a new record**************************************\n"
+     printf "please give the information of your new record:\n"
+#tput sc
+
+     printf "your cd-catalog-number:"
+     get_valid_input cd_catalog_number
+
+     printf "your cd_title:" 
+     get_valid_input cd_title
+
+     printf "your cd_style:"
+     get_valid_input cd_style
+
+     printf "your cd_artist:"
+     get_valid_input cd_artist
+
+     printf "\n"
+
+     printf "%20s\n" "your inputs are :" 
+     printf "%20s%-s\n" "catalog number:" "$cd_catalog_number"
+     printf "%20s%-s\n" "title:" "$cd_title"
+     printf "%20s%-s\n" "style:" "$cd_style"
+     printf "%20s%-s\n" "artist:" "$cd_artist"
+     
+     if get_confirmed ; then
+	     insert_cd $cd_catalog_number,$cd_title,$cd_style,$cd_artist
+	     add_cd_tracks
+     else
+	     cd_title=""
+		     
+    fi
+
+   return 0
+
+}
+
+
+remove_records(){
+
+     printf "i am remove_records\n"	
+}
+
+
+list_tracks(){
+
+	grep "^$cd_catalog_number" "$tracks_file" > $temp_file
+	set $(wc -l $temp_file)
+	lines=$1
+
+	if [ $lines -eq 0 ] ; then
+		printf "sorry , this cd contains no tracks"
+	else
+		printf "cd $cd_title includes :\n"
+		cut -d , -f 2- $temp_file
+	fi | more
+
+	printf "press return \n" 
+	read x
+	return 0	
+}
+
+
+
+find_cd(){
+
+	printf "\n" 
+	while true ; do 
+	        printf "please give some characteristics to determine your wanted cd :"
+		read character
+		grep $character $title_file > $temp_file
+		set $(wc $temp_file)
+		lines=$1
+		case $lines in
+			0)	printf "sorry,No Matched CD"
+				return  0
+				;;
+			1)	
+				IFS=","
+				read cd_catalog_number cd_title cd_style cd_artist < $temp_file
+				IFS=""
+				printf "what you are searching for is:\n"
+				printf "%20s%-s\n" "catalog number:" "$cd_catalog_number"
+     				printf "%20s%-s\n" "title:" "$cd_title"
+     				printf "%20s%-s\n" "style:" "$cd_style"
+     				printf "%20s%-s\n" "artist:" "$cd_artist"
+
+				printf "Do you want to see tracks included by CD :\033[34m $cd_title\033[0m ?\n" 
+				get_confirmed &&  list_tracks 
+				return 0 
+				;;
+
+			*)	printf "sorry , characteristics is not unique,try angin please !\n";;
+		esac
+	done
+
+	return 0
+}
+
+
+update_cd(){
+
+     printf "i am update_cd\n"	
+}
+
+
+count_cds(){
+
+#set is used here to extract particular field from the result of wc.
+# what wc produce are: lines($1)  words($2)  chars($3)  and the target file_path($4) 
+         set $(wc -l $title_file)
+	 cd_numbers=$1
+	 set $(wc -l $tracks_file)
+	 cd_track_numbers=$1
+	 printf "\n" 
+	 printf "you have \033[33m $cd_numbers\033[0m  CDs , with a total of \033[33m$cd_track_numbers\033[0m tracks"
+	 printf "\n"
+	 sleep 3
+}
+
+
+
+
+##########################################################################################################
+##########################################################################################################
+############## the codes below is like the c code part "main()" ##########################################
+
+#set_menu_choice
+
+        if [ -f "$temp_file" ] ; then
+	rm -f "$temp_file"
+	fi
+	
+	if [ ! -f "$title_file" ] ; then
+		touch $title_file
+	fi
+	
+	if [ ! -f $"tracks_file" ] ; then
+		touch $tracks_file
+	fi
+
+
+	clear
+	echo 
+	echo 
+	echo 
+	printf "my little CD program\n\n"
+
+	quit=n
+
+	while [ "$quit" != "y" ] ; do
+		set_menu_choice
+		case "$menu_choice" in
+                     a) add_records;;
+		     r) remove_records;;
+		     f) find_cd;;
+		     u) update_cd;;
+		     c) count_cds;;
+		     l) list_tracks;;
+                    #b) browse_cds;;
+		     q | Q) quit=y;;
+		     *) printf "sorry , you've given a wrong selection ! please try it again !!\n";;
+		 esac
+        done
+
+
+exit 0
+

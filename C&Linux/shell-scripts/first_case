@@ -1,0 +1,21 @@
+#!/bin/bash
+
+   echo 
+
+  read -n 1 -p "please input a number between 1~9 :"   num
+
+  echo -e '\n' 
+  
+  case $num in
+     1)
+	echo you are the first one;;
+     2)
+	echo you are the second one;;
+     3) 
+	echo you are the third one;;
+     *)
+	echo sorry ! you come too later;;
+  esac
+
+  echo 
+

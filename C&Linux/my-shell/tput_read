@@ -1,0 +1,17 @@
+#!/bin/bash
+echo -n "please input your password: "
+stty -echo
+read password
+stty echo
+echo
+echo "your password is : ${password}"
+echo "please enter 'y' to confirm"
+read -t 30 -n 1 x
+if [ "$x" = "y" ]
+then
+    exit 0 
+else
+    echo
+    echo you entered no
+    exit 1
+fi

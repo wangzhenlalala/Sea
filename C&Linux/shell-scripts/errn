@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo -e "\n\n$*\n$@\n$#\n\n"
+while [ -n "$*" ]  
+do
+	echo $1
+	shift
+done
+declear -i aa=$#
+
+for((;$aa>=1;$aa=$aa-1))
+do 
+	echo $aa
+done

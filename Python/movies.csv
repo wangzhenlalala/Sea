@@ -1,0 +1,1400 @@
+movie_title,director_name,color,duration,actor_1_name,language,country,title_year
+Avatar,James Cameron,Color,178,CCH Pounder,English,USA,2009
+Pirates of the Caribbean: At World's End,Gore Verbinski,Color,169,Johnny Depp,English,USA,2007
+Spectre,Sam Mendes,Color,148,Christoph Waltz,English,UK,2015
+The Dark Knight Rises,Christopher Nolan,Color,164,Tom Hardy,English,USA,2012
+Star Wars: Episode VII - The Force Awakens,JJ Abrams,Color,136,Harrison Ford,English,USA,2015
+John Carter,Andrew Stanton,Color,132,Daryl Sabara,English,USA,2012
+Spider-Man 3,Sam Raimi,Color,156,J.K. Simmons,English,USA,2007
+Tangled,Nathan Greno,Color,100,Brad Garrett,English,USA,2010
+Avengers: Age of Ultron,Joss Whedon,Color,141,Chris Hemsworth,English,USA,2015
+Harry Potter and the Half-Blood Prince,David Yates,Color,153,Alan Rickman,English,UK,2009
+Batman v Superman: Dawn of Justice,Zack Snyder,Color,183,Henry Cavill,English,USA,2016
+Superman Returns,Bryan Singer,Color,169,Kevin Spacey,English,USA,2006
+Quantum of Solace,Marc Forster,Color,106,Giancarlo Giannini,English,UK,2008
+Pirates of the Caribbean: Dead Man's Chest,Gore Verbinski,Color,151,Johnny Depp,English,USA,2006
+The Lone Ranger,Gore Verbinski,Color,150,Johnny Depp,English,USA,2013
+Man of Steel,Zack Snyder,Color,143,Henry Cavill,English,USA,2013
+The Chronicles of Narnia: Prince Caspian,Andrew Adamson,Color,150,Peter Dinklage,English,USA,2008
+The Avengers,Joss Whedon,Color,173,Chris Hemsworth,English,USA,2012
+Pirates of the Caribbean: On Stranger Tides,Rob Marshall,Color,136,Johnny Depp,English,USA,2011
+Men in Black 3,Barry Sonnenfeld,Color,106,Will Smith,English,USA,2012
+The Hobbit: The Battle of the Five Armies,Peter Jackson,Color,164,Aidan Turner,English,New Zealand,2014
+The Amazing Spider-Man,Marc Webb,Color,153,Emma Stone,English,USA,2012
+Robin Hood,Ridley Scott,Color,156,Mark Addy,English,USA,2010
+The Hobbit: The Desolation of Smaug,Peter Jackson,Color,186,Aidan Turner,English,USA,2013
+The Golden Compass,Chris Weitz,Color,113,Christopher Lee,English,USA,2007
+King Kong,Peter Jackson,Color,201,Naomi Watts,English,New Zealand,2005
+Titanic,James Cameron,Color,194,Leonardo DiCaprio,English,USA,1997
+Captain America: Civil War,Anthony Russo,Color,147,Robert Downey Jr.,English,USA,2016
+Battleship,Peter Berg,Color,131,Liam Neeson,English,USA,2012
+Jurassic World,Colin Trevorrow,Color,124,Bryce Dallas Howard,English,USA,2015
+Skyfall,Sam Mendes,Color,143,Albert Finney,English,UK,2012
+Spider-Man 2,Sam Raimi,Color,135,J.K. Simmons,English,USA,2004
+Iron Man 3,Shane Black,Color,195,Robert Downey Jr.,English,USA,2013
+Alice in Wonderland,Tim Burton,Color,108,Johnny Depp,English,USA,2010
+X-Men: The Last Stand,Brett Ratner,Color,104,Hugh Jackman,English,Canada,2006
+Monsters University,Dan Scanlon,Color,104,Steve Buscemi,English,USA,2013
+Transformers: Revenge of the Fallen,Michael Bay,Color,150,Glenn Morshower,English,USA,2009
+Transformers: Age of Extinction,Michael Bay,Color,165,Bingbing Li,English,USA,2014
+Oz the Great and Powerful,Sam Raimi,Color,130,Tim Holmes,English,USA,2013
+The Amazing Spider-Man 2,Marc Webb,Color,142,Emma Stone,English,USA,2014
+TRON: Legacy,Joseph Kosinski,Color,125,Jeff Bridges,English,USA,2010
+Cars 2,John Lasseter,Color,106,Joe Mantegna,English,USA,2011
+Green Lantern,Martin Campbell,Color,123,Ryan Reynolds,English,USA,2011
+Toy Story 3,Lee Unkrich,Color,103,Tom Hanks,English,USA,2010
+Terminator Salvation,McG,Color,118,Christian Bale,English,USA,2009
+Furious 7,James Wan,Color,140,Jason Statham,English,USA,2015
+World War Z,Marc Forster,Color,123,Peter Capaldi,English,USA,2013
+X-Men: Days of Future Past,Bryan Singer,Color,149,Jennifer Lawrence,English,USA,2014
+Star Trek Into Darkness,J.J. Abrams,Color,132,Benedict Cumberbatch,English,USA,2013
+Jack the Giant Slayer,Bryan Singer,Color,114,Eddie Marsan,English,USA,2013
+The Great Gatsby,Baz Luhrmann,Color,143,Leonardo DiCaprio,English,Australia,2013
+Prince of Persia: The Sands of Time,Mike Newell,Color,116,Jake Gyllenhaal,English,USA,2010
+Pacific Rim,Guillermo del Toro,Color,131,Charlie Hunnam,English,USA,2013
+Transformers: Dark of the Moon,Michael Bay,Color,154,Glenn Morshower,English,USA,2011
+Indiana Jones and the Kingdom of the Crystal Skull,Steven Spielberg,Color,122,Harrison Ford,English,USA,2008
+The Good Dinosaur,Peter Sohn,Color,93,A.J. Buckley,English,USA,2015
+Brave,Mark Andrews,Color,93,Kelly Macdonald,English,USA,2012
+Star Trek Beyond,Justin Lin,Color,122,Sofia Boutella,English,USA,2016
+WALL·E,Andrew Stanton,Color,98,John Ratzenberger,English,USA,2008
+Rush Hour 3,Brett Ratner,Color,91,Tzi Ma,English,USA,2007
+2012,Roland Emmerich,Color,158,Oliver Platt,English,USA,2009
+A Christmas Carol,Robert Zemeckis,Color,96,Robin Wright,English,USA,2009
+Jupiter Ascending,Lana Wachowski,Color,127,Channing Tatum,English,USA,2015
+The Legend of Tarzan,David Yates,Color,110,Christoph Waltz,English,USA,2016
+X-Men: Apocalypse,Bryan Singer,Color,144,Jennifer Lawrence,English,USA,2016
+The Dark Knight,Christopher Nolan,Color,152,Christian Bale,English,USA,2008
+Up,Pete Docter,Color,96,John Ratzenberger,English,USA,2009
+Monsters vs. Aliens,Rob Letterman,Color,94,Amy Poehler,English,USA,2009
+Iron Man,Jon Favreau,Color,126,Robert Downey Jr.,English,USA,2008
+Hugo,Martin Scorsese,Color,126,Chloë Grace Moretz,English,USA,2011
+Wild Wild West,Barry Sonnenfeld,Color,106,Will Smith,English,USA,1999
+The Mummy: Tomb of the Dragon Emperor,Rob Cohen,Color,112,Jet Li,English,USA,2008
+Suicide Squad,David Ayer,Color,123,Will Smith,English,USA,2016
+Evan Almighty,Tom Shadyac,Color,96,Jimmy Bennett,English,USA,2007
+Edge of Tomorrow,Doug Liman,Color,113,Tom Cruise,English,USA,2014
+Waterworld,Kevin Reynolds,Color,176,Jeanne Tripplehorn,English,USA,1995
+G.I. Joe: The Rise of Cobra,Stephen Sommers,Color,118,Joseph Gordon-Levitt,English,USA,2009
+Inside Out,Pete Docter,Color,95,Amy Poehler,English,USA,2015
+The Jungle Book,Jon Favreau,Color,106,Scarlett Johansson,English,UK,2016
+Iron Man 2,Jon Favreau,Color,124,Robert Downey Jr.,English,USA,2010
+Snow White and the Huntsman,Rupert Sanders,Color,132,Chris Hemsworth,English,USA,2012
+Maleficent,Robert Stromberg,Color,97,Angelina Jolie Pitt,English,USA,2014
+Dawn of the Planet of the Apes,Matt Reeves,Color,130,Gary Oldman,English,USA,2014
+The Lovers,Roland Joffé,Color,109,Tamsin Egerton,English,Belgium,2015
+47 Ronin,Carl Rinsch,Color,128,Keanu Reeves,English,USA,2013
+Captain America: The Winter Soldier,Anthony Russo,Color,136,Scarlett Johansson,English,USA,2014
+Shrek Forever After,Mike Mitchell,Color,93,Jon Hamm,English,USA,2010
+Tomorrowland,Brad Bird,Color,130,Judy Greer,English,USA,2015
+Big Hero 6,Don Hall,Color,102,Damon Wayans Jr.,English,USA,2014
+Wreck-It Ralph,Rich Moore,Color,101,Jack McBrayer,English,USA,2012
+The Polar Express,Robert Zemeckis,Color,100,Tom Hanks,English,USA,2004
+Independence Day: Resurgence,Roland Emmerich,Color,120,Vivica A. Fox,English,USA,2016
+How to Train Your Dragon,Dean DeBlois,Color,98,Gerard Butler,English,USA,2010
+Terminator 3: Rise of the Machines,Jonathan Mostow,Color,109,Nick Stahl,English,USA,2003
+Guardians of the Galaxy,James Gunn,Color,121,Bradley Cooper,English,USA,2014
+Interstellar,Christopher Nolan,Color,169,Matthew McConaughey,English,USA,2014
+Inception,Christopher Nolan,Color,148,Leonardo DiCaprio,English,USA,2010
+Godzilla Resurgence,Hideaki Anno,Color,120,Mark Chinnery,Japanese,Japan,2016
+The Hobbit: An Unexpected Journey,Peter Jackson,Color,182,Aidan Turner,English,USA,2012
+The Fast and the Furious,Rob Cohen,Color,106,Paul Walker,English,USA,2001
+The Curious Case of Benjamin Button,David Fincher,Color,166,Brad Pitt,English,USA,2008
+X-Men: First Class,Matthew Vaughn,Color,132,Jennifer Lawrence,English,USA,2011
+The Hunger Games: Mockingjay - Part 2,Francis Lawrence,Color,137,Jennifer Lawrence,English,USA,2015
+The Sorcerer's Apprentice,Jon Turteltaub,Color,109,Nicolas Cage,English,USA,2010
+Poseidon,Wolfgang Petersen,Color,98,Jimmy Bennett,English,USA,2006
+Alice Through the Looking Glass,James Bobin,Color,113,Johnny Depp,English,USA,2016
+Shrek the Third,Chris Miller,Color,93,Justin Timberlake,English,USA,2007
+Warcraft,Duncan Jones,Color,123,Dominic Cooper,English,USA,2016
+Terminator Genisys,Alan Taylor,Color,126,J.K. Simmons,English,USA,2015
+The Chronicles of Narnia: The Voyage of the Dawn Treader,Michael Apted,Color,113,Bruce Spence,English,USA,2010
+Pearl Harbor,Michael Bay, Black and White,184,Jennifer Garner,English,USA,2001
+Transformers,Michael Bay,Color,144,Zack Ward,English,USA,2007
+Alexander,Oliver Stone,Color,206,Anthony Hopkins,English,Germany,2004
+Harry Potter and the Order of the Phoenix,David Yates,Color,138,Robert Pattinson,English,UK,2007
+Harry Potter and the Goblet of Fire,Mike Newell,Color,157,Robert Pattinson,English,UK,2005
+Hancock,Peter Berg,Color,102,Will Smith,English,USA,2008
+I Am Legend,Francis Lawrence,Color,104,Will Smith,English,USA,2007
+Charlie and the Chocolate Factory,Tim Burton,Color,115,Johnny Depp,English,USA,2005
+Ratatouille,Brad Bird,Color,111,Janeane Garofalo,English,USA,2007
+Batman Begins,Christopher Nolan,Color,128,Christian Bale,English,USA,2005
+Madagascar: Escape 2 Africa,Eric Darnell,Color,89,Bernie Mac,English,USA,2008
+Night at the Museum: Battle of the Smithsonian,Shawn Levy,Color,105,Robin Williams,English,USA,2009
+X-Men Origins: Wolverine,Gavin Hood,Color,119,Hugh Jackman,English,USA,2009
+The Matrix Revolutions,Lana Wachowski,Color,129,Essie Davis,English,Australia,2003
+Frozen,Chris Buck,Color,102,Josh Gad,English,USA,2013
+The Matrix Reloaded,Lana Wachowski,Color,138,Steve Bastoni,English,USA,2003
+Thor: The Dark World,Alan Taylor,Color,112,Chris Hemsworth,English,USA,2013
+Mad Max: Fury Road,George Miller,Color,120,Tom Hardy,English,Australia,2015
+Angels & Demons,Ron Howard,Color,146,Tom Hanks,English,USA,2009
+Thor,Kenneth Branagh,Color,115,Chris Hemsworth,English,USA,2011
+Bolt,Byron Howard,Color,96,Chloë Grace Moretz,English,USA,2008
+G-Force,Hoyt Yeatman,Color,88,Kelli Garner,English,USA,2009
+Wrath of the Titans,Jonathan Liebesman,Color,99,Liam Neeson,English,USA,2012
+Dark Shadows,Tim Burton,Color,113,Johnny Depp,English,USA,2012
+Mission: Impossible - Rogue Nation,Christopher McQuarrie,Color,131,Tom Cruise,English,China,2015
+The Wolfman,Joe Johnston,Color,119,Anthony Hopkins,English,USA,2010
+The Legend of Tarzan,David Yates,Color,110,Christoph Waltz,English,USA,2016
+Bee Movie,Steve Hickner,Color,91,Matthew Broderick,English,USA,2007
+Kung Fu Panda 2,Jennifer Yuh Nelson,Color,90,Angelina Jolie Pitt,English,USA,2011
+The Last Airbender,M. Night Shyamalan,Color,103,Seychelle Gabriel,English,USA,2010
+Mission: Impossible III,J.J. Abrams,Color,124,Philip Seymour Hoffman,English,USA,2006
+White House Down,Roland Emmerich,Color,131,Channing Tatum,English,USA,2013
+Mars Needs Moms,Simon Wells,Color,88,Elisabeth Harnois,English,USA,2011
+Flushed Away,David Bowers,Color,85,Hugh Jackman,English,UK,2006
+Pan,Joe Wright,Color,111,Hugh Jackman,English,USA,2015
+Mr. Peabody & Sherman,Rob Minkoff,Color,92,Ty Burrell,English,USA,2014
+Troy,Wolfgang Petersen,Color,196,Brad Pitt,English,USA,2004
+Madagascar 3: Europe's Most Wanted,Eric Darnell,Color,93,Jada Pinkett Smith,English,USA,2012
+Die Another Day,Lee Tamahori, Black and White,133,Toby Stephens,English,UK,2002
+Ghostbusters,Paul Feig,Color,116,Ed Begley Jr.,English,USA,2016
+Armageddon,Michael Bay,Color,153,Bruce Willis,English,USA,1998
+Men in Black II,Barry Sonnenfeld,Color,88,Will Smith,English,USA,2002
+Beowulf,Robert Zemeckis,Color,115,Robin Wright,English,USA,2007
+Kung Fu Panda 3,Alessandro Carloni,Color,95,J.K. Simmons,English,USA,2016
+Mission: Impossible - Ghost Protocol,Brad Bird,Color,133,Tom Cruise,English,USA,2011
+Rise of the Guardians,Peter Ramsey,Color,97,Hugh Jackman,English,USA,2012
+Fun with Dick and Jane,Dean Parisot,Color,90,John Michael Higgins,English,USA,2005
+The Last Samurai,Edward Zwick,Color,154,Tom Cruise,English,USA,2003
+Exodus: Gods and Kings,Ridley Scott,Color,150,Christian Bale,English,UK,2014
+Star Trek,J.J. Abrams,Color,127,Chris Hemsworth,English,USA,2009
+Spider-Man,Sam Raimi,Color,121,J.K. Simmons,English,USA,2002
+How to Train Your Dragon 2,Dean DeBlois,Color,102,Gerard Butler,English,USA,2014
+Gods of Egypt,Alex Proyas,Color,126,Gerard Butler,English,USA,2016
+Stealth,Rob Cohen,Color,121,Sam Shepard,English,USA,2005
+Watchmen,Zack Snyder,Color,215,Matt Frewer,English,USA,2009
+Lethal Weapon 4,Richard Donner,Color,127,Jet Li,English,USA,1998
+Hulk,Ang Lee,Color,138,Kevin Rankin,English,USA,2003
+G.I. Joe: Retaliation,Jon M. Chu,Color,122,Channing Tatum,English,USA,2013
+Sahara,Breck Eisner,Color,124,Matthew McConaughey,English,UK,2005
+Final Fantasy: The Spirits Within,Hironobu Sakaguchi,Color,106,Steve Buscemi,English,USA,2001
+Captain America: The First Avenger,Joe Johnston,Color,124,Chris Evans,English,USA,2011
+The World Is Not Enough,Michael Apted,Color,128,Colin Salmon,English,UK,1999
+Master and Commander: The Far Side of the World,Peter Weir,Color,138,James D'Arcy,English,USA,2003
+The Twilight Saga: Breaking Dawn - Part 2,Bill Condon,Color,115,Robert Pattinson,English,USA,2012
+Happy Feet 2,George Miller,Color,100,Robin Williams,English,Australia,2011
+The Incredible Hulk,Louis Leterrier,Color,135,Ty Burrell,English,USA,2008
+Miami Vice,,Color,60,Don Johnson,English,USA,
+The BFG,Steven Spielberg,Color,117,Mark Rylance,English,UK,2016
+The Revenant,Alejandro G. Iñárritu,Color,156,Leonardo DiCaprio,English,USA,2015
+Turbo,David Soren,Color,96,Ryan Reynolds,English,USA,2013
+Rango,Gore Verbinski,Color,107,Johnny Depp,English,USA,2011
+Penguins of Madagascar,Eric Darnell,Color,92,Benedict Cumberbatch,English,USA,2014
+The Bourne Ultimatum,Paul Greengrass,Color,115,Matt Damon,English,USA,2007
+Kung Fu Panda,Mark Osborne,Color,92,Angelina Jolie Pitt,English,USA,2008
+Ant-Man,Peyton Reed,Color,117,Judy Greer,English,USA,2015
+The Hunger Games: Catching Fire,Francis Lawrence,Color,146,Jennifer Lawrence,English,USA,2013
+The Twilight Saga: Breaking Dawn - Part 2,Bill Condon,Color,115,Robert Pattinson,English,USA,2012
+Home,Tim Johnson,Color,94,Jim Parsons,English,USA,2015
+War of the Worlds,Steven Spielberg,Color,116,Tom Cruise,English,USA,2005
+Bad Boys II,Michael Bay,Color,147,Will Smith,English,USA,2003
+Puss in Boots,Chris Miller,Color,90,Salma Hayek,English,USA,2011
+Salt,Phillip Noyce,Color,101,Angelina Jolie Pitt,English,USA,2010
+Noah,Darren Aronofsky,Color,138,Anthony Hopkins,English,USA,2014
+The Adventures of Tintin,Steven Spielberg,Color,107,Toby Jones,English,USA,2011
+Harry Potter and the Prisoner of Azkaban,Alfonso Cuarón,Color,142,Daniel Radcliffe,English,UK,2004
+Australia,Baz Luhrmann,Color,165,Essie Davis,English,Australia,2008
+After Earth,M. Night Shyamalan,Color,100,Will Smith,English,USA,2013
+Dinosaur,Eric Leighton,Color,82,Alfre Woodard,English,USA,2000
+Harry Potter and the Deathly Hallows: Part II,Matt Birch,Color,,Rupert Grint,English,UK,2011
+Night at the Museum: Secret of the Tomb,Shawn Levy,Color,98,Robin Williams,English,USA,2014
+Megamind,Tom McGrath,Color,95,J.K. Simmons,English,USA,2010
+Harry Potter and the Sorcerer's Stone,Chris Columbus,Color,159,Daniel Radcliffe,English,UK,2001
+R.I.P.D.,Robert Schwentke,Color,96,Ryan Reynolds,English,USA,2013
+Godzilla Resurgence,Hideaki Anno,Color,120,Mark Chinnery,Japanese,Japan,2016
+Pirates of the Caribbean: The Curse of the Black Pearl,Gore Verbinski,Color,143,Johnny Depp,English,USA,2003
+Harry Potter and the Deathly Hallows: Part I,Matt Birch,Color,,Rupert Grint,English,UK,2010
+The Hunger Games: Mockingjay - Part 1,Francis Lawrence,Color,123,Jennifer Lawrence,English,USA,2014
+The Da Vinci Code,Ron Howard,Color,174,Tom Hanks,English,USA,2006
+Rio 2,Carlos Saldanha,Color,101,Miguel Ferrer,English,USA,2014
+X-Men 2,Bryan Singer,Color,134,Hugh Jackman,English,Canada,2003
+Fast Five,Justin Lin,Color,132,Paul Walker,English,USA,2011
+Sherlock Holmes: A Game of Shadows,Guy Ritchie,Color,129,Robert Downey Jr.,English,USA,2011
+Clash of the Titans,Louis Leterrier,Color,106,Liam Neeson,English,USA,2010
+Total Recall,Paul Verhoeven,Color,113,Ronny Cox,English,USA,1990
+The 13th Warrior,John McTiernan,Color,102,Tony Curran,English,USA,1999
+The Bourne Legacy,Tony Gilroy,Color,135,Jeremy Renner,English,USA,2012
+Batman & Robin,Joel Schumacher,Color,125,Michael Gough,English,USA,1997
+How the Grinch Stole Christmas,Ron Howard,Color,110,Clint Howard,English,USA,2000
+The Day After Tomorrow,Roland Emmerich,Color,124,Jake Gyllenhaal,English,USA,2004
+Mission: Impossible II,John Woo,Color,123,Tom Cruise,English,USA,2000
+The Perfect Storm,Wolfgang Petersen,Color,130,Karen Allen,English,USA,2000
+Fantastic 4: Rise of the Silver Surfer,Tim Story,Color,92,Chris Evans,English,USA,2007
+Life of Pi,Ang Lee,Color,127,Suraj Sharma,English,USA,2012
+Ghost Rider,Mark Steven Johnson,Color,123,Nicolas Cage,English,USA,2007
+Jason Bourne,Paul Greengrass,Color,123,Matt Damon,English,UK,2016
+Charlie's Angels: Full Throttle,McG,Color,107,Demi Moore,English,USA,2003
+Prometheus,Ridley Scott,Color,124,Michael Fassbender,English,USA,2012
+Stuart Little 2,Rob Minkoff,Color,77,Nathan Lane,English,USA,2002
+Elysium,Neill Blomkamp,Color,109,Matt Damon,English,USA,2013
+The Chronicles of Riddick,David Twohy,Color,134,Vin Diesel,English,USA,2004
+RoboCop,José Padilha,Color,117,Gary Oldman,English,USA,2014
+Speed Racer,Lana Wachowski,Color,135,Scott Porter,English,USA,2008
+How Do You Know,James L. Brooks,Color,121,Shelley Conn,English,USA,2010
+Knight and Day,James Mangold,Color,117,Tom Cruise,English,USA,2010
+Oblivion,Joseph Kosinski,Color,124,Morgan Freeman,English,USA,2013
+Star Wars: Episode III - Revenge of the Sith,George Lucas,Color,140,Natalie Portman,English,USA,2005
+Star Wars: Episode II - Attack of the Clones,George Lucas,Color,142,Natalie Portman,English,USA,2002
+The Wolverine,James Mangold,Color,138,Hugh Jackman,English,USA,2013
+Star Wars: Episode I - The Phantom Menace,George Lucas,Color,136,Natalie Portman,English,USA,1999
+The Croods,Kirk De Micco,Color,98,Ryan Reynolds,English,USA,2013
+Asterix at the Olympic Games,Frédéric Forestier,Color,116,Alain Delon,French,France,2008
+Windtalkers,John Woo,Color,153,Nicolas Cage,English,USA,2002
+The Huntsman: Winter's War,Cedric Nicolas-Troyan,Color,120,Chris Hemsworth,English,USA,2016
+Teenage Mutant Ninja Turtles,Jonathan Liebesman,Color,101,Noel Fisher,English,USA,2014
+Gravity,Alfonso Cuarón,Color,91,Phaldut Sharma,English,UK,2013
+Dante's Peak,Roger Donaldson,Color,108,Jamie Renée Smith,English,USA,1997
+Teenage Mutant Ninja Turtles: Out of the Shadows,Dave Green,Color,112,Stephen Amell,English,USA,2016
+Fantastic Four,Josh Trank,Color,100,Tim Blake Nelson,English,USA,2015
+Night at the Museum,Shawn Levy,Color,108,Robin Williams,English,USA,2006
+San Andreas,Brad Peyton,Color,114,Dwayne Johnson,English,USA,2015
+Tomorrow Never Dies,Roger Spottiswoode,Color,119,Vincent Schiavelli,English,UK,1997
+The Patriot,Roland Emmerich,Color,142,Heath Ledger,English,USA,2000
+Ocean's Twelve,Steven Soderbergh,Color,125,Brad Pitt,English,USA,2004
+Mr. & Mrs. Smith,Doug Liman,Color,126,Brad Pitt,English,USA,2005
+Insurgent,Robert Schwentke,Color,119,Kate Winslet,English,USA,2015
+The Aviator,Martin Scorsese, Black and White,170,Leonardo DiCaprio,English,USA,2004
+Gulliver's Travels,Rob Letterman,Color,85,James Corden,English,USA,2010
+The Green Hornet,Michel Gondry,Color,119,Christoph Waltz,English,USA,2011
+The A-Team,,Color,60,George Peppard,English,USA,
+300: Rise of an Empire,Noam Murro,Color,102,Eva Green,English,USA,2014
+The Smurfs,Raja Gosnell,Color,103,Mahadeo Shivraj,English,USA,2011
+Home on the Range,Will Finn,Color,76,Steve Buscemi,English,USA,2004
+Allegiant,Robert Schwentke,Color,120,Naomi Watts,English,USA,2016
+Real Steel,Shawn Levy,Color,127,Hugh Jackman,English,USA,2011
+The Smurfs 2,Raja Gosnell,Color,105,Jacob Tremblay,English,USA,2013
+Speed 2: Cruise Control,Jan de Bont,Color,121,Jason Patric,English,USA,1997
+Ender's Game,Gavin Hood,Color,114,Harrison Ford,English,USA,2013
+Live Free or Die Hard,Len Wiseman,Color,129,Bruce Willis,English,USA,2007
+The Lord of the Rings: The Fellowship of the Ring,Peter Jackson,Color,171,Christopher Lee,English,New Zealand,2001
+Around the World in 80 Days,Frank Coraci,Color,120,Jim Broadbent,English,USA,2004
+Ali,Michael Mann, Black and White,165,Will Smith,English,USA,2001
+The Cat in the Hat,Bo Welch,Color,82,Sean Hayes,English,USA,2003
+Kingdom of Heaven,Ridley Scott,Color,194,Liam Neeson,English,USA,2005
+Stuart Little,Rob Minkoff,Color,84,Chazz Palminteri,English,Germany,1999
+The Princess and the Frog,Ron Clements,Color,97,Oprah Winfrey,English,USA,2009
+The Martian,Ridley Scott,Color,151,Matt Damon,English,USA,2015
+The Island,Michael Bay,Color,136,Scarlett Johansson,English,USA,2005
+Town & Country,Peter Chelsom,Color,104,Del Zamora,English,New Line,2001
+Gone in Sixty Seconds,Dominic Sena,Color,127,Nicolas Cage,English,USA,2000
+Gladiator,Ridley Scott,Color,171,Djimon Hounsou,English,USA,2000
+Minority Report,Steven Spielberg,Color,145,Tom Cruise,English,USA,2002
+Harry Potter and the Chamber of Secrets,Chris Columbus,Color,174,Daniel Radcliffe,English,UK,2002
+Casino Royale,Martin Campbell, Black and White,144,Eva Green,English,UK,2006
+Planet of the Apes,Tim Burton,Color,119,Cary-Hiroyuki Tagawa,English,USA,2001
+Terminator 2: Judgment Day,James Cameron,Color,153,Joe Morton,English,USA,1991
+Public Enemies,Michael Mann,Color,140,Johnny Depp,English,USA,2009
+American Gangster,Ridley Scott,Color,176,Denzel Washington,English,USA,2007
+True Lies,James Cameron,Color,141,Jamie Lee Curtis,English,USA,1994
+The Taking of Pelham 1 2 3,Tony Scott,Color,106,Denzel Washington,English,USA,2009
+Little Fockers,Paul Weitz,Color,98,Robert De Niro,English,USA,2010
+The Other Guys,Adam McKay,Color,116,Dwayne Johnson,English,USA,2010
+Eraser,Chuck Russell,Color,115,Vanessa Williams,English,USA,1996
+Django Unchained,Quentin Tarantino,Color,165,Leonardo DiCaprio,English,USA,2012
+The Hunchback of Notre Dame,Gary Trousdale,Color,91,Demi Moore,English,USA,1996
+The Emperor's New Groove,Mark Dindal,Color,78,Eartha Kitt,English,USA,2000
+The Expendables 2,Simon West,Color,103,Jason Statham,English,USA,2012
+National Treasure,Jon Turteltaub,Color,131,Nicolas Cage,English,USA,2004
+Eragon,Stefen Fangmeier, Black and White,104,Djimon Hounsou,English,USA,2006
+Where the Wild Things Are,Spike Jonze,Color,101,Catherine O'Hara,English,Germany,2009
+Pan,Joe Wright,Color,111,Hugh Jackman,English,USA,2015
+Epic,Chris Wedge,Color,102,Josh Hutcherson,English,USA,2013
+The Tourist,Florian Henckel von Donnersmarck,Color,103,Johnny Depp,English,USA,2010
+End of Days,Peter Hyams,Color,121,CCH Pounder,English,USA,1999
+Blood Diamond,Edward Zwick,Color,143,Leonardo DiCaprio,English,Germany,2006
+The Wolf of Wall Street,Martin Scorsese,Color,240,Leonardo DiCaprio,English,USA,2013
+Batman Forever,Joel Schumacher,Color,121,Michael Gough,English,USA,1995
+Starship Troopers,Paul Verhoeven,Color,129,Jake Busey,English,USA,1997
+Cloud Atlas,Tom Tykwer,Color,172,Tom Hanks,English,Germany,2012
+Legend of the Guardians: The Owls of Ga'Hoole,Zack Snyder,Color,101,Abbie Cornish,English,USA,2010
+Catwoman,Pitof,Color,87,Frances Conroy,English,USA,2004
+Hercules,Brett Ratner,Color,101,Dwayne Johnson,English,USA,2014
+Treasure Planet,Ron Clements,Color,95,Joseph Gordon-Levitt,English,USA,2002
+Land of the Lost,Brad Silberling,Color,102,Will Ferrell,English,USA,2009
+The Expendables 3,Patrick Hughes,Color,131,Jason Statham,English,USA,2014
+Point Break,Ericson Core,Color,114,Ray Winstone,English,USA,2015
+Son of the Mask,Lawrence Guterman,Color,94,Jamie Kennedy,English,USA,2005
+In the Heart of the Sea,Ron Howard,Color,122,Chris Hemsworth,English,USA,2015
+The Adventures of Pluto Nash,Ron Underwood,Color,95,Rosario Dawson,English,USA,2002
+Green Zone,Paul Greengrass,Color,115,Matt Damon,English,France,2010
+The Peanuts Movie,Steve Martino,Color,88,Francesca Capaldi,English,USA,2015
+The Spanish Prisoner,David Mamet,Color,110,Ben Gazzara,English,USA,1997
+The Mummy Returns,Stephen Sommers,Color,130,Dwayne Johnson,English,USA,2001
+Gangs of New York,Martin Scorsese,Color,216,Leonardo DiCaprio,English,USA,2002
+The Flowers of War,Yimou Zhang,Color,146,Christian Bale,Mandarin,China,2011
+Surf's Up,Ash Brannon,Color,85,Jeff Bridges,English,USA,2007
+The Stepford Wives,Frank Oz,Color,93,Jon Lovitz,English,USA,2004
+Black Hawk Down,Ridley Scott,Color,152,Ioan Gruffudd,English,USA,2001
+The Campaign,Jay Roach,Color,85,Will Ferrell,English,USA,2012
+The Fifth Element,Luc Besson,Color,126,Milla Jovovich,English,France,1997
+Sex and the City 2,Michael Patrick King,Color,146,Chris Noth,English,USA,2010
+The Road to El Dorado,Bibo Bergeron,Color,89,Frank Welker,English,USA,2000
+Ice Age: Continental Drift,Steve Martino,Color,88,Peter Dinklage,English,USA,2012
+Cinderella,Kenneth Branagh,Color,105,Hayley Atwell,English,USA,2015
+The Lovely Bones,Peter Jackson,Color,135,Michael Imperioli,English,USA,2009
+Finding Nemo,Andrew Stanton,Color,100,Alexander Gould,English,USA,2003
+The Lord of the Rings: The Return of the King,Peter Jackson,Color,192,Orlando Bloom,English,USA,2003
+The Lord of the Rings: The Two Towers,Peter Jackson,Color,172,Christopher Lee,English,USA,2002
+Seventh Son,Sergey Bodrov,Color,102,Jeff Bridges,English,USA,2014
+Lara Croft: Tomb Raider,Simon West,Color,100,Angelina Jolie Pitt,English,USA,2001
+Transcendence,Wally Pfister,Color,119,Johnny Depp,English,UK,2014
+Jurassic Park III,Joe Johnston,Color,92,Michael Jeter,English,USA,2001
+Rise of the Planet of the Apes,Rupert Wyatt,Color,105,James Franco,English,USA,2011
+The Spiderwick Chronicles,Mark Waters,Color,107,Martin Short,English,USA,2008
+A Good Day to Die Hard,John Moore,Color,101,Bruce Willis,English,USA,2013
+The Alamo,John Lee Hancock,Color,137,Dennis Quaid,English,USA,2004
+The Incredibles,Brad Bird,Color,115,Holly Hunter,English,USA,2004
+Cutthroat Island,Renny Harlin,Color,124,Christopher Masterson,English,USA,1995
+Percy Jackson & the Olympians: The Lightning Thief,Chris Columbus,Color,118,Logan Lerman,English,UK,2010
+Men in Black,Barry Sonnenfeld,Color,98,Will Smith,English,USA,1997
+Toy Story 2,John Lasseter,Color,82,Tom Hanks,English,USA,1999
+Unstoppable,Tony Scott,Color,98,Denzel Washington,English,USA,2010
+Rush Hour 2,Brett Ratner,Color,90,Mei Melançon,English,USA,2001
+What Lies Beneath,Robert Zemeckis,Color,130,Harrison Ford,English,USA,2000
+Cloudy with a Chance of Meatballs,Phil Lord,Color,90,Will Forte,English,USA,2009
+Ice Age: Dawn of the Dinosaurs,Carlos Saldanha,Color,94,Denis Leary,English,USA,2009
+The Secret Life of Walter Mitty,Ben Stiller,Color,114,Adam Scott,English,USA,2013
+Charlie's Angels,McG,Color,94,Bill Murray,English,USA,2000
+The Departed,Martin Scorsese,Color,151,Leonardo DiCaprio,English,USA,2006
+Mulan,Tony Bancroft,Color,88,Ming-Na Wen,English,USA,1998
+Tropic Thunder,Ben Stiller,Color,121,Robert Downey Jr.,English,USA,2008
+The Girl with the Dragon Tattoo,David Fincher,Color,158,Robin Wright,English,USA,2011
+Die Hard with a Vengeance,John McTiernan,Color,128,Bruce Willis,English,USA,1995
+Sherlock Holmes,Guy Ritchie,Color,128,Robert Downey Jr.,English,USA,2009
+Ben-Hur,Timur Bekmambetov,Color,141,Morgan Freeman,English,USA,2016
+Atlantis: The Lost Empire,Gary Trousdale,Color,95,Leonard Nimoy,English,USA,2001
+Alvin and the Chipmunks: The Road Chip,Walt Becker,Color,92,Bella Thorne,English,USA,2015
+Valkyrie,Bryan Singer,Color,121,Tom Cruise,English,USA,2008
+You Don't Mess with the Zohan,Dennis Dugan,Color,113,Adam Sandler,English,USA,2008
+Pixels,Chris Columbus,Color,106,Peter Dinklage,English,USA,2015
+A.I. Artificial Intelligence,Steven Spielberg,Color,146,Haley Joel Osment,English,USA,2001
+The Haunted Mansion,Rob Minkoff,Color,88,Marsha Thomason,English,USA,2003
+Contact,Robert Zemeckis,Color,150,Matthew McConaughey,English,USA,1997
+Hollow Man,Paul Verhoeven,Color,119,Greg Grunberg,English,USA,2000
+The Interpreter,Sydney Pollack,Color,128,Curtiss Cook,Aboriginal,UK,2005
+Percy Jackson: Sea of Monsters,Thor Freudenthal,Color,106,Logan Lerman,English,USA,2013
+Lara Croft Tomb Raider: The Cradle of Life,Jan de Bont,Color,117,Gerard Butler,English,USA,2003
+Now You See Me 2,Jon M. Chu,Color,129,Daniel Radcliffe,English,USA,2016
+The Saint,Phillip Noyce,Color,116,Alun Armstrong,English,USA,1997
+Spy Game,Tony Scott,Color,114,Brad Pitt,English,Germany,2001
+Mission to Mars,Brian De Palma,Color,114,Don Cheadle,English,USA,2000
+Rio,Carlos Saldanha,Color,96,Anne Hathaway,English,USA,2011
+Bicentennial Man,Chris Columbus,Color,132,Robin Williams,English,USA,1999
+Volcano,Mick Jackson,Color,104,Don Cheadle,English,USA,1997
+The Devil's Own,Alan J. Pakula,Color,111,Harrison Ford,English,USA,1997
+K-19: The Widowmaker,Kathryn Bigelow,Color,138,Liam Neeson,English,UK,2002
+Fantastic Four,Josh Trank,Color,100,Tim Blake Nelson,English,USA,2015
+Conan the Barbarian,John Milius,Color,129,William Smith,English,USA,1982
+Cinderella Man,Ron Howard,Color,144,Paddy Considine,English,USA,2005
+The Nutcracker in 3D,Andrey Konchalovskiy,Color,110,Shirley Henderson,English,UK,2010
+Seabiscuit,Gary Ross, Black and White,140,Jeff Bridges,English,USA,2003
+Twister,Jan de Bont,Color,113,Philip Seymour Hoffman,English,USA,1996
+The Fast and the Furious,Rob Cohen,Color,106,Paul Walker,English,USA,2001
+Cast Away,Robert Zemeckis,Color,143,Tom Hanks,English,USA,2000
+Happy Feet,George Miller,Color,108,Robin Williams,English,USA,2006
+The Bourne Supremacy,Paul Greengrass,Color,108,Matt Damon,English,USA,2004
+Air Force One,Wolfgang Petersen,Color,124,Harrison Ford,English,USA,1997
+Ocean's Eleven,Steven Soderbergh,Color,116,Brad Pitt,English,USA,2001
+The Three Musketeers,Paul W.S. Anderson,Color,110,Milla Jovovich,English,Germany,2011
+Hotel Transylvania,Genndy Tartakovsky,Color,91,Steve Buscemi,English,USA,2012
+Enchanted,Kevin Lima,Color,107,Jeff Bennett,English,USA,2007
+Hannibal,,Color,44,Caroline Dhavernas,English,USA,
+Safe House,Daniel Espinosa,Color,115,Denzel Washington,English,USA,2012
+102 Dalmatians,Kevin Lima,Color,100,Ioan Gruffudd,English,USA,2000
+Tower Heist,Brett Ratner,Color,104,Matthew Broderick,English,USA,2011
+The Holiday,Nancy Meyers,Color,138,Kate Winslet,English,USA,2006
+Enemy of the State,Tony Scott,Color,140,Will Smith,English,USA,1998
+It's Complicated,Nancy Meyers,Color,120,Meryl Streep,English,USA,2009
+Ocean's Thirteen,Steven Soderbergh,Color,122,Al Pacino,English,USA,2007
+Open Season,Roger Allers,Color,83,Jon Favreau,English,USA,2006
+Divergent,Neil Burger,Color,139,Kate Winslet,English,USA,2014
+Enemy at the Gates,Jean-Jacques Annaud,Color,131,Bob Hoskins,English,USA,2001
+The Rundown,Peter Berg,Color,104,Dwayne Johnson,English,USA,2003
+Last Action Hero,John McTiernan,Color,130,F. Murray Abraham,English,USA,1993
+Memoirs of a Geisha,Rob Marshall,Color,145,Li Gong,English,USA,2005
+The Fast and the Furious: Tokyo Drift,Justin Lin,Color,104,Amber Stevens West,English,USA,2006
+Arthur Christmas,Sarah Smith,Color,97,Jim Broadbent,English,UK,2011
+Meet Joe Black,Martin Brest,Color,178,Anthony Hopkins,English,USA,1998
+Collateral Damage,Andrew Davis,Color,108,Raymond Cruz,English,USA,2002
+All That Jazz,Bob Fosse,Color,123,Roy Scheider,English,USA,1979
+Mirror Mirror,Tarsem Singh,Color,106,Julia Roberts,English,USA,2012
+Scott Pilgrim vs. the World,Edgar Wright,Color,112,Anna Kendrick,English,USA,2010
+The Core,Jon Amiel,Color,135,Glenn Morshower,English,USA,2003
+Nutty Professor II: The Klumps,Peter Segal,Color,109,Larry Miller,English,USA,2000
+Scooby-Doo,Raja Gosnell,Color,86,Sarah Michelle Gellar,English,USA,2002
+Dredd,Pete Travis,Color,95,Wood Harris,English,UK,2012
+Click,Frank Coraci,Color,107,Adam Sandler,English,USA,2006
+Creepshow,George A. Romero,Color,130,Ted Danson,English,USA,1982
+Cats & Dogs: The Revenge of Kitty Galore,Brad Peyton,Color,82,Jack McBrayer,English,USA,2010
+Jumper,Doug Liman,Color,88,Kristen Stewart,English,USA,2008
+Hellboy II: The Golden Army,Guillermo del Toro,Color,120,Seth MacFarlane,English,USA,2008
+Zodiac,David Fincher,Color,162,Robert Downey Jr.,English,USA,2007
+The 6th Day,Roger Spottiswoode,Color,123,Robert Duvall,English,USA,2000
+Bruce Almighty,Tom Shadyac,Color,101,Morgan Freeman,English,USA,2003
+The Expendables,Sylvester Stallone,Color,113,Jason Statham,English,USA,2010
+Mission: Impossible,Brian De Palma,Color,110,Tom Cruise,English,USA,1996
+The Hunger Games,Gary Ross,Color,142,Jennifer Lawrence,English,USA,2012
+The Hangover Part II,Todd Phillips,Color,102,Bradley Cooper,English,USA,2011
+Batman Returns,Tim Burton,Color,126,Michael Gough,English,USA,1992
+Over the Hedge,Tim Johnson,Color,83,Bruce Willis,English,USA,2006
+Lilo & Stitch,Dean DeBlois,Color,85,Tia Carrere,English,USA,2002
+Charlotte's Web,Gary Winick,Color,97,Steve Buscemi,English,USA,2006
+Deep Impact,Mimi Leder,Color,120,Morgan Freeman,English,USA,1998
+RED 2,Dean Parisot,Color,116,Bruce Willis,English,USA,2013
+The Longest Yard,Peter Segal,Color,113,Adam Sandler,English,USA,2005
+Alvin and the Chipmunks: Chipwrecked,Mike Mitchell,Color,87,Amy Poehler,English,USA,2011
+Grown Ups 2,Dennis Dugan,Color,101,Steve Buscemi,English,USA,2013
+Get Smart,Peter Segal,Color,110,Bill Murray,English,USA,2008
+Something's Gotta Give,Nancy Meyers,Color,128,Keanu Reeves,English,USA,2003
+Shutter Island,Martin Scorsese,Color,138,Leonardo DiCaprio,English,USA,2010
+Four Christmases,Seth Gordon,Color,88,Jon Favreau,English,Germany,2008
+Robots,Chris Wedge,Color,91,Jim Broadbent,English,USA,2005
+Face/Off,John Woo,Color,138,Nicolas Cage,English,USA,1997
+Bedtime Stories,Adam Shankman,Color,99,Adam Sandler,English,USA,2008
+Road to Perdition,Sam Mendes,Color,117,Tom Hanks,English,USA,2002
+Just Go with It,Dennis Dugan,Color,117,Adam Sandler,English,USA,2011
+Daredevil,,,54,Elden Henson,English,USA,
+Con Air,Simon West,Color,123,Steve Buscemi,English,USA,1997
+Eagle Eye,D.J. Caruso,Color,118,Rosario Dawson,English,USA,2008
+Cold Mountain,Anthony Minghella,Color,154,Philip Seymour Hoffman,English,USA,2003
+The Book of Eli,Albert Hughes,Color,118,Denzel Washington,English,USA,2010
+Flubber,Les Mayfield,Color,90,Robin Williams,English,USA,1997
+The Haunting,Jan de Bont,Color,113,Liam Neeson,English,USA,1999
+Space Jam,Joe Pytka,Color,88,Bill Murray,English,USA,1996
+The Pink Panther,Shawn Levy,Color,93,Roger Rees,English,USA,2006
+The Day the Earth Stood Still,Scott Derrickson,
+The Day the Earth Stood Still,Scott Derrickson,Color,104,Keanu Reeves,English,USA,2008
+Conspiracy Theory,Richard Donner,Color,135,Julia Roberts,English,USA,1997
+Fury,David Ayer,Color,134,Brad Pitt,English,USA,2014
+Six Days Seven Nights,Ivan Reitman,Color,98,Harrison Ford,English,USA,1998
+Yogi Bear,Eric Brevig,Color,80,Justin Timberlake,English,USA,2010
+Spirit: Stallion of the Cimarron,Kelly Asbury,Color,83,Matt Damon,English,USA,2002
+Zookeeper,Frank Coraci,Color,102,Rosario Dawson,English,USA,2011
+Lost in Space,Stephen Hopkins,Color,130,Gary Oldman,English,USA,1998
+The Manchurian Candidate,Jonathan Demme,Color,129,Denzel Washington,English,USA,2004
+Déjà Vu,Henry Jaglom,Color,117,Vanessa Redgrave,English,USA,1997
+Hotel Transylvania 2,Genndy Tartakovsky,Color,89,Steve Buscemi,English,USA,2015
+Bewitched,, Black and White,25,Elizabeth Montgomery,English,USA,
+Fantasia 2000,James Algar,Color,74,Quincy Jones,English,USA,1999
+The Time Machine,Simon Wells,Color,96,Mark Addy,English,USA,2002
+Mighty Joe Young,Ron Underwood,Color,114,Charlize Theron,English,USA,1998
+Swordfish,Dominic Sena,Color,99,Hugh Jackman,English,USA,2001
+The Legend of Zorro,Martin Campbell,Color,129,Michael Emerson,Spanish,USA,2005
+What Dreams May Come,Vincent Ward,Color,113,Robin Williams,English,USA,1998
+Little Nicky,Steven Brill,Color,90,Adam Sandler,English,USA,2000
+The Brothers Grimm,Terry Gilliam,Color,118,Matt Damon,English,USA,2005
+Mars Attacks!,Tim Burton,Color,106,Natalie Portman,English,USA,1996
+Evolution,Lucile Hadzihalilovic,Color,81,Nissim Renard,French,France,2015
+The Edge,Lee Tamahori,Color,117,Anthony Hopkins,English,USA,1997
+Surrogates,Jonathan Mostow,Color,89,Bruce Willis,English,USA,2009
+Thirteen Days,Roger Donaldson,Color,145,Bruce Greenwood,English,USA,2000
+Daylight,Rob Cohen,Color,114,Sylvester Stallone,English,USA,1996
+Walking with Dinosaurs 3D,Barry Cook,Color,87,Charlie Rowe,English,USA,2013
+Battlefield Earth,Roger Christian,Color,119,Richard Tyson,English,USA,2000
+Looney Tunes: Back in Action,Joe Dante,Color,91,Brendan Fraser,English,Germany,2003
+Nine,Rob Marshall, Black and White,118,Fergie,English,USA,2009
+Timeline,Richard Donner,Color,116,Paul Walker,English,USA,2003
+The Postman,Kevin Costner,Color,177,Olivia Williams,English,USA,1997
+Babe: Pig in the City,George Miller,Color,97,Adam Goldberg,English,Australia,1998
+The Last Witch Hunter,Breck Eisner,Color,106,Vin Diesel,English,USA,2015
+Red Planet,Antony Hoffman,Color,106,Bob Neill,English,USA,2000
+Arthur and the Invisibles,Luc Besson,Color,94,Mia Farrow,English,France,2006
+Oceans,Jacques Perrin,Color,104,Pedro Armendáriz Jr.,French,France,2009
+A Sound of Thunder,Peter Hyams,Color,102,David Oyelowo,English,UK,2005
+Pompeii,Paul W.S. Anderson,Color,105,Sasha Roiz,English,Canada,2014
+Top Cat Begins,Andrés Couturier,Color,89,Sariann Monaco,Spanish,Mexico,2015
+A Beautiful Mind,Ron Howard,Color,135,Adam Goldberg,English,USA,2001
+The Lion King,Roger Allers,Color,73,Matthew Broderick,English,USA,1994
+Journey 2: The Mysterious Island,Brad Peyton,Color,94,Josh Hutcherson,English,USA,2012
+Cloudy with a Chance of Meatballs 2,Cody Cameron,Color,95,Will Forte,English,USA,2013
+Red Dragon,Brett Ratner,Color,124,Philip Seymour Hoffman,English,Germany,2002
+Hidalgo,Joe Johnston,Color,136,J.K. Simmons,English,USA,2004
+Jack and Jill,Dennis Dugan,Color,91,Al Pacino,English,USA,2011
+2 Fast 2 Furious,John Singleton,Color,107,Paul Walker,English,USA,2003
+The Little Prince,Mark Osborne,Color,108,Jeff Bridges,English,France,2015
+The Invasion,Oliver Hirschbiegel,Color,99,Roger Rees,English,USA,2007
+The Adventures of Rocky & Bullwinkle,Des McAnuff,Color,92,Robert De Niro,English,USA,2000
+The Secret Life of Pets,Yarrow Cheney,Color,87,Steve Coogan,English,Japan,2016
+The League of Extraordinary Gentlemen,Stephen Norrington, Black and White,110,Jason Flemyng,English,USA,2003
+Despicable Me 2,Pierre Coffin,Color,98,Steve Carell,English,USA,2013
+Independence Day,Roland Emmerich,Color,154,Will Smith,English,USA,1996
+The Lost World: Jurassic Park,Steven Spielberg,Color,129,Ariana Richards,English,USA,1997
+Madagascar,Eric Darnell,Color,86,Jada Pinkett Smith,English,USA,2005
+Children of Men,Alfonso Cuarón,Color,109,Charlie Hunnam,English,USA,2006
+X-Men,Bryan Singer,Color,104,Hugh Jackman,English,USA,2000
+Wanted,Timur Bekmambetov,Color,110,Angelina Jolie Pitt,English,USA,2008
+The Rock,Michael Bay,Color,136,Nicolas Cage,English,USA,1996
+Ice Age: The Meltdown,Carlos Saldanha,Color,115,Denis Leary,English,USA,2006
+50 First Dates,Peter Segal,Color,99,Adam Sandler,English,USA,2004
+Hairspray,Adam Shankman,Color,117,Jerry Stiller,English,USA,2007
+Exorcist: The Beginning,Renny Harlin,Color,125,James D'Arcy,English,USA,2004
+Inspector Gadget,David Kellogg,Color,110,Matthew Broderick,English,USA,1999
+Now You See Me,Louis Leterrier,Color,125,Morgan Freeman,English,USA,2013
+Grown Ups,Dennis Dugan,Color,102,Steve Buscemi,English,USA,2010
+The Terminal,Steven Spielberg,Color,128,Tom Hanks,English,USA,2004
+Constantine,,Color,43,Harold Perrineau,English,USA,
+Hotel for Dogs,Thor Freudenthal,Color,100,Don Cheadle,English,USA,2009
+Vertical Limit,Martin Campbell,Color,124,Nicholas Lea,English,USA,2000
+Charlie Wilson's War,Mike Nichols,Color,102,Philip Seymour Hoffman,English,USA,2007
+Shark Tale,Bibo Bergeron,Color,90,Robert De Niro,English,USA,2004
+Dreamgirls,Bill Condon,Color,130,Loretta Devine,English,USA,2006
+Life,,Color,45,Adam Arkin,English,USA,
+Be Cool,F. Gary Gray,Color,118,Dwayne Johnson,English,USA,2005
+Munich,Steven Spielberg,Color,163,Ayelet Zurer,English,France,2005
+Tears of the Sun,Antoine Fuqua,Color,142,Bruce Willis,English,USA,2003
+Killers,Robert Luketic,Color,100,Tom Selleck,English,USA,2010
+The Man from U.N.C.L.E.,Guy Ritchie,Color,116,Henry Cavill,English,USA,2015
+Spanglish,James L. Brooks,Color,131,Adam Sandler,English,USA,2004
+Monster House,Gil Kenan,Color,91,Steve Buscemi,English,USA,2006
+Bandits,Barry Levinson,Color,123,Bruce Willis,English,USA,2001
+First Knight,Jerry Zucker,Color,134,Julia Ormond,English,USA,1995
+Anna and the King,Andy Tennant,Color,148,Bai Ling,English,USA,1999
+Immortals,Tarsem Singh,Color,110,Henry Cavill,English,USA,2011
+Hostage,Florent-Emilio Siri,Color,113,Jimmy Bennett,English,USA,2005
+Titan A.E.,Don Bluth,Color,94,Matt Damon,English,USA,2000
+Hollywood Homicide,Ron Shelton,Color,116,Harrison Ford,English,USA,2003
+Soldier,Paul W.S. Anderson,Color,99,Connie Nielsen,English,UK,1998
+Carriers,David Pastor,Color,84,Christopher Meloni,English,USA,2009
+Monkeybone,Henry Selick,Color,93,Brendan Fraser,English,USA,2001
+Flight of the Phoenix,John Moore,Color,113,Dennis Quaid,English,USA,2004
+Unbreakable,M. Night Shyamalan,Color,106,Robin Wright,English,USA,2000
+Minions,Kyle Balda,Color,91,Steve Carell,English,USA,2015
+Sucker Punch,Zack Snyder,Color,128,Jon Hamm,English,USA,2011
+Snake Eyes,Brian De Palma,Color,98,Nicolas Cage,English,USA,1998
+Sphere,Barry Levinson,Color,134,Peter Coyote,English,USA,1998
+The Angry Birds Movie,Clay Kaytis,Color,97,Peter Dinklage,English,USA,2016
+Fool's Gold,Andy Tennant,Color,112,Matthew McConaughey,English,USA,2008
+Funny People,Judd Apatow,Color,153,Adam Sandler,English,USA,2009
+The Kingdom,Peter Berg,Color,110,Jennifer Garner,English,USA,2007
+Talladega Nights: The Ballad of Ricky Bobby,Adam McKay,Color,122,Will Ferrell,English,USA,2006
+Dr. Dolittle 2,Steve Carr,Color,87,Raven-Symoné,English,USA,2001
+Braveheart,Mel Gibson,Color,178,Mhairi Calvey,English,USA,1995
+Jarhead,Sam Mendes,Color,125,Jake Gyllenhaal,English,Germany,2005
+The Simpsons Movie,David Silverman,Color,87,Albert Brooks,English,USA,2007
+The Majestic,Frank Darabont,Color,152,Martin Landau,English,USA,2001
+Driven,Renny Harlin,Color,116,Sylvester Stallone,English,USA,2001
+Two Brothers,Jean-Jacques Annaud,Color,109,David Gant,English,France,2004
+The Village,M. Night Shyamalan,Color,108,Bryce Dallas Howard,English,USA,2004
+Doctor Dolittle,Betty Thomas,Color,85,Oliver Platt,English,USA,1998
+Signs,M. Night Shyamalan,Color,106,Rory Culkin,English,USA,2002
+Shrek 2,Andrew Adamson,Color,93,Rupert Everett,English,USA,2004
+Cars,John Lasseter,Color,117,John Ratzenberger,English,USA,2006
+Runaway Bride,Garry Marshall,Color,116,Julia Roberts,English,USA,1999
+xXx,Rob Cohen,Color,132,Vin Diesel,English,USA,2002
+The SpongeBob Movie: Sponge Out of Water,Paul Tibbitt,Color,92,Tim Conway,English,USA,2015
+Ransom,Ron Howard,Color,139,Lili Taylor,English,USA,1996
+Inglourious Basterds,Quentin Tarantino,Color,153,Michael Fassbender,English,USA,2009
+Hook,Steven Spielberg,Color,142,Robin Williams,English,USA,1991
+Hercules,Brett Ratner,Color,101,Dwayne Johnson,English,USA,2014
+Die Hard 2,Renny Harlin,Color,124,Bruce Willis,English,USA,1990
+S.W.A.T.,Clark Johnson,Color,117,Jeremy Renner,English,USA,2003
+Sleepy Hollow,,Color,45,Nicole Beharie,English,USA,
+Vanilla Sky,Cameron Crowe,Color,141,Tom Cruise,English,USA,2001
+Lady in the Water,M. Night Shyamalan,Color,110,Bryce Dallas Howard,English,USA,2006
+AVP: Alien vs. Predator,Paul W.S. Anderson,Color,109,Sanaa Lathan,English,USA,2004
+Alvin and the Chipmunks: The Squeakquel,Betty Thomas,Color,88,Amy Poehler,English,USA,2009
+We Were Soldiers,Randall Wallace,Color,124,Jon Hamm,English,USA,2002
+Olympus Has Fallen,Antoine Fuqua,Color,119,Gerard Butler,English,USA,2013
+Star Trek: Insurrection,Jonathan Frakes,Color,103,LeVar Burton,English,USA,1998
+Battle Los Angeles,Jonathan Liebesman,Color,116,Noel Fisher,English,USA,2011
+Big Fish,Tim Burton,Color,125,Steve Buscemi,English,USA,2003
+Wolf,Mike Nichols,Color,125,David Hyde Pierce,English,USA,1994
+War Horse,Steven Spielberg, Black and White,146,Jeremy Irvine,English,USA,2011
+The Monuments Men,George Clooney,Color,118,Bill Murray,English,USA,2014
+The Abyss,James Cameron,Color,171,Michael Biehn,English,USA,1989
+Wall Street: Money Never Sleeps,Oliver Stone,Color,136,Frank Langella,English,USA,2010
+Dracula Untold,Gary Shore,Color,92,Dominic Cooper,English,USA,2014
+The Siege,Edward Zwick,Color,116,Denzel Washington,English,USA,1998
+Stardust,Matthew Vaughn,Color,127,Henry Cavill,English,UK,2007
+Seven Years in Tibet,Jean-Jacques Annaud,Color,136,Brad Pitt,English,USA,1997
+The Dilemma,Ron Howard,Color,111,Channing Tatum,English,USA,2011
+Bad Company,Joel Schumacher,Color,116,Anthony Hopkins,English,USA,2002
+Doom,Andrzej Bartkowiak,Color,113,Dwayne Johnson,English,UK,2005
+I Spy,Betty Thomas,Color,97,Gary Cole,English,USA,2002
+Underworld: Awakening,Måns Mårlind,Color,88,Theo James,English,USA,2012
+Rock of Ages,Adam Shankman,Color,136,James Martin Kelly,English,USA,2012
+Hart's War,Gregory Hoblit,Color,125,Bruce Willis,English,USA,2002
+Killer Elite,Gary McKendry,Color,116,Jason Statham,English,UK,2011
+Rollerball,John McTiernan,Color,98,LL Cool J,English,USA,2002
+Ballistic: Ecks vs. Sever,Wych Kaosayananda,Color,91,Talisa Soto,English,USA,2002
+Hard Rain,Mikael Salomon,Color,97,Morgan Freeman,English,USA,1998
+Osmosis Jones,Bobby Farrelly,Color,95,Ron Howard,English,USA,2001
+Legends of Oz: Dorothy's Return,Will Finn,Color,88,Lea Michele,English,USA,2013
+Blackhat,Michael Mann,Color,133,Chris Hemsworth,English,USA,2015
+Sky Captain and the World of Tomorrow,Kerry Conran,Color,106,Angelina Jolie Pitt,English,USA,2004
+Basic Instinct 2,Michael Caton-Jones,Color,116,Charlotte Rampling,English,UK,2006
+Escape Plan,Mikael Håfström,Color,115,Sylvester Stallone,English,USA,2013
+The Legend of Hercules,Renny Harlin,Color,99,Roxanne McKee,English,USA,2014
+The Sum of All Fears,Phil Alden Robinson,Color,124,Morgan Freeman,English,USA,2002
+The Twilight Saga: Eclipse,David Slade,Color,124,Robert Pattinson,English,USA,2010
+The Score,Frank Oz,Color,124,Robert De Niro,English,USA,2001
+Despicable Me,Pierre Coffin,Color,87,Steve Carell,English,USA,2010
+Money Train,Joseph Ruben,Color,105,Vincent Pastore,English,USA,1995
+Ted 2,Seth MacFarlane,Color,125,Liam Neeson,English,USA,2015
+Agora,Alejandro Amenábar,Color,141,Max Minghella,English,Spain,2009
+Mystery Men,Kinka Usher,Color,121,Janeane Garofalo,English,USA,1999
+Hall Pass,Bobby Farrelly,Color,111,Jenna Fischer,English,USA,2011
+The Insider,Michael Mann,Color,157,Al Pacino,English,USA,1999
+The Finest Hours,Craig Gillespie,Color,117,Michael Raymond-James,English,USA,2016
+Body of Lies,Ridley Scott,Color,128,Leonardo DiCaprio,English,USA,2008
+Dinner for Schmucks,Jay Roach,Color,114,Steve Carell,English,USA,2010
+Abraham Lincoln: Vampire Hunter,Timur Bekmambetov,Color,105,Rufus Sewell,English,USA,2012
+Entrapment,Jon Amiel,Color,113,Will Patton,English,USA,1999
+Last Man Standing,,Color,30,Hector Elizondo,English,USA,
+The X Files,Rob Bowman,Color,121,Martin Landau,English,USA,1998
+The Last Legion,Doug Lefler,Color,102,Colin Firth,English,UK,2007
+Saving Private Ryan,Steven Spielberg,Color,169,Tom Hanks,English,USA,1998
+Need for Speed,Scott Waugh,Color,132,Rami Malek,English,USA,2014
+What Women Want,Nancy Meyers,Color,127,Judy Greer,English,USA,2000
+Ice Age,Chris Wedge,Color,103,Goran Visnjic,English,USA,2002
+Dreamcatcher,Lawrence Kasdan,Color,136,Morgan Freeman,English,USA,2003
+Lincoln,Steven Spielberg,Color,150,Joseph Gordon-Levitt,English,USA,2012
+The Matrix,Lana Wachowski,Color,136,Keanu Reeves,English,USA,1999
+Apollo 13,Ron Howard,Color,140,Tom Hanks,English,USA,1995
+Total Recall,Paul Verhoeven,Color,113,Ronny Cox,English,USA,1990
+The Santa Clause 2,Michael Lembeck,Color,104,Judge Reinhold,English,USA,2002
+Les Misérables,Tom Hooper,Color,158,Hugh Jackman,English,USA,2012
+You've Got Mail,Nora Ephron,Color,119,Tom Hanks,English,USA,1998
+Step Brothers,Adam McKay,Color,106,Will Ferrell,English,USA,2008
+The Mask of Zorro,Martin Campbell,Color,136,Anthony Hopkins,English,USA,1998
+Due Date,Todd Phillips,Color,95,Robert Downey Jr.,English,USA,2010
+Unbroken,Angelina Jolie Pitt,Color,137,Finn Wittrock,English,USA,2014
+Space Cowboys,Clint Eastwood, Black and White,130,Clint Eastwood,English,USA,2000
+Cliffhanger,Renny Harlin,Color,124,Sylvester Stallone,English,USA,1993
+Broken Arrow,John Woo,Color,108,Delroy Lindo,English,USA,1996
+The Kid,Jon Turteltaub,Color,104,Bruce Willis,English,USA,2000
+World Trade Center,Oliver Stone,Color,129,Nicolas Cage,English,USA,2006
+Mona Lisa Smile,Mike Newell,Color,117,Julia Roberts,English,USA,2003
+The Dictator,Larry Charles,Color,99,Sayed Badreya,English,USA,2012
+Eyes Wide Shut,Stanley Kubrick,Color,159,Tom Cruise,English,UK,1999
+Annie,Will Gluck,Color,118,Quvenzhané Wallis,English,USA,2014
+Focus,Glenn Ficarra,Color,105,Will Smith,English,USA,2015
+This Means War,McG,Color,103,Tom Hardy,English,USA,2012
+Blade: Trinity,David S. Goyer,Color,122,Ryan Reynolds,English,USA,2004
+Red Dawn,John Milius,Color,114,Lea Thompson,English,USA,1984
+Primary Colors,Mike Nichols,Color,143,Maura Tierney,English,France,1998
+Resident Evil: Retribution,Paul W.S. Anderson,Color,96,Milla Jovovich,English,Germany,2012
+Death Race,Paul W.S. Anderson,Color,111,Jason Statham,English,USA,2008
+The Long Kiss Goodnight,Renny Harlin,Color,121,Melina Kanakaredes,English,USA,1996
+Proof of Life,Taylor Hackford,Color,135,Pamela Reed,English,USA,2000
+Zathura: A Space Adventure,Jon Favreau,Color,101,Kristen Stewart,English,USA,2005
+Fight Club,David Fincher,Color,151,Brad Pitt,English,USA,1999
+We Are Marshall,McG,Color,131,Matthew McConaughey,English,USA,2006
+The Missing,,Color,60,Jason Flemyng,English,UK,
+Hudson Hawk,Michael Lehmann,Color,100,Bruce Willis,English,USA,1991
+Lucky Numbers,Nora Ephron,Color,105,Michael Rapaport,English,France,2000
+Oliver Twist,Roman Polanski,Color,130,Ian McNeice,English,UK,2005
+Elektra,Rob Bowman,Color,100,Jennifer Garner,English,Canada,2005
+Sin City: A Dame to Kill For,Frank Miller, Black and White,102,Joseph Gordon-Levitt,English,USA,2014
+Random Hearts,Sydney Pollack,Color,133,Harrison Ford,English,USA,1999
+Everest,Baltasar Kormákur,Color,121,Michael Kelly,English,UK,2015
+Perfume: The Story of a Murderer,Tom Tykwer,Color,147,Michael Smiley,English,Germany,2006
+Austin Powers in Goldmember,Jay Roach,Color,94,Verne Troyer,English,USA,2002
+Astro Boy,David Bowers,Color,94,Nicolas Cage,English,Hong Kong,2009
+Jurassic Park,Steven Spielberg,Color,127,Wayne Knight,English,USA,1993
+Wyatt Earp,Lawrence Kasdan,Color,212,Dennis Quaid,English,USA,1994
+Clear and Present Danger,Phillip Noyce,Color,141,Harrison Ford,English,USA,1994
+Dragon Blade,Daniel Lee,Color,103,Si Won Choi,Mandarin,China,2015
+Littleman,Keenen Ivory Wayans,Color,98,Chazz Palminteri,English,USA,2006
+U-571,Jonathan Mostow,Color,116,Matthew McConaughey,English,France,2000
+The American President,Rob Reiner,Color,114,Shawna Waldron,English,USA,1995
+The Love Guru,Marco Schnabel,Color,87,Justin Timberlake,English,USA,2008
+3000 Miles to Graceland,Demian Lichtenstein,Color,125,Jon Lovitz,English,USA,2001
+The Hateful Eight,Quentin Tarantino,Color,187,Craig Stark,English,USA,2015
+Blades of Glory,Josh Gordon,Color,93,Will Ferrell,English,USA,2007
+Hop,Tim Hill,Color,95,Gary Cole,English,USA,2011
+300,Zack Snyder,Color,117,Gerard Butler,English,USA,2006
+Meet the Fockers,Jay Roach,Color,106,Robert De Niro,English,USA,2004
+Marley & Me,David Frankel,Color,115,Eric Dane,English,USA,2008
+The Green Mile,Frank Darabont,Color,189,Tom Hanks,English,USA,1999
+Wild Hogs,Walt Becker,Color,100,Jill Hennessy,English,USA,2007
+Chicken Little,Mark Dindal,Color,81,Catherine O'Hara,English,USA,2005
+Gone Girl,David Fincher,Color,149,Patrick Fugit,English,USA,2014
+The Bourne Identity,Doug Liman,Color,119,Matt Damon,English,USA,2002
+GoldenEye,Martin Campbell,Color,130,Izabella Scorupco,English,UK,1995
+The General's Daughter,Simon West,Color,116,Daniel von Bargen,English,USA,1999
+The Truman Show,Peter Weir,Color,103,Natascha McElhone,English,USA,1998
+The Prince of Egypt,Brenda Chapman,Color,99,Martin Short,English,USA,1998
+Daddy Day Care,Steve Carr,Color,92,Anjelica Huston,English,USA,2003
+2 Guns,Baltasar Kormákur,Color,109,Denzel Washington,English,USA,2013
+Cats & Dogs,Lawrence Guterman,Color,87,Carol Ann Susi,English,USA,2001
+The Italian Job,F. Gary Gray,Color,111,Jason Statham,English,USA,2003
+Two Weeks Notice,Marc Lawrence,Color,101,Dorian Missick,English,USA,2002
+Antz,Eric Darnell,Color,83,Sylvester Stallone,English,USA,1998
+Couples Retreat,Peter Billingsley,Color,113,Jon Favreau,English,USA,2009
+Days of Thunder,Tony Scott,Color,107,Tom Cruise,English,USA,1990
+Cheaper by the Dozen 2,Adam Shankman,Color,94,Taylor Lautner,English,USA,2005
+The Scorch Trials,Wes Ball,Color,132,Ki Hong Lee,English,USA,2015
+Eat Pray Love,Ryan Murphy,Color,140,James Franco,English,USA,2010
+The Family Man,Brett Ratner,Color,125,Nicolas Cage,English,USA,2000
+RED,Robert Schwentke,Color,111,Bruce Willis,English,USA,2010
+Any Given Sunday,Oliver Stone,Color,156,Al Pacino,English,USA,1999
+The Horse Whisperer,Robert Redford,Color,170,Scarlett Johansson,English,USA,1998
+Collateral,Michael Mann,Color,120,Tom Cruise,English,USA,2004
+The Scorpion King,Chuck Russell,Color,100,Dwayne Johnson,English,USA,2002
+Ladder 49,Jay Russell,Color,115,Billy Burke,English,USA,2004
+Jack Reacher,Christopher McQuarrie,Color,130,Tom Cruise,English,USA,2012
+Deep Blue Sea,Renny Harlin,Color,105,LL Cool J,English,USA,1999
+This Is It,Kenny Ortega,Color,111,Misha Gabriel Hamilton,English,USA,2009
+Contagion,Steven Soderbergh,Color,106,Matt Damon,English,USA,2011
+Kangaroo Jack,David McNally,Color,89,Estella Warren,English,USA,2003
+Coraline,Henry Selick, Black and White,100,Jennifer Saunders,English,USA,2009
+The Happening,M. Night Shyamalan,Color,91,Zooey Deschanel,English,USA,2008
+Man on Fire,Tony Scott,Color,146,Denzel Washington,English,USA,2004
+The Shaggy Dog,Brian Robbins,Color,98,Robert Downey Jr.,English,USA,2006
+Starsky & Hutch,Todd Phillips,Color,101,Snoop Dogg,English,USA,2004
+Jingle All the Way,Brian Levant,Color,94,Jim Belushi,English,USA,1996
+Hellboy,Guillermo del Toro,Color,132,James Babson,English,USA,2004
+A Civil Action,Steven Zaillian,Color,115,Robert Duvall,English,USA,1998
+ParaNorman,Chris Butler,Color,92,Anna Kendrick,English,USA,2012
+The Jackal,Michael Caton-Jones,Color,124,J.K. Simmons,English,USA,1997
+Paycheck,John Woo,Color,119,Ivana Milicevic,English,USA,2003
+Up Close & Personal,Jon Avnet,Color,124,Joe Mantegna,English,USA,1996
+The Tale of Despereaux,Sam Fell,Color,93,Emma Watson,English,UK,2008
+Rules of Engagement,,Color,22,Bianca Kajlich,English,USA,
+The Tuxedo,Kevin Donovan,Color,98,Romany Malco,English,USA,2002
+Under Siege 2: Dark Territory,Geoff Murphy,Color,92,Peter Greene,English,USA,1995
+Jack Ryan: Shadow Recruit,Kenneth Branagh,Color,105,Colm Feore,English,USA,2014
+Joy,David O. Russell,Color,124,Jennifer Lawrence,English,USA,2015
+London Has Fallen,Babak Najafi,Color,99,Gerard Butler,English,UK,2016
+Alien: Resurrection,Jean-Pierre Jeunet,Color,116,Gary Dourdan,English,USA,1997
+Shooter,Antoine Fuqua,Color,124,Tate Donovan,English,USA,2007
+The Boxtrolls,Graham Annable,Color,96,Isaac Hempstead Wright,English,USA,2014
+Practical Magic,Griffin Dunne,Color,104,Goran Visnjic,English,USA,1998
+The Lego Movie,Phil Lord,Color,100,Morgan Freeman,English,Australia,2014
+Miss Congeniality 2: Armed and Fabulous,John Pasquin,Color,115,Eileen Brennan,English,USA,2005
+Reign of Fire,Rob Bowman,Color,101,Christian Bale,English,USA,2002
+Gangster Squad,Ruben Fleischer,Color,113,Ryan Gosling,English,USA,2013
+Year One,Harold Ramis,Color,100,Olivia Wilde,English,USA,2009
+Invictus,Clint Eastwood,Color,134,Matt Damon,English,USA,2009
+State of Play,Kevin Macdonald,Color,127,Robin Wright,English,USA,2009
+Duplicity,Tony Gilroy,Color,125,Julia Roberts,English,USA,2009
+My Favorite Martian,Donald Petrie,Color,94,Steven Anthony Lawrence,English,USA,1999
+The Sentinel,Clark Johnson,Color,107,Blair Brown,English,USA,2006
+Planet 51,Jorge Blanco,Color,91,Dwayne Johnson,English,Spain,2009
+Star Trek: Nemesis,Stuart Baird,Color,116,Tom Hardy,English,USA,2002
+Intolerable Cruelty,Joel Coen,Color,100,Cedric the Entertainer,English,USA,2003
+Trouble with the Curve,Robert Lorenz,Color,111,Clint Eastwood,English,USA,2012
+Edge of Darkness,Martin Campbell,Color,117,Bojana Novakovic,English,UK,2010
+The Relic,Peter Hyams,Color,110,John Kapelos,English,UK,1997
+Analyze That,Harold Ramis,Color,96,Robert De Niro,English,USA,2002
+Righteous Kill,Jon Avnet,Color,101,Robert De Niro,English,USA,2008
+Mercury Rising,Harold Becker,Color,111,Bruce Willis,English,USA,1998
+The Soloist,Joe Wright,Color,117,Robert Downey Jr.,English,UK,2009
+The Legend of Bagger Vance,Robert Redford,Color,126,Matt Damon,English,USA,2000
+Almost Famous,Cameron Crowe,Color,152,Philip Seymour Hoffman,English,USA,2000
+Garfield 2,Tim Hill,Color,86,Bill Murray,English,UK,2006
+xXx: State of the Union,Lee Tamahori,Color,101,Sunny Mabrey,English,USA,2005
+Priest,Scott Stewart,Color,87,Josh Wingate,English,USA,2011
+Sinbad: Legend of the Seven Seas,Patrick Gilmore,Color,85,Brad Pitt,English,USA,2003
+Event Horizon,Paul W.S. Anderson,Color,130,Sean Pertwee,English,UK,1997
+The Avengers,Joss Whedon,Color,173,Chris Hemsworth,English,USA,2012
+Dragonfly,Tom Shadyac,Color,104,Joe Morton,English,USA,2002
+The Black Dahlia,Brian De Palma,Color,121,Scarlett Johansson,English,Germany,2006
+Flyboys,Tony Bill, Black and White,140,James Franco,English,UK,2006
+The Last Castle,Rod Lurie,Color,131,Clifton Collins Jr.,English,USA,2001
+Supernova,Walter Hill,Color,91,Robert Forster,English,USA,2000
+Winter's Tale,Akiva Goldsman,Color,118,Matt Bomer,English,USA,2014
+The Mortal Instruments: City of Bones,Harald Zwart,Color,130,Aidan Turner,English,USA,2013
+Meet Dave,Brian Robbins,Color,90,Marc Blucas,English,USA,2008
+Dark Water,Walter Salles,Color,103,Dougray Scott,English,USA,2005
+Edtv,Ron Howard,Color,122,Matthew McConaughey,English,USA,1999
+Inkheart,Iain Softley,Color,106,Brendan Fraser,English,Germany,2008
+The Spirit,Frank Miller,Color,103,Scarlett Johansson,English,USA,2008
+Mortdecai,David Koepp,Color,107,Johnny Depp,English,UK,2015
+In the Name of the King: A Dungeon Siege Tale,Uwe Boll,Color,156,Jason Statham,English,Germany,2007
+Beyond Borders,Martin Campbell,Color,127,Angelina Jolie Pitt,English,USA,2003
+Xi you ji zhi: Sun Wukong san da Baigu Jing,Pou-Soi Cheang,Color,119,Li Gong,English,China,2016
+The Great Raid,John Dahl, Black and White,132,James Franco,Filipino,USA,2005
+Deadpool,Tim Miller,Color,108,Ryan Reynolds,English,USA,2016
+Holy Man,Stephen Herek,Color,114,Kelly Preston,English,USA,1998
+American Sniper,Clint Eastwood,Color,133,Bradley Cooper,English,USA,2014
+Goosebumps,Rob Letterman,Color,103,Odeya Rush,English,USA,2015
+Just Like Heaven,Mark Waters,Color,95,Jon Heder,English,USA,2005
+The Flintstones in Viva Rock Vegas,Brian Levant,Color,90,Taylor Negron,English,USA,2000
+Rambo III,Peter MacDonald,Color,87,Sylvester Stallone,English,USA,1988
+Leatherheads,George Clooney,Color,114,Robert Baker,English,USA,2008
+The Ridiculous 6,Frank Coraci,Color,119,Taylor Lautner,English,USA,2015
+Did You Hear About the Morgans?,Marc Lawrence,Color,103,Michael Kelly,English,USA,2009
+The Internship,Shawn Levy,Color,125,Josh Gad,English,USA,2013
+Resident Evil: Afterlife,Paul W.S. Anderson,Color,97,Milla Jovovich,English,Germany,2010
+Red Tails,Anthony Hemingway,Color,125,David Oyelowo,English,USA,2012
+Sex and the City,,Color,30,Chris Noth,English,USA,
+The Devil's Advocate,Taylor Hackford,Color,136,Keanu Reeves,English,USA,1997
+That's My Boy,Sean Anders,Color,116,Adam Sandler,English,USA,2012
+DragonHeart,Rob Cohen,Color,103,Dennis Quaid,English,USA,1996
+After the Sunset,Brett Ratner,Color,97,Salma Hayek,English,USA,2004
+Ghost Rider: Spirit of Vengeance,Mark Neveldine,Color,96,Nicolas Cage,English,USA,2011
+Captain Corelli's Mandolin,John Madden,Color,131,Christian Bale,English,UK,2001
+Anger Management,,Color,22,Barry Corbin,English,USA,
+The Pacifier,Adam Shankman,Color,95,Vin Diesel,English,Canada,2005
+Walking Tall,Kevin Bray,Color,86,Dwayne Johnson,English,USA,2004
+Forrest Gump,Robert Zemeckis, Black and White,142,Tom Hanks,English,USA,1994
+Alvin and the Chipmunks,Tim Hill,Color,92,Jesse McCartney,English,USA,2007
+Meet the Parents,Jay Roach,Color,108,Robert De Niro,English,USA,2000
+Pocahontas,Mike Gabriel,Color,84,Christian Bale,English,USA,1995
+Superman,Richard Donner,Color,188,Marlon Brando,English,USA,1978
+The Nutty Professor,Tom Shadyac,Color,95,Jada Pinkett Smith,English,USA,1996
+Hitch,Andy Tennant,Color,118,Will Smith,English,USA,2005
+George of the Jungle,Sam Weisman,Color,92,Brendan Fraser,English,USA,1997
+American Wedding,Jesse Dylan,Color,74,Alyson Hannigan,English,USA,2003
+Captain Phillips,Paul Greengrass,Color,134,Tom Hanks,English,USA,2013
+Date Night,Shawn Levy,Color,101,Mila Kunis,English,USA,2010
+Casper,Brad Silberling,Color,100,Eric Idle,English,USA,1995
+The Equalizer,Antoine Fuqua,Color,132,Denzel Washington,English,USA,2014
+Maid in Manhattan,Wayne Wang,Color,105,Bob Hoskins,English,USA,2002
+Crimson Tide,Tony Scott,Color,123,Denzel Washington,English,USA,1995
+The Pursuit of Happyness,Gabriele Muccino,Color,117,Will Smith,English,USA,2006
+Flightplan,Robert Schwentke,Color,98,Erika Christensen,English,USA,2005
+Disclosure,Barry Levinson,Color,128,Demi Moore,English,USA,1994
+City of Angels,Brad Silberling,Color,114,Nicolas Cage,English,Germany,1998
+Kill Bill: Vol. 1,Quentin Tarantino, Black and White,111,David Carradine,English,USA,2003
+Bowfinger,Frank Oz,Color,85,Robert Downey Jr.,English,USA,1999
+Stargate SG-1,,Color,44,Christopher Judge,English,USA,
+Kill Bill: Vol. 2,Quentin Tarantino, Black and White,137,Vivica A. Fox,English,USA,2004
+Tango & Cash,Andrey Konchalovskiy,Color,97,Sylvester Stallone,English,USA,1989
+Death Becomes Her,Robert Zemeckis,Color,104,Bruce Willis,English,USA,1992
+Shanghai Noon,Tom Dey,Color,110,Xander Berkeley,English,USA,2000
+Executive Decision,Stuart Baird,Color,133,Oliver Platt,English,USA,1996
+Mr. Popper's Penguins,Mark Waters,Color,94,Madeline Carroll,English,USA,2011
+The Forbidden Kingdom,Rob Minkoff,Color,104,Jet Li,English,USA,2008
+Free Birds,Jimmy Hayward,Color,91,Amy Poehler,English,USA,2013
+Alien 3,David Fincher,Color,145,Charles S. Dutton,English,USA,1992
+Evita,Alan Parker,Color,135,Andrea Corr,English,USA,1996
+Ronin,John Frankenheimer,Color,122,Robert De Niro,English,UK,1998
+The Ghost and the Darkness,Stephen Hopkins,Color,110,Tom Wilkinson,English,USA,1996
+Paddington,Paul King,Color,95,Julie Walters,English,UK,2014
+The Watch,Akiva Schaffer,Color,102,Will Forte,English,USA,2012
+The Hunted,William Friedkin,Color,94,Connie Nielsen,English,USA,2003
+Instinct,Jon Turteltaub,Color,126,Anthony Hopkins,English,USA,1999
+Stuck on You,Bobby Farrelly,Color,118,Matt Damon,English,USA,2003
+Semi-Pro,Kent Alterman,Color,99,Will Ferrell,English,USA,2008
+The Pirates! Band of Misfits,Peter Lord,Color,88,Salma Hayek,English,UK,2012
+Changeling,Clint Eastwood,Color,141,Angelina Jolie Pitt,English,USA,2008
+Chain Reaction,Andrew Davis,Color,107,Keanu Reeves,English,USA,1996
+The Fan,Tony Scott,Color,116,Robert De Niro,English,USA,1996
+The Phantom of the Opera,Joel Schumacher, Black and White,143,Gerard Butler,English,UK,2004
+Elizabeth: The Golden Age,Shekhar Kapur,Color,114,Eddie Redmayne,English,UK,2007
+Æon Flux,Karyn Kusama,Color,93,Charlize Theron,English,USA,2005
+Gods and Generals,Ron Maxwell,Color,280,Billy Campbell,English,USA,2003
+Turbulence,Robert Butler,Color,100,Hector Elizondo,English,USA,1997
+Imagine That,Karey Kirkpatrick,Color,107,Stephen Root,English,USA,2009
+Muppets Most Wanted,James Bobin,Color,119,Ty Burrell,English,USA,2014
+Thunderbirds,Jonathan Frakes,Color,95,Sophia Myles,English,UK,2004
+Burlesque,Steve Antin,Color,119,Eric Dane,English,USA,2010
+A Very Long Engagement,Jean-Pierre Jeunet,Color,133,Denis Lavant,French,France,2004
+Lolita,Stanley Kubrick, Black and White,152,James Mason,English,UK,1962
+Eye See You,Jim Gillespie,Color,96,Sylvester Stallone,English,USA,2002
+Blade II,Guillermo del Toro,Color,117,Norman Reedus,English,USA,2002
+Seven Pounds,Gabriele Muccino,Color,123,Will Smith,English,USA,2008
+Bullet to the Head,Walter Hill,Color,92,Sylvester Stallone,English,USA,2012
+The Godfather: Part III,Francis Ford Coppola,Color,170,Al Pacino,English,USA,1990
+Elizabethtown,Cameron Crowe,Color,123,Orlando Bloom,English,USA,2005
+Superman II,Richard Lester,Color,116,Margot Kidder,English,USA,1980
+Gigli,Martin Brest,Color,121,Todd Giebenhain,English,USA,2003
+All the King's Men,Steven Zaillian, Black and White,128,Kate Winslet,English,Germany,2006
+Shaft,John Singleton,Color,99,Christian Bale,English,Germany,2000
+Anastasia,Don Bluth,Color,94,Kirsten Dunst,English,USA,1997
+Moulin Rouge!,Baz Luhrmann, Black and White,127,Jim Broadbent,English,USA,2001
+Domestic Disturbance,Harold Becker,Color,89,Steve Buscemi,English,USA,2001
+Black Mass,Scott Cooper,Color,123,Johnny Depp,English,USA,2015
+Flags of Our Fathers,Clint Eastwood,Color,135,Paul Walker,English,USA,2006
+Law Abiding Citizen,F. Gary Gray,Color,118,Gerard Butler,English,USA,2009
+Grindhouse,Robert Rodriguez,Color,189,Quentin Tarantino,English,USA,2007
+Beloved,Jonathan Demme,Color,172,Oprah Winfrey,English,USA,1998
+Lucky You,Curtis Hanson,Color,124,Robert Downey Jr.,English,USA,2007
+Catch Me If You Can,Steven Spielberg,Color,141,Leonardo DiCaprio,English,USA,2002
+Zero Dark Thirty,Kathryn Bigelow,Color,157,Jennifer Ehle,English,USA,2012
+The Break-Up,Peyton Reed,Color,106,Jon Favreau,English,USA,2006
+Mamma Mia!,Phyllida Lloyd,Color,108,Colin Firth,English,USA,2008
+Valentine's Day,Garry Marshall,Color,125,Bradley Cooper,English,USA,2010
+The Dukes of Hazzard,Jay Chandrasekhar,Color,107,Alice Greczyn,English,USA,2005
+The Thin Red Line,Terrence Malick,Color,215,Nick Stahl,English,USA,1998
+The Change-Up,David Dobkin,Color,118,Ryan Reynolds,English,USA,2011
+Man on the Moon,Milos Forman,Color,118,Matt Price,English,UK,1999
+Casino,Martin Scorsese,Color,178,Robert De Niro,English,USA,1995
+From Paris with Love,Pierre Morel,Color,92,Kasia Smutniak,English,France,2010
+Bulletproof Monk,Paul Hunter,Color,104,Jaime King,English,USA,2003
+Barnyard,Steve Oedekerk,Color,90,Rob Paulsen,English,Germany,2006
+Deck the Halls,John Whitesell,Color,93,Matthew Broderick,English,USA,2006
+The Twilight Saga: New Moon,Chris Weitz,Color,130,Robert Pattinson,English,USA,2009
+Shrek,Andrew Adamson,Color,90,Kathleen Freeman,English,USA,2001
+The Adjustment Bureau,George Nolfi,Color,106,Matt Damon,English,USA,2011
+Robin Hood: Prince of Thieves,Kevin Reynolds,Color,155,Alan Rickman,English,USA,1991
+Jerry Maguire,Cameron Crowe,Color,139,Tom Cruise,English,USA,1996
+Ted,Seth MacFarlane,Color,112,Mila Kunis,English,USA,2012
+As Good as It Gets,James L. Brooks,Color,139,Lupe Ontiveros,English,USA,1997
+Patch Adams,Tom Shadyac,Color,115,Robin Williams,English,USA,1998
+Anchorman 2: The Legend Continues,Adam McKay,Color,143,Harrison Ford,English,USA,2013
+Mr. Deeds,Steven Brill,Color,96,Steve Buscemi,English,USA,2002
+Super 8,J.J. Abrams,Color,112,Joel Courtney,English,USA,2011
+Erin Brockovich,Steven Soderbergh,Color,131,Julia Roberts,English,USA,2000
+How to Lose a Guy in 10 Days,Donald Petrie,Color,116,Matthew McConaughey,English,USA,2003
+22 Jump Street,Phil Lord,Color,112,Channing Tatum,English,USA,2014
+Interview with the Vampire: The Vampire Chronicles,Neil Jordan,Color,123,Brad Pitt,English,USA,1994
+Yes Man,Peyton Reed,Color,104,Bradley Cooper,English,USA,2008
+Central Intelligence,Rawson Marshall Thurber,Color,107,Dwayne Johnson,English,USA,2016
+Stepmom,Chris Columbus,Color,124,Julia Roberts,English,USA,1998
+Daddy's Home,Sean Anders,Color,96,Will Ferrell,English,USA,2015
+Into the Woods,Rob Marshall,Color,125,Johnny Depp,English,USA,2014
+Inside Man,Spike Lee,Color,129,Denzel Washington,English,USA,2006
+Payback,Brian Helgeland,Color,90,Bill Duke,English,USA,1999
+Congo,Frank Marshall,Color,109,Dylan Walsh,English,USA,1995
+We Bought a Zoo,Cameron Crowe,Color,124,Scarlett Johansson,English,USA,2011
+Knowing,Alex Proyas,Color,121,Nicolas Cage,English,USA,2009
+Failure to Launch,Tom Dey,Color,95,Bradley Cooper,English,USA,2006
+The Ring Two,Hideo Nakata,Color,128,Naomi Watts,English,USA,2005
+Garfield,Peter Hewitt,Color,80,Bill Murray,English,USA,2004
+Christmas with the Kranks,Joe Roth,Color,99,Jamie Lee Curtis,English,USA,2004
+Moneyball,Bennett Miller,Color,133,Philip Seymour Hoffman,English,USA,2011
+Outbreak,Wolfgang Petersen,Color,127,Kevin Spacey,English,USA,1995
+Non-Stop,Jaume Collet-Serra,Color,106,Liam Neeson,English,UK,2014
+Race to Witch Mountain,Andy Fickman,Color,98,Dwayne Johnson,English,USA,2009
+V for Vendetta,James McTeigue,Color,132,Natalie Portman,English,USA,2005
+Shanghai Knights,David Dobkin,Color,114,Fann Wong,English,USA,2003
+Unforgotten,,Color,45,Bernard Hill,English,UK,
+Curious George,Matthew O'Callaghan,Color,78,Will Ferrell,English,USA,2006
+Herbie Fully Loaded,Angela Robinson,Color,101,Scoot McNairy,English,USA,2005
+Don't Say a Word,Gary Fleder,Color,113,Oliver Platt,English,USA,2001
+Hansel & Gretel: Witch Hunters,Tommy Wirkola,Color,98,Jeremy Renner,English,Germany,2013
+Unfaithful,Adrian Lyne,Color,124,Olivier Martinez,English,USA,2002
+I Am Number Four,D.J. Caruso,Color,109,Alex Pettyfer,English,USA,2011
+Syriana,Stephen Gaghan,Color,128,Matt Damon,English,USA,2005
+13 Hours,Michael Bay,Color,144,Toby Stephens,English,USA,2016
+The Book of Life,Jorge R. Gutiérrez,Color,95,Channing Tatum,English,USA,2014
+Firewall,Richard Loncraine,Color,105,Jimmy Bennett,English,USA,2006
+Absolute Power,Clint Eastwood,Color,121,Clint Eastwood,English,USA,1997
+G.I. Jane,Ridley Scott,Color,125,Viggo Mortensen,English,USA,1997
+The Game,David Fincher,Color,129,Deborah Kara Unger,English,USA,1997
+Silent Hill,Christophe Gans,Color,132,Radha Mitchell,English,Canada,2006
+The Replacements,Howard Deutch,Color,118,Keanu Reeves,English,USA,2000
+American Reunion,Jon Hurwitz,Color,113,Alyson Hannigan,English,USA,2012
+The Negotiator,F. Gary Gray,Color,140,Kevin Spacey,English,Germany,1998
+Into the Storm,Steven Quale,Color,89,Matt Walsh,English,USA,2014
+Beverly Hills Cop III,John Landis,Color,104,Louis Lombardi,English,USA,1994
+Gremlins 2: The New Batch,Joe Dante,Color,106,Christopher Lee,English,USA,1990
+The Judge,David Dobkin,Color,141,Robert Downey Jr.,English,USA,2014
+The Peacemaker,Mimi Leder,Color,124,Armin Mueller-Stahl,English,USA,1997
+Resident Evil: Apocalypse,Alexander Witt,Color,98,Milla Jovovich,English,Germany,2004
+Bridget Jones: The Edge of Reason,Beeban Kidron,Color,108,Colin Firth,English,UK,2004
+Out of Time,Carl Franklin,Color,114,Denzel Washington,English,USA,2003
+On Deadly Ground,Steven Seagal,Color,101,Mike Starr,English,USA,1994
+The Adventures of Sharkboy and Lavagirl 3-D,Robert Rodriguez,Color,93,Taylor Lautner,English,USA,2005
+The Beach,Danny Boyle,Color,119,Leonardo DiCaprio,English,USA,2000
+Raising Helen,Garry Marshall,Color,119,Amber Valletta,English,USA,2004
+Ninja Assassin,James McTeigue,Color,99,Shô Kosugi,English,USA,2009
+For Love of the Game,Sam Raimi,Color,137,J.K. Simmons,English,USA,1999
+A Touch of Frost,,Color,105,David Jason,English,UK,
+Striptease,Andrew Bergman,Color,117,Demi Moore,English,USA,1996
+Marmaduke,Tom Dey,Color,87,Emma Stone,English,USA,2010
+Hereafter,Clint Eastwood,Color,129,Matt Damon,English,USA,2010
+Murder by Numbers,Barbet Schroeder,Color,115,Ryan Gosling,English,USA,2002
+Assassins,Richard Donner, Black and White,132,Muse Watson,English,France,1995
+Hannibal Rising,Peter Webber,Color,131,Li Gong,English,UK,2007
+The Story of Us,Rob Reiner,Color,95,Bruce Willis,English,USA,1999
+The Host,Andrew Niccol,Color,125,J.D. Evermore,English,USA,2013
+Basic,John McTiernan,Color,98,Connie Nielsen,English,Germany,2003
+Blood Work,Clint Eastwood,Color,110,Clint Eastwood,English,USA,2002
+The International,Tom Tykwer,Color,118,Naomi Watts,English,USA,2009
+Escape from L.A.,John Carpenter,Color,101,Steve Buscemi,English,USA,1996
+Twisted,,Color,60,Grey Damon,English,USA,
+The Iron Giant,Brad Bird,Color,90,Vin Diesel,English,USA,1999
+The Life Aquatic with Steve Zissou,Wes Anderson,Color,119,Bill Murray,English,USA,2004
+Free State of Jones,Gary Ross,Color,139,Matthew McConaughey,English,USA,2016
+The Life of David Gale,Alan Parker,Color,130,Kevin Spacey,English,USA,2003
+Man of the House,Stephen Herek,Color,100,Christina Milian,English,USA,2005
+Run All Night,Jaume Collet-Serra,Color,114,Liam Neeson,English,USA,2015
+Eastern Promises,David Cronenberg,Color,96,Viggo Mortensen,English,USA,2007
+Into the Blue,John Stockwell,Color,110,Paul Walker,English,USA,2005
+The Messenger: The Story of Joan of Arc,Luc Besson,Color,158,Paul Brooke,English,France,1999
+Your Highness,David Gordon Green,Color,102,Natalie Portman,English,USA,2011
+Dream House,Jim Sheridan,Color,84,Naomi Watts,English,USA,2011
+Mad City,Costa-Gavras,Color,115,Mia Kirshner,English,USA,1997
+Baby's Day Out,Patrick Read Johnson,Color,99,Joe Mantegna,English,USA,1994
+The Scarlet Letter,Roland Joffé,Color,135,Gary Oldman,English,USA,1995
+Fair Game,Doug Liman,Color,108,Naomi Watts,English,USA,2010
+Defiance,,Color,43,Julie Benz,English,USA,
+Domino,Tony Scott,Color,127,Ian Ziering,English,France,2005
+Jade,William Friedkin,Color,107,Michael Biehn,English,USA,1995
+Gamer,Mark Neveldine,Color,95,Gerard Butler,English,USA,2009
+Beautiful Creatures,Richard LaGravenese,Color,124,Alden Ehrenreich,English,USA,2013
+Death to Smoochy,Danny DeVito,Color,109,Robin Williams,English,UK,2002
+Zoolander 2,Ben Stiller,Color,102,Milla Jovovich,English,USA,2016
+The Big Bounce,George Armitage,Color,88,Morgan Freeman,English,USA,2004
+What Planet Are You From?,Mike Nichols,Color,87,Judy Greer,English,USA,2000
+Drive Angry,Patrick Lussier,Color,104,Nicolas Cage,English,USA,2011
+Street Fighter: The Legend of Chun-Li,Andrzej Bartkowiak,Color,96,Chris Klein,English,Canada,2009
+The One,James Wong,Color,85,Jason Statham,English,USA,2001
+Outlander,,Color,64,Tobias Menzies,English,USA,
+The Adventures of Ford Fairlane,Renny Harlin,Color,104,Lauren Holly,English,USA,1990
+Pirate Radio,Richard Curtis,Color,135,Philip Seymour Hoffman,English,UK,2009
+Traffic,Steven Soderbergh,Color,190,Michael O'Neill,English,USA,2000
+Indiana Jones and the Last Crusade,Steven Spielberg,Color,127,Harrison Ford,English,USA,1989
+Anna Karenina,Joe Wright,Color,129,Kelly Macdonald,English,UK,2012
+Chappie,Neill Blomkamp,Color,120,Hugh Jackman,English,USA,2015
+The Bone Collector,Phillip Noyce,Color,118,Denzel Washington,English,USA,1999
+Panic Room,David Fincher,Color,112,Kristen Stewart,English,USA,2002
+The Tooth Fairy,Chuck Bowman,Color,89,P.J. Soles,English,USA,2006
+Three Kings,David O. Russell,Color,114,Judy Greer,English,USA,1999
+Child 44,Daniel Espinosa,Color,137,Tom Hardy,English,Czech Republic,2015
+Rat Race,Jerry Zucker,Color,112,Corinna Harney,English,Canada,2001
+K-PAX,Iain Softley,Color,120,Kevin Spacey,English,USA,2001
+Kate & Leopold,James Mangold,Color,123,Hugh Jackman,English,USA,2001
+Bedazzled,Harold Ramis,Color,93,Brendan Fraser,English,USA,2000
+The Cotton Club,Francis Ford Coppola,Color,123,Nicolas Cage,English,USA,1984
+3:10 to Yuma,James Mangold,Color,122,Christian Bale,English,USA,2007
+Taken 3,Olivier Megaton,Color,115,Liam Neeson,English,France,2014
+Out of Sight,Steven Soderbergh,Color,123,Don Cheadle,English,USA,1998
+The Cable Guy,Ben Stiller,Color,96,Matthew Broderick,English,USA,1996
+Earth,Deepa Mehta,Color,110,Nandita Das,Hindi,India,1998
+Dick Tracy,Warren Beatty,Color,105,Charlie Korsmo,English,USA,1990
+The Thomas Crown Affair,John McTiernan,Color,113,Mark Margolis,English,USA,1999
+Riding in Cars with Boys,Penny Marshall,Color,132,Rosie Perez,English,USA,2001
+First Blood,Ted Kotcheff,Color,93,Sylvester Stallone,English,USA,1982
+Solaris,Andrei Tarkovsky, Black and White,115,Donatas Banionis,Russian,Soviet Union,1972
+Happily N'Ever After,Paul Bolger,Color,75,Sarah Michelle Gellar,English,USA,2006
+Mary Reilly,Stephen Frears,Color,108,Julia Roberts,English,USA,1996
+My Best Friend's Wedding,P.J. Hogan,Color,105,Julia Roberts,English,USA,1997
+America's Sweethearts,Joe Roth,Color,102,Julia Roberts,English,USA,2001
+Insomnia,Christopher Nolan,Color,118,Al Pacino,English,USA,2002
+Star Trek: First Contact,Jonathan Frakes,Color,111,LeVar Burton,English,USA,1996
+Jonah Hex,Jimmy Hayward,Color,81,Michael Fassbender,English,USA,2010
+Courage Under Fire,Edward Zwick,Color,116,Denzel Washington,English,USA,1996
+Liar Liar,Tom Shadyac,Color,86,Maura Tierney,English,USA,1997
+The Infiltrator,Brad Furman,Color,127,Joseph Gilgun,English,UK,2016
+Inchon,Terence Young,Color,140,Laurence Olivier,English,South Korea,1981
+The Flintstones,Brian Levant,Color,91,Jonathan Winters,English,USA,1994
+Taken 2,Olivier Megaton,Color,98,Liam Neeson,English,France,2012
+Scary Movie 3,David Zucker,Color,84,Regina Hall,English,USA,2003
+Miss Congeniality,Donald Petrie,Color,109,Candice Bergen,English,USA,2000
+Journey to the Center of the Earth,Eric Brevig,Color,93,Josh Hutcherson,English,USA,2008
+The Princess Diaries 2: Royal Engagement,Garry Marshall,Color,113,Anne Hathaway,English,USA,2004
+The Pelican Brief,Alan J. Pakula,Color,141,Denzel Washington,English,USA,1993
+The Client,Joel Schumacher,Color,119,Bradley Whitford,English,USA,1994
+The Bucket List,Rob Reiner,Color,97,Morgan Freeman,English,USA,2007
+Patriot Games,Phillip Noyce,Color,117,Harrison Ford,English,USA,1992
+Monster-in-Law,Robert Luketic,Color,101,Adam Scott,English,Germany,2005
+Prisoners,Denis Villeneuve,Color,153,Hugh Jackman,English,USA,2013
+Training Day,Antoine Fuqua,Color,122,Denzel Washington,English,USA,2001
+Galaxy Quest,Dean Parisot,Color,102,Alan Rickman,English,USA,1999
+Scary Movie 2,Keenen Ivory Wayans,Color,83,Natasha Lyonne,English,USA,2001
+The Muppets,James Bobin,Color,103,Bill Cobbs,English,USA,2011
+Blade,Stephen Norrington,Color,110,Sanaa Lathan,English,USA,1998
+Coach Carter,Thomas Carter,Color,136,Channing Tatum,English,USA,2005
+Changing Lanes,Roger Michell,Color,91,Sydney Pollack,English,USA,2002
+Anaconda,Luis Llosa,Color,89,Frank Welker,English,USA,1997
+Coyote Ugly,David McNally,Color,107,Adam Garcia,English,USA,2000
+Love Actually,Richard Curtis,Color,129,Colin Firth,English,UK,2003
+A Bug's Life,John Lasseter,Color,95,Kevin Spacey,English,USA,1998
+From Hell,Albert Hughes,Color,122,Johnny Depp,English,USA,2001
+The Specialist,Luis Llosa,Color,110,Sylvester Stallone,English,Peru,1994
+Tin Cup,Ron Shelton,Color,135,Don Johnson,English,USA,1996
+Kicking & Screaming,Jesse Dylan,Color,95,Josh Hutcherson,English,USA,2005
+The Hitchhiker's Guide to the Galaxy,Garth Jennings,Color,109,Zooey Deschanel,English,USA,2005
+Fat Albert,Joel Zwick,Color,93,Dania Ramirez,English,USA,2004
+Resident Evil: Extinction,Russell Mulcahy,Color,94,Milla Jovovich,English,France,2007
+Blended,Frank Coraci,Color,117,Bella Thorne,English,USA,2014
+Last Holiday,Wayne Wang,Color,112,LL Cool J,English,USA,2006
+The River Wild,Curtis Hanson,Color,111,Meryl Streep,English,USA,1994
+The Indian in the Cupboard,Frank Oz,Color,96,Steve Coogan,English,USA,1995
+Savages,Oliver Stone, Black and White,141,Demián Bichir,English,USA,2012
+Cellular,David R. Ellis,Color,94,Richard Burgi,English,USA,2004
+Johnny English,Peter Howitt,Color,87,Kevin McNally,English,UK,2003
+The Ant Bully,John A. Davis,Color,88,Nicolas Cage,English,USA,2006
+Dune,David Lynch,Color,177,Virginia Madsen,English,USA,1984
+Across the Universe,Julie Taymor,Color,133,Jim Sturgess,English,USA,2007
+Revolutionary Road,Sam Mendes,Color,119,Leonardo DiCaprio,English,USA,2008
+16 Blocks,Richard Donner,Color,102,Bruce Willis,English,Germany,2006
+Babylon A.D.,Mathieu Kassovitz,Color,101,Vin Diesel,English,France,2008
+The Glimmer Man,John Gray,Color,91,Alexa PenaVega,English,USA,1996
+Multiplicity,Harold Ramis,Color,117,John de Lancie,English,USA,1996
+Aliens in the Attic,John Schultz,Color,86,Malese Jow,English,USA,2009
+The Pledge,Sean Penn,Color,124,Costas Mandylor,English,USA,2001
+The Producers,Susan Stroman,Color,134,Jon Lovitz,English,USA,2005
+Dredd,Pete Travis,Color,95,Wood Harris,English,UK,2012
+The Phantom,Simon Wincer,Color,100,Cary-Hiroyuki Tagawa,English,Australia,1996
+All the Pretty Horses,Billy Bob Thornton,Color,220,Matt Damon,English,USA,2000
+Nixon,Oliver Stone, Black and White,212,Anthony Hopkins,English,USA,1995
+The Ghost Writer,Roman Polanski,Color,128,Jim Belushi,English,France,2010
+Deep Rising,Stephen Sommers,Color,106,Djimon Hounsou,English,USA,1998
+Miracle at St. Anna,Spike Lee,Color,160,Joseph Gordon-Levitt,English,USA,2008
+Curse of the Golden Flower,Yimou Zhang,Color,114,Li Gong,Mandarin,China,2006
+Bangkok Dangerous,Danny Pang,Color,99,Nicolas Cage,English,USA,2008
+Big Trouble,Barry Sonnenfeld,Color,74,Zooey Deschanel,English,USA,2002
+Love in the Time of Cholera,Mike Newell,Color,139,Marcela Mar,English,USA,2007
+The Returned,,Color,52,Pierre Perrier,French,France,
+Shadow Conspiracy,George P. Cosmatos,Color,103,Sam Waterston,English,USA,1997
+Johnny English Reborn,Oliver Parker,Color,101,Daniel Kaluuya,English,USA,2011
+Foodfight!,Lawrence Kasanoff,Color,91,Jerry Stiller,English,USA,2012
+Argo,Ben Affleck,Color,130,Clea DuVall,English,USA,2012
+The Fugitive,Andrew Davis,Color,130,Harrison Ford,English,USA,1993
+The Bounty Hunter,Andy Tennant,Color,110,Gerard Butler,English,USA,2010
+Sleepers,Barry Levinson, Black and White,147,Robert De Niro,English,USA,1996
+Rambo: First Blood Part II,George P. Cosmatos,Color,96,Sylvester Stallone,English,USA,1985
+The Juror,Brian Gibson,Color,118,Joseph Gordon-Levitt,English,USA,1996
+Pinocchio,Norman Ferguson,Color,88,Mel Blanc,English,USA,1940
+Heaven's Gate,Michael Cimino,Color,325,Jeff Bridges,English,USA,1980
+Underworld: Evolution,Len Wiseman,Color,102,Sophia Myles,English,USA,2006
+Victor Frankenstein,Paul McGuigan,Color,110,Daniel Radcliffe,English,USA,2015
+Finding Forrester,Gus Van Sant,Color,136,F. Murray Abraham,English,USA,2000
+28 Days,Betty Thomas,Color,103,Steve Buscemi,English,USA,2000
+Unleashed,Louis Leterrier,Color,103,Morgan Freeman,English,France,2005
+The Sweetest Thing,Roger Kumble,Color,90,Judith Chapman,English,USA,2002
+The Firm,Sydney Pollack,Color,154,Tom Cruise,English,USA,1993
+Charlie St. Cloud,Burr Steers,Color,99,Augustus Prew,English,USA,2010
+The Mechanic,Simon West,Color,93,Jason Statham,English,USA,2011
+21 Jump Street,Phil Lord,Color,109,Channing Tatum,English,USA,2012
+Notting Hill,Roger Michell,Color,124,Julia Roberts,English,UK,1999
+Chicken Run,Peter Lord,Color,84,Imelda Staunton,English,UK,2000
+Along Came Polly,John Hamburg,Color,90,Philip Seymour Hoffman,English,USA,2004
+Boomerang,Reginald Hudlin,Color,117,John Witherspoon,English,USA,1992
+The Heat,Paul Feig,Color,123,Michael Rapaport,English,USA,2013
+Cleopatra,Joseph L. Mankiewicz,Color,251,Martin Landau,English,UK,1963
+Here Comes the Boom,Frank Coraci,Color,105,Salma Hayek,English,USA,2012
+High Crimes,Carl Franklin,Color,115,Morgan Freeman,English,USA,2002
+The Mirror Has Two Faces,Barbra Streisand,Color,122,Jeff Bridges,English,USA,1996
+The Mothman Prophecies,Mark Pellington,Color,119,Debra Messing,English,USA,2002
+Brüno,Larry Charles,Color,81,Bono,English,USA,2009
+Licence to Kill,John Glen,Color,133,Robert Davi,English,UK,1989
+Red Riding Hood,Catherine Hardwicke,Color,100,Gary Oldman,English,USA,2011
+15 Minutes,John Herzfeld,Color,120,Robert De Niro,English,USA,2001
+Super Mario Bros.,Annabel Jankel,Color,104,Bob Hoskins,English,UK,1993
+Lord of War,Andrew Niccol,Color,122,Nicolas Cage,English,USA,2005
+Hero,Yimou Zhang, Black and White,80,Jet Li,Mandarin,China,2002
+One for the Money,Julie Anne Robinson,Color,91,Fisher Stevens,English,USA,2012
+The Interview,Evan Goldberg,Color,112,James Franco,English,USA,2014
+The Warrior's Way,Sngmoo Lee,Color,100,Tony Cox,English,New Zealand,2010
+McHale's Navy,, Black and White,30,Tim Conway,English,USA,
+Micmacs,Jean-Pierre Jeunet,Color,105,Omar Sy,French,France,2009
+8 Mile,Curtis Hanson,Color,110,Mekhi Phifer,English,USA,2002
+Animal Kingdom: Let's go Ape,Jamel Debbouze,Color,101,Jamel Debbouze,French,France,2015
+A Knight's Tale,Brian Helgeland,Color,144,Heath Ledger,English,USA,2001
+The Medallion,Gordon Chan,Color,108,Julian Sands,English,Hong Kong,2003
+The Sixth Sense,M. Night Shyamalan,Color,107,Bruce Willis,English,USA,1999
+Man on a Ledge,Asger Leth,Color,102,Robert Clohessy,English,USA,2012
+The Big Year,David Frankel,Color,100,Joel McHale,English,USA,2011
+The Karate Kid,John G. Avildsen,Color,126,Martin Kove,English,USA,1984
+American Hustle,David O. Russell,Color,138,Jennifer Lawrence,English,USA,2013
+The Proposal,Anne Fletcher,Color,108,Ryan Reynolds,English,USA,2009
+Double Jeopardy,Bruce Beresford,Color,105,Bruce Greenwood,English,USA,1999
+Back to the Future Part II,Robert Zemeckis,Color,108,Lea Thompson,English,USA,1989
+Lucy,Luc Besson,Color,89,Scarlett Johansson,English,France,2014
+Fifty Shades of Grey,Sam Taylor-Johnson,Color,129,Jennifer Ehle,English,USA,2015
+Spy Kids 3-D: Game Over,Robert Rodriguez,Color,84,Sylvester Stallone,English,USA,2003
+A Time to Kill,Joel Schumacher,Color,149,Kevin Spacey,English,USA,1996
+Cheaper by the Dozen,Shawn Levy,Color,94,Tom Welling,English,USA,2003
+Lone Survivor,Peter Berg,Color,121,Jerry Ferrara,English,USA,2013
+A League of Their Own,Penny Marshall, Black and White,128,Tom Hanks,English,USA,1992
+The Conjuring 2,James Wan,Color,134,Javier Botet,English,USA,2016
+The Social Network,David Fincher,Color,120,Andrew Garfield,English,USA,2010
+He's Just Not That Into You,Ken Kwapis,Color,129,Carmen Perez,English,USA,2009
+Scary Movie 4,David Zucker,Color,89,Beau Mirchoff,English,USA,2006
+Scream 3,Wes Craven,Color,116,Kelly Rutherford,English,USA,2000
+Back to the Future Part III,Robert Zemeckis,Color,118,Lea Thompson,English,USA,1990
+Get Hard,Etan Cohen,Color,107,Will Ferrell,English,USA,2015
+Bram Stoker's Dracula,Francis Ford Coppola,Color,155,Keanu Reeves,English,USA,1992
+Julie & Julia,Nora Ephron,Color,123,Meryl Streep,English,USA,2009
+42,Brian Helgeland,Color,128,Harrison Ford,English,USA,2013
+The Talented Mr. Ripley,Anthony Minghella,Color,139,Philip Seymour Hoffman,English,USA,1999
+Dumb and Dumber To,Bobby Farrelly,Color,109,Bill Murray,English,USA,2014
+Eight Below,Frank Marshall,Color,120,Paul Walker,English,USA,2006
+The Intern,Nancy Meyers,Color,121,Robert De Niro,English,USA,2015
+Ride Along 2,Tim Story,Color,102,Olivia Munn,English,USA,2016
+The Last of the Mohicans,Michael Mann,Color,117,Wes Studi,English,USA,1992
+Ray,Taylor Hackford,Color,178,Bokeem Woodbine,English,USA,2004
+Sin City,Frank Miller, Black and White,147,Rosario Dawson,English,USA,2005
+Vantage Point,Pete Travis,Color,90,Dennis Quaid,English,USA,2008
+Shallow Hal,Bobby Farrelly,Color,114,Jason Alexander,English,USA,2001
+JFK,Oliver Stone, Black and White,206,Sally Kirkland,English,France,1991
+Big Momma's House 2,John Whitesell,Color,99,Chloë Grace Moretz,English,USA,2006
+The Mexican,Gore Verbinski,Color,123,J.K. Simmons,English,USA,2001
+Unbroken,Angelina Jolie Pitt,Color,137,Finn Wittrock,English,USA,2014
+17 Again,Burr Steers,Color,102,Matthew Perry,English,USA,2009
+The Other Woman,Nick Cassavetes,Color,109,Don Johnson,English,USA,2014
+The Final Destination,David R. Ellis,Color,82,Krista Allen,English,USA,2009
+Bridge of Spies,Steven Spielberg,Color,142,Tom Hanks,English,USA,2015
+Behind Enemy Lines,John Moore,Color,106,Joaquim de Almeida,English,USA,2001
+Get Him to the Greek,Nicholas Stoller,Color,114,Pink,English,USA,2010
+Shall We Dance,Peter Chelsom,Color,106,Lisa Ann Walter,English,USA,2004
+Small Soldiers,Joe Dante,Color,108,Kirsten Dunst,English,USA,1998
+Spawn,Mark A.Z. Dippé,Color,98,Michael Jai White,English,USA,1997
+The Count of Monte Cristo,Kevin Reynolds,Color,131,Henry Cavill,English,UK,2002
+The Lincoln Lawyer,Brad Furman,Color,118,Matthew McConaughey,English,USA,2011
+Unknown,Jaume Collet-Serra,Color,113,Liam Neeson,English,UK,2011
+The Prestige,Christopher Nolan,Color,130,Christian Bale,English,USA,2006
+Horrible Bosses 2,Sean Anders,Color,116,Kevin Spacey,English,USA,2014
+Escape from Planet Earth,Cal Brunker,Color,89,Brendan Fraser,English,USA,2013
+Apocalypto,Mel Gibson,Color,139,Rudy Youngblood,Maya,USA,2006
+The Living Daylights,John Glen,Color,130,Joe Don Baker,English,UK,1987
+Predators,Nimród Antal,Color,107,Topher Grace,English,USA,2010
+Legal Eagles,Ivan Reitman,Color,116,Brian Dennehy,English,USA,1986
+Secret Window,David Koepp,Color,96,Johnny Depp,English,USA,2004
+The Lake House,Alejandro Agresti,Color,99,Keanu Reeves,English,USA,2006
+The Skeleton Key,Iain Softley, Black and White,104,Gena Rowlands,English,USA,2005
+The Odd Life of Timothy Green,Peter Hedges,Color,105,Jennifer Garner,English,USA,2012
+Made of Honor,Paul Weiland,Color,101,Busy Philipps,English,USA,2008
+Jersey Boys,Clint Eastwood,Color,134,Johnny Cannizzaro,English,USA,2014
+The Rainmaker,Francis Ford Coppola,Color,135,Matt Damon,English,USA,1997
+Gothika,Mathieu Kassovitz,Color,98,Robert Downey Jr.,English,USA,2003
+Amistad,Steven Spielberg,Color,155,Anthony Hopkins,English,USA,1997
+Medicine Man,John McTiernan,Color,106,Lorraine Bracco,English,USA,1992
+Aliens vs. Predator: Requiem,Colin Strause,Color,102,Sam Trammell,English,USA,2007
+Ri¢hie Ri¢h,Donald Petrie,Color,95,Macaulay Culkin,English,USA,1994
+Autumn in New York,Joan Chen,Color,103,J.K. Simmons,English,USA,2000
+Music and Lyrics,Marc Lawrence,Color,95,Brad Garrett,English,USA,2007
+Paul,Greg Mottola,Color,109,Bobby Lee,English,USA,2011
+The Guilt Trip,Anne Fletcher,Color,95,Miriam Margolyes,English,USA,2012
+Scream 4,Wes Craven,Color,111,Alison Brie,English,USA,2011
+8MM,Joel Schumacher,Color,123,Nicolas Cage,English,Germany,1999
+The Doors,Oliver Stone,Color,140,Michael Wincott,English,USA,1991
+Sex Tape,Jake Kasdan,Color,94,James Wilcox,English,USA,2014
+Hanging Up,Diane Keaton,Color,94,Adam Arkin,English,Germany,2000
+Final Destination 5,Steven Quale,Color,92,Emma Bell,English,USA,2011
+Mickey Blue Eyes,Kelly Makin,Color,102,Jeanne Tripplehorn,English,UK,1999
+Pay It Forward,Mimi Leder,Color,123,Kevin Spacey,English,USA,2000
+Fever Pitch,Bobby Farrelly,Color,104,Jimmy Fallon,English,USA,2005
+Arthur,,Color,30,Bruce Dinsmore,English,Canada,
+Drillbit Taylor,Steven Brill,Color,102,Lisa Ann Walter,English,USA,2008
+A Million Ways to Die in the West,Seth MacFarlane,Color,136,Liam Neeson,English,USA,2014
+The Shadow,Russell Mulcahy,Color,93,Jonathan Winters,English,USA,1994
+Extremely Loud & Incredibly Close,Stephen Daldry,Color,129,Tom Hanks,English,USA,2011
+Morning Glory,Roger Michell,Color,107,Noah Bean,English,USA,2010
+Get Rich or Die Tryin',Jim Sheridan,Color,117,50 Cent,English,USA,2005
+The Art of War,Christian Duguay,Color,116,Michael Biehn,English,USA,2000
+Rent,Chris Columbus,Color,135,Rosario Dawson,English,USA,2005
+Bless the Child,Chuck Russell,Color,107,Rufus Sewell,English,USA,2000
+The Out-of-Towners,Sam Weisman,Color,90,Oliver Hudson,English,USA,1999
+The Island of Dr. Moreau,John Frankenheimer,Color,99,Marlon Brando,English,USA,1996
+The Musketeer,Peter Hyams,Color,104,Catherine Deneuve,English,Germany,2001
+The Other Boleyn Girl,Justin Chadwick,Color,115,Natalie Portman,English,UK,2008
+Sweet November,Pat O'Connor,Color,119,Keanu Reeves,English,USA,2001
+The Reaping,Stephen Hopkins,Color,99,Stephen Rea,English,USA,2007
+Mean Streets,Martin Scorsese,Color,112,Robert De Niro,English,USA,1973
+Renaissance Man,Penny Marshall,Color,128,Ed Begley Jr.,English,USA,1994
+Colombiana,Olivier Megaton,Color,112,Jordi Mollà,English,France,2011
+The Magic Sword: Quest for Camelot,Frederik Du Chau,Color,86,Gary Oldman,English,USA,1998
+City by the Sea,Michael Caton-Jones,Color,108,Robert De Niro,English,USA,2002
+At First Sight,Irwin Winkler, Black and White,128,Mira Sorvino,English,USA,1999
+Torque,Joseph Kahn,Color,84,Dane Cook,English,USA,2004
+City Hall,Harold Becker,Color,111,Al Pacino,English,USA,1996
+Showgirls,Paul Verhoeven,Color,131,Bobbie Phillips,English,France,1995
+Marie Antoinette,Sofia Coppola,Color,123,Kirsten Dunst,English,USA,2006
+Kiss of Death,Barbet Schroeder,Color,101,Nicolas Cage,English,USA,1995
+Get Carter,Stephen Kay,Color,102,Sylvester Stallone,English,USA,2000
+The Impossible,J.A. Bayona,Color,114,Naomi Watts,English,Spain,2012
+Ishtar,Elaine May,Color,107,Carol Kane,English,USA,1987
+Fantastic Mr. Fox,Wes Anderson,Color,87,Bill Murray,English,USA,2009
+Life or Something Like It,Stephen Herek,Color,103,Angelina Jolie Pitt,English,USA,2002
+Memoirs of an Invisible Man,John Carpenter,Color,99,Richard Epcar,English,USA,1992
+Amélie,Jean-Pierre Jeunet, Black and White,122,Mathieu Kassovitz,French,France,2001
+New York Minute,Dennie Gordon,Color,91,Mary-Kate Olsen,English,USA,2004
+Alfie,Charles Shyer,Color,103,Omar Epps,English,UK,2004
+Big Miracle,Ken Kwapis,Color,107,Ted Danson,English,USA,2012
+The Deep End of the Ocean,Ulu Grosbard,Color,106,Alexa PenaVega,English,USA,1999
+Feardotcom,William Malone,Color,101,Natascha McElhone,English,UK,2002
+Cirque du Freak: The Vampire's Assistant,Paul Weitz,Color,109,Josh Hutcherson,English,USA,2009
+Victor Frankenstein,Paul McGuigan,Color,110,Daniel Radcliffe,English,USA,2015
+Duplex,Danny DeVito,Color,89,Justin Theroux,English,USA,2003
+Soul Men,Malcolm D. Lee,Color,100,Bernie Mac,English,USA,2008
+Raise the Titanic,Jerry Jameson,Color,119,M. Emmet Walsh,English,UK,1980
+Universal Soldier: The Return,Mic Rodgers,Color,83,Michael Jai White,English,USA,1999
+Pandorum,Christian Alvart,Color,108,Norman Reedus,English,Germany,2009
+Impostor,Gary Fleder,Color,102,Gary Dourdan,English,USA,2001
+Extreme Ops,Christian Duguay,Color,93,Rufus Sewell,English,UK,2002
+Just Visiting,Jean-Marie Poiré,Color,84,Bridgette Wilson-Sampras,English,France,2001
+Sunshine,Danny Boyle,Color,107,Chris Evans,English,UK,2007
+A Thousand Words,Brian Robbins,Color,91,John Gatins,English,USA,2012
+Delgo,Marc F. Adler,Color,94,Eric Idle,English,USA,2008
+The Gunman,Pierre Morel,Color,115,Ray Winstone,English,USA,2015
+Alex Rider: Operation Stormbreaker,Geoffrey Sax,Color,93,Alex Pettyfer,English,Germany,2006
+Disturbia,D.J. Caruso,Color,105,Sarah Roemer,English,USA,2007
+Hackers,Iain Softley,Color,107,Angelina Jolie Pitt,English,USA,1995
+The Hunting Party,Richard Shepard,Color,101,James Brolin,English,USA,2007
+The Hudsucker Proxy,Joel Coen, Black and White,111,Jennifer Jason Leigh,English,UK,1994
+The Warlords,Peter Ho-Sun Chan,Color,113,Jet Li,Mandarin,Hong Kong,2007
+Nomad: The Warrior,Sergey Bodrov,Color,112,Jay Hernandez,Kazakh,France,2005
+Snowpiercer,Joon-ho Bong,Color,126,Chris Evans,English,South Korea,2013
+A Monster in Paris,Bibo Bergeron,Color,90,Adam Goldberg,French,France,2011
+The Last Shot,Jeff Nathanson,Color,93,Matthew Broderick,English,USA,2004
+The Crow,Alex Proyas,Color,98,Michael Wincott,English,USA,1994
+Baahubali: The Beginning,S.S. Rajamouli,Color,159,Tamannaah Bhatia,Telugu,India,2015
+The Time Traveler's Wife,Robert Schwentke,Color,107,Arliss Howard,English,USA,2009
+Because I Said So,Michael Lehmann,Color,102,Colin Ferguson,English,USA,2007
+The Fast and the Furious,Rob Cohen,Color,106,Paul Walker,English,USA,2001
+Frankenweenie,Tim Burton, Black and White,87,Martin Landau,English,USA,2012
+Serenity,Joss Whedon,Color,119,Adam Baldwin,English,USA,2005
+Against the Ropes,Charles S. Dutton,Color,110,Omar Epps,English,USA,2004
+Superman III,Richard Lester,Color,125,Margot Kidder,English,UK,1983
+Grudge Match,Peter Segal,Color,113,Robert De Niro,English,USA,2013
+Red Cliff,John Woo,Color,150,Takeshi Kaneshiro,Mandarin,China,2008
+Sweet Home Alabama,Andy Tennant,Color,108,Ethan Embry,English,USA,2002
+The Ugly Truth,Robert Luketic,Color,96,Gerard Butler,English,USA,2009
+Sgt. Bilko,Jonathan Lynn,Color,93,Austin Pendleton,English,USA,1996
+Spy Kids 2: Island of Lost Dreams,Robert Rodriguez,Color,100,Steve Buscemi,English,USA,2002
+Star Trek: Generations,David Carson,Color,118,LeVar Burton,English,USA,1994
+The Grandmaster,Kar-Wai Wong,Color,122,Tony Chiu Wai Leung,Mandarin,Hong Kong,2013
+Water for Elephants,Francis Lawrence,Color,120,Robert Pattinson,English,USA,2011
+3rd Rock from the Sun,,Color,60,Joseph Gordon-Levitt,English,USA,
+Dragon Nest: Warriors' Dawn,Yuefeng Song,Color,88,Blythe Auffarth,English,China,2014
+The Hurricane,Norman Jewison, Black and White,146,Denzel Washington,English,USA,1999
+Enough,Michael Apted,Color,115,Bill Cobbs,English,USA,2002
+Heartbreakers,David Mirkin,Color,123,Sarah Silverman,English,USA,2001
+Paul Blart: Mall Cop 2,Andy Fickman,Color,94,D.B. Woodside,English,USA,2015
+Angel Eyes,Luis Mandoki,Color,102,Sonia Braga,English,USA,2001
+Joe Somebody,John Pasquin,Color,98,Jim Belushi,English,USA,2001
+The Ninth Gate,Roman Polanski,Color,133,Johnny Depp,English,Spain,1999
+Extreme Measures,Michael Apted,Color,118,J.K. Simmons,English,USA,1996
+Rock Star,Stephen Herek,Color,105,Beth Grant,English,USA,2001
+Precious,Lee Daniels,Color,109,Mo'Nique,English,USA,2009
+White Squall,Ridley Scott,Color,129,Jeff Bridges,English,USA,1996
+The Thing,John Carpenter,Color,109,Wilford Brimley,English,USA,1982
+Riddick,David Twohy,Color,127,Vin Diesel,English,USA,2013
+Switchback,Jeb Stuart,Color,118,Gregory Scott Cummins,English,USA,1997
+Texas Rangers,Steve Miner,Color,110,Tom Skerritt,English,USA,2001
+City of Ember,Gil Kenan,Color,90,Bill Murray,English,USA,2008
+The Master,Paul Thomas Anderson,Color,144,Mike Howard,English,USA,2012
+Virgin Territory,David Leland,Color,97,Hayden Christensen,English,Italy,2007
+The Express,Gary Fleder, Black and White,130,Dennis Quaid,English,USA,2008
+The 5th Wave,J Blakeson,Color,112,Chloë Grace Moretz,English,USA,2016
+Creed,Ryan Coogler,Color,133,Sylvester Stallone,English,USA,2015
+The Town,Ben Affleck,Color,150,Jeremy Renner,English,USA,2010
+What to Expect When You're Expecting,Kirk Jones,Color,110,Anna Kendrick,English,USA,2012
+Burn After Reading,Ethan Coen,Color,96,J.K. Simmons,English,USA,2008
+Nim's Island,Jennifer Flackett,Color,96,Gerard Butler,English,USA,2008
+Rush,Ron Howard,Color,123,Chris Hemsworth,English,UK,2013
+Magnolia,Paul Thomas Anderson,Color,188,Patton Oswalt,English,USA,1999
+Cop Out,Kevin Smith,Color,107,Bruce Willis,English,USA,2010
+How to Be Single,Christian Ditter,Color,110,Alison Brie,English,USA,2016
+Dolphin Tale,Charles Martin Smith,Color,113,Morgan Freeman,English,USA,2011
+Twilight,Catherine Hardwicke,Color,122,Kristen Stewart,English,USA,2008
+John Q,Nick Cassavetes,Color,116,Denzel Washington,English,USA,2002
+Blue Streak,Les Mayfield,Color,93,Peter Greene,English,USA,1999
+We're the Millers,Rawson Marshall Thurber,Color,118,Laura-Leigh,English,USA,2013
+Obitaemyy ostrov,Fedor Bondarchuk,Color,115,Yuliya Snigir,Russian,Russia,2009
+Breakdown,Jonathan Mostow,Color,93,Kathleen Quinlan,English,USA,1997
+Never Say Never Again,Irvin Kershner,Color,121,Bernie Casey,English,UK,1983
+Hot Tub Time Machine,Steve Pink,Color,101,Charlie McDermott,English,USA,2010
+Dolphin Tale 2,Charles Martin Smith,Color,107,Morgan Freeman,English,USA,2014
+Reindeer Games,John Frankenheimer,Color,124,Charlize Theron,English,USA,2000
+A Man Apart,F. Gary Gray,Color,109,Vin Diesel,English,USA,2003
+Aloha,Cameron Crowe,Color,105,Emma Stone,English,USA,2015
+Ghosts of Mississippi,Rob Reiner,Color,130,Alexa PenaVega,English,USA,1996
+Snow Falling on Cedars,Scott Hicks,Color,127,Rick Yune,English,USA,1999
+The Rite,Mikael Håfström,Color,114,Anthony Hopkins,English,USA,2011
+Gattaca,Andrew Niccol,Color,106,Blair Underwood,English,USA,1997
+Isn't She Great,Andrew Bergman,Color,95,Stockard Channing,English,USA,2000
+Space Chimps,Kirk De Micco,Color,81,Cheryl Hines,English,USA,2008
+Head of State,Chris Rock,Color,95,Bernie Mac,English,USA,2003
+The Hangover,Todd Phillips,Color,108,Bradley Cooper,English,USA,2009
+Ip Man 3,Wilson Yip,Color,105,Mike Tyson,Cantonese,Hong Kong,2015
+Austin Powers: The Spy Who Shagged Me,Jay Roach,Color,95,Muse Watson,English,USA,1999
+Batman,Tim Burton,Color,126,Michael Gough,English,USA,1989
+There Be Dragons,Roland Joffé,Color,102,Jordi Mollà,English,Spain,2011
+Lethal Weapon 3,Richard Donner,Color,121,Rene Russo,English,USA,1992
+The Blind Side,John Lee Hancock,Color,129,Catherine Dyer,English,USA,2009
+Rush Hour,,Color,43,Jon Foo,English,USA,
+Spy Kids,Robert Rodriguez,Color,88,Alexa PenaVega,English,USA,2001
+Horrible Bosses,Seth Gordon,Color,106,Kevin Spacey,English,USA,2011
+True Grit,Ethan Coen,Color,110,Matt Damon,English,USA,2010
+The Devil Wears Prada,David Frankel,Color,109,Meryl 

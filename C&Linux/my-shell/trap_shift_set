@@ -1,0 +1,32 @@
+#!/bin/bash
+
+while [ "$1" != "" ]
+do
+    echo "$1"
+    shift
+done
+
+set $(date)
+
+echo "now \$2 is : $2"
+echo "$*"
+echo 
+
+handler(){
+  echo "trap handler"
+  echo
+  trap INT
+}
+
+rm -f temp_file_$$
+date > temp_file_$$
+
+trap handler INT
+while [ -f temp_file_$$ ]
+do
+ echo "file exists"
+ sleep 1
+done
+
+
+

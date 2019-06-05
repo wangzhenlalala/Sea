@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo $#
+x=$IFS
+IFS=
+echo "$*" '$*'
+echo "$@" '$@'
+
+IFS=$x
+while [ $# -ne 0 ]
+do
+    echo $1
+    shift
+done

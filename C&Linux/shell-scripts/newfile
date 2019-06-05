@@ -1,0 +1,23 @@
+#!/bin/bash
+#program:
+#	this shell-script helps you to create a new file that attached with the current 
+#	date information!
+#author:
+#	wangzhen
+echo -e "\n\ni will help you to create a new file with date in the current directory.\n\n" 
+read -p "please input your new file name:" newfilename
+
+filename=${newfilename:-yourfile}_$(date +%Y-%m-%d)
+
+touch   ./"$filename"
+
+if [ $? -eq 0 ]
+then
+	echo -e "\n\nyour new file is : $filename\n\n"
+	exit 0
+else
+	echo -e "\n\nmission failed , your file has not been created yet!! i am so sorry!\n\n"
+	exit 1
+fi
+
+

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+rm -rf nothing*
+
+echo > nothing1
+echo > nothing2
+mkdir nothing3
+
+#in shell , we write nothing*  will be extend to ./nothing* !!!!!
+
+for file in nothing*
+do
+  if test -d $file 
+  then 
+    break;
+  fi
+done
+
+echo "the first directory is $file"
+
+rm -rf ./nothing?

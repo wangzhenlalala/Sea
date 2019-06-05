@@ -1,0 +1,45 @@
+<view>
+    <text>{{block.text}}</text>
+    <img src={{block.src}} />
+
+    <text>{{block.text}}</text>
+    <img src={{block.src}} />
+
+    <text>{{block.text}}</text>
+    <img src={{block.src}} />
+</view>
+
+
+var formData = new formData();
+forData.add('title', 'xxx');
+formData.add('datetime');
+formdata.add('authoer');
+
+formData.add('img_1', Image);
+formData.add('text_1', String);
+
+
+/*
+    如果在修改的模式下：
+        1. 替换了图片/文字
+        2. 新增了图片/文字
+        3. 调整了{图片&文字}的顺序
+
+*/
+问题就成了：
+    1. 如何 创建一个新的pageStructure
+    2. 如何对一个已经存在的pageStructure对象，施加操作，使其变成另外一个对对象。并diff两者的差异
+pageStructure = {
+    title: 'title'
+    time: time,
+    author: 'author'
+
+    content: [
+        {
+            id: id,
+            image: url | path | "" ,
+            text: string | ""
+        }
+    ]
+
+}

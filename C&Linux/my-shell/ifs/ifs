@@ -1,0 +1,17 @@
+#!/bin/bash
+
+output_args(){
+    echo '$*' $*
+    while [ $# -ne 0 ] 
+    do
+        echo [$1]
+        shift
+    done
+}
+
+var1="  a b  c  "
+output_args $var1
+
+var2="::a b:c"
+IFS=":"
+output_args $var2

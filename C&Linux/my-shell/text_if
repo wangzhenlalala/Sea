@@ -1,0 +1,55 @@
+#!/bin/bash
+
+if [ -f /bin/bash ]
+then 
+  echo "file /bin/bash exists"
+  if [ -x /bin/bash ] 
+  then
+     echo "/bin/bash is excutable"
+  fi
+fi
+
+if [ -d /bin/bash ] 
+then
+  echo "/bin/bash is a directory"
+else
+  echo "/bin/bash is not a directory"
+fi
+
+echo "please tell me  is it morning now ? "
+read now
+#if we enter nothing ,bash will produce error
+# [ = "yes" ]
+#if [ $now = "yes" ]
+if [ "$now" = "yes" ]
+then 
+ echo "yeah it is morning now"
+elif [ "$now" = "no" ]
+then
+ echo "nop it is afternoon now"
+else
+ echo "sorry wrong answer"
+fi
+
+for item in $(ls .)
+do
+	if [ -f $item ]
+        then
+		echo $item is a file
+	fi
+done
+
+echo "please enter [a | b | c | d]"
+read letter
+case "$letter" in
+	a) echo "you entered $letter";;
+b | c | d) echo "you enter b or c or d";;
+        *) echo "i can recoginize";;
+esac
+
+name="wangzhen"
+for((i=0;i < ${#name};i++))
+do
+    echo ${name:i:1}---$i
+done
+exit 0

@@ -1,0 +1,10 @@
+#LWP-Cookies-2.0
+Set-Cookie3: __cfduid=dfeeb894a903e35336f0454a9fb2ee0dc1541864621; path="/"; domain=".jobbole.com"; path_spec; domain_dot; expires="2019-11-10 15:43:41Z"; HttpOnly=None; version=0
+Set-Cookie3: name=wangzhen; path="/"; domain=".jobbole.com"; expires="2019-11-10 15:43:41Z"; HttpOnly=None; version=0
+Set-Cookie3: age=55; path="/"; domain=".jobbole.com"; version=0
+Set-Cookie3: happy=yes; path="/"; domain=".jobbole.com"; version=0
+
+
+#domain and path and version are necessary. or you get loadError
+#and cookies of diffenent domians will not send !!!!
+

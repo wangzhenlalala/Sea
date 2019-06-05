@@ -1,0 +1,10 @@
+echo 
+name=wangzhen
+if [ -n $name ]
+   then
+    echo the first param is not empty 
+    echo 
+else
+   echo the first param is empty 
+   echo
+fi 

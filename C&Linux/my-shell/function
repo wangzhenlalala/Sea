@@ -1,0 +1,25 @@
+#!/bin/bash
+
+yes_or_no(){
+    echo  "is your name $* ? "
+    while true
+    do
+      echo -n "answer yes or no : "
+      read x
+      case "$x" in 
+        y | yes)  return 0;;
+         n | no)  return 1;;
+              *)  echo "oh come on!!  don't be like this";;
+      esac
+    done
+}
+
+echo "original parameters are $* "
+#in linux the value 0  that a function returns means success!!!! otherwise failure!!! 
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+if yes_or_no "$1"
+then
+  echo "nice name"
+else
+  echo "never mind"
+fi

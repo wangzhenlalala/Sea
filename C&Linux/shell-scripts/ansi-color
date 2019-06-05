@@ -1,0 +1,56 @@
+#!/bin/bash
+#this shell is aimed to test the ANSI color
+#you can see how to use color in you shell script so that 
+#your script will be away from dullness !!!  haha
+# \033 is the octal number of ESC ,which indicates the start of this color 
+#escape sequence. and '['  starts the color attribution. 
+#it gose like below:      
+#                      \033[ font-attr;fg-color;bg-color m
+#  and   the 'm' in the end can't be omited !!!!!!!!!!!!!!
+
+
+#[ font_attr  foreground_color background_color m;
+#font_attr:
+#0         1      22           4(24)        5(25)          7(27)   
+#default bold  nobold  underline(not)   blink(not)  standout(not)
+#fg_color:
+#30     31   32     33     34    35      36   37 
+#black  red green  yellow blue  magenta cyan white 
+#40                                           47
+#bg_color:
+
+
+# i don't know why 
+#    echo "\033[1;31;41m"wang zhen""
+# does not work;
+
+clear
+
+#tput cup 10 1
+
+for font_attr in 0 1 4 5 7
+do
+ printf "______________________________\n"
+     printf "ESC[%s;foreground;background m\n" $font_attr
+
+     for fg_color in 30 31 32 33 34 35 36 37
+     do 
+	   for bg_color in 40 41 42 43 44 45 46 47
+	   do
+	           printf "\033[%s;%s;%sm%2s%2s" $font_attr $fg_color $bg_color \
+			$fg_color $bg_color
+	           
+	   done
+	   
+           printf "\033[0m"
+	   printf "\n"
+
+     done
+
+printf "\033[0m"
+done
+
+printf "\033[0m"
+exit 0
+
+

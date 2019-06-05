@@ -1,0 +1,48 @@
+ksjdfkdif 
+whello world
+hello sorld i am wangzhen
+who are you 
+enen
+aaaaaaaaaaaaaaa
+ksjdfkdif 
+ksjdfkdif 
+ksjdfkdif 
+ksjdfkdif 
+ksjdfkdif 
+ksjdfkdif 
+       while((mydirent = readdir(dirp))!=NULL)
+whello world
+hello sorld i am wangzhen
+who are you 
+enen
+aaaaaaaaaaaaaaa
+whello world
+hello sorld i am wangzhen
+who are you 
+enen
+aaaaaaaaaaaaaaa
+whello world
+hello sorld i am wangzhen
+who are you 
+enen
+aaaaaaaaaaaaaaa
+whello world
+hello sorld i am wangzhen
+who are you 
+enen
+aaaaaaaaaaaaaaa
+whello world
+hello sorld i am wangzhen
+who are you 
+enen
+aaaaaaaaaaaaaaa
+whello world
+hello sorld i am wangzhen
+who are you 
+enen
+aaaaaaaaaaaaaaa
+
+#include <unistd.h>
+#include <stdlib.h>
+#include <dirent.h>
+#include <string.h>

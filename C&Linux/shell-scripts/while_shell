@@ -1,0 +1,10 @@
+#!/bin/bash
+
+read -p "input a number to be printed from 1 to it :" num
+
+  while [ $num -gt 0 ] 
+	do 
+	    echo $num
+            num=` expr $num - 1 `
+	done
+   exit 0

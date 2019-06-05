@@ -1,0 +1,23 @@
+#!/bin/bash
+
+nu=4
+while $(expr $nu > 0)
+do
+    echo $nu
+    nu=$(expr $nu - 1)
+done
+
+
+
+
+nu=4
+# this form of arithmetic operation is more effective $((expression)) than  $(expr op1 - ope)
+# condition test can do arithmetic test 
+# eq ne gt ge lt lq
+while [ $nu -gt 0 ]
+do
+    echo $nu
+    nu=$(($nu -1))
+done
+
+echo $*'$*'
