@@ -1,0 +1,96 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.container,
+.container_1,
+.container_2 {
+    width: 100%;
+    /* height: 100%; */
+    display: flex;
+    flex-wrap: wrap;
+}
+.item{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.red,
+.red_1 {
+    background: red;
+    width: 100%;
+    height: 50px;
+}
+.olive,
+.olive_1 {
+    background: olive;
+    width: 100%;
+    height: 50px;
+}
+.cyan,
+.cyan_1 {
+    background: cyan;
+    width: 100%;
+    height: 50px;
+}
+.navy,
+.navy_1 {
+    background: navy;
+    width: 100%;
+    height: 50px;
+}
+
+
+@media screen and (min-width: 500px) {
+    .red, 
+    .red_1 {
+        height: 100px;
+        width: 50%;
+    }
+    /* 虽然 .red的高度是100px， .ovlie and .cyan 的高度是50px，.ovlie可以出现在.red的右边，但是.cyan会在下一行显示，而不是和.olive并列
+    尽管，.olive的下方还有足够空间 
+    需要把.olive 和 .cyan放到一个父元素里面，该父元素和.red是一个级别(兄弟)*/
+    .olive {
+        width: 50%;
+    }
+    .cyan {
+        width: 50%;
+    }
+
+    .container_2 {
+        width: 50%;
+    }
+    .red_1 {
+        width: 50%;
+    }
+
+}
+
+@media screen and (min-width: 700px) {
+    .red,
+    .red_1 {
+        width: 25%;
+        order: 1;
+    }
+    .navy,
+    .navy_1 {
+        width: 25%;
+        height: 100px;
+        order: -1;
+    }
+}
+/* pattern: Mostly Fluid */
+@media screen and (min-width: 900px) {
+    .container,
+    .container_1 {
+        width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

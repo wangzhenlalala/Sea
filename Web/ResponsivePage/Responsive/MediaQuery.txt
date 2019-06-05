@@ -1,0 +1,30 @@
+1. <link rel="stylesheet" media="screen and (min-width: 500px)" href="over500.css">
+    当屏幕的尺寸，大于500px的时候，加载over500.css
+2. 
+    @media screen and (min-width: 500px){
+        body{
+            background: blue;
+        }
+        block-element__modifier{
+
+        }
+    }
+
+   @media screen and (min-width: 800px){
+        body{
+            background: yellow;
+        }
+        block-element__modifier{
+
+        }
+    }
+
+min-width:
+    测量的是浏览器的展示区域的大小viewport
+min-device-width:
+    测量的是屏幕的大小
+
+Break point
+    - minor Break point
+
+Media queries can get complex, especially when they start overlapping

@@ -1,0 +1,13 @@
+1. git format-patch target_branch -o patches_directory
+	git format-patch target_branch -1 commit_id -o patch_directory
+2. git am your.patch (am-> apply from a mailbox)
+	** 可以在不同的仓库中进行
+
+3. git cherry-pick commit_id => to current branch with a new commit
+
+同一个仓库当中的所有的分支，具有同一个根节点对不对？？？
+
+[1.working_directory]  --git add--> [2.index]  --git commit--> [3.local_repo]
+git diff HEAD [filename]: 3 --direction--> 1  
+git diff [filename] : 2 --direction--> 1
+git diff --cached [filename]: 3 --direction--> 2

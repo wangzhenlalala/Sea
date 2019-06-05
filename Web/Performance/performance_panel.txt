@@ -1,0 +1,42 @@
+performance metrics
+1. FPS
+2. 
+
+scripting
+rendering
+painting
+other
+idle
+
+Sections:
+	1. Frames
+	2. Main: the activity in main thread
+	3. Raster
+	4. GPU
+	
+move your mouse left and right over fps panel: scrubbing
+
+******** command panel ctrl + shift + p
+1. show rendering "fps meter"
+
+performance is the art of doing less word !!!
+and make any work you do as efficient as possible.
+
+Layout
+	forced reflow
+recalculate style
+
+
+?? 如果main thread 一直有函数在执行 浏览器渲染下一帧 要什么时候进行？？？？
+
+16.66ms
+10ms
+pixel to screen pipeline:
+	1. Js
+	2. style
+	3. Layout： size and position, reflow
+	4. Paint: draw pixels to Multiple Layers [1] create a list of draw calls. [2]
+	5. Composite
+	
+udacity 浏览器渲染优化
+

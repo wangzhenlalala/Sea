@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style/index.css">
+</head>
+<body>
+    <div class="btns">
+        <button data-type="setTimeout">start setTimeout</button>
+        <button data-type="requestAnimationFrame">start requestAnimationFrame</button>
+        <button data-type="both">start Both</button>
+        <button data-type="reset">reset</button>
+    </div>
+   <div>
+       <div class="movingBox setTimeout">
+            use setTimeout
+       </div>
+
+       <div class="movingBox requestAnimationFrame">
+            use requestAnimationFrame
+       </div>
+   </div> 
+   <script src="./scripts/ManyTasksPerFrame.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>accessibility -- focus</title>
+	<style>
+		.linux{
+			width: 100px;
+			height: 100px;
+		}
+		.js-focus-visible :focus:not(.focus-visible){
+			outline: 0;
+		}
+	</style>
+
+</head>
+<body>
+	<label>
+		<input type="text" />
+	</label>
+	<label>
+		<input type="checkbox">
+		hello
+	</label>
+	<div class="buttons">
+		<button>hello</button>
+		<button>world</button>
+	</div>
+	<div>
+		<div class="focusable" tabindex=0>focus me</div>
+	</div>
+	<div>
+		<a href="#">i am a link</a>
+		<img src="http://allvectorlogo.com/img/2016/06/linux-logo-2.png" class="linux"/>
+	</div>
+	<script src="./focus-visible.js"></script>
+</body>
+</html>
+.

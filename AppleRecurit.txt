@@ -1,0 +1,30 @@
+Fullstack
+	•Strong experience on a professional software development team building highly scalable, distributed systems
+	•In-depth experience building web services, micro service architecture
+	•Experience in REST API design and implementation
+	•Strong in one or more languages (Python/Ruby/Golang/Javascript)
+	•Experience with non-relational, NoSQL databases and various data-storage systems (Cassandra,Elastic, Postgres, FoundationDB, object stores)
+	•Familiarity with full stack development
+	•Deep understanding of distributed systems and multi-threaded programming concepts
+	•Ability to work on multi-faceted, cross-functional projects
+	•Ability to collaborate effectively with teams located in different locations
+	•Good understanding of HTML and CSS
+	•Experience with modern Javascript frameworks (Angular, React, etc.)
+	•Experience with creating Javascript Single Page Apps with cross-browser compatibility
+
+Frontend
+	•Proficient JavaScript programmer
+	•Experience with JS frameworks is highly desirable: React, Angular, etc.
+	•Experience with CSS3 and Less/Sass in large scale applications
+	•Familiarity with networking protocols and programming.
+	•Knowledge of media streaming, HTML5 MSE/EME, encryption standards a plus
+	•Strong problem solving and critical thinking skills
+	•Passion for quality and close attention to details
+	•Ability to collaborate with multi-functional teams
+	•Strong communication and interpersonal skills
+	•Aptitude to independently learn new technologies
+
+** distributed systems 
+** multi-threaded programming
+** networking protocols
+** cross-browser compatibility

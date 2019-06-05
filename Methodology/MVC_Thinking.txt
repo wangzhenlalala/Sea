@@ -1,0 +1,4 @@
+modal 的更新会触发 view的更新，
+	modal和view的 ***粒度*** 的确定
+	modal和view的绑定 （数据和模板的绑定)
+	就需要好好设计

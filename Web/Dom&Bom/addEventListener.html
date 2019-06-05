@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <style>
+        .with-color{
+            outline: 1px solid blue;
+            background: yellow;
+        }
+    </style>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div id="target">
+        click me
+    </div>    
+    <!-- 
+        call addEventListener many times on an element will add many callbacks not just one.
+        removeEventListener(type, listener, useCapture);
+     -->
+    <script>
+        var target = document.querySelector("#target");
+        let addColor = function(){
+          target.classList.add('with-color');
+          console.log('addColor');
+          return true;  
+        };
+        let removeColor  = function (){
+            console.log('removeColor');
+            target.classList.remove('with-color');
+            return true;
+        };
+        let delegateDocumentToRemoveColor = function(event){
+            console.log('delegateDocumentToRemoveColor');
+            console.log(event);
+            debugger
+            event.target.getAttribute('id') == "target" && removeColor();
+        }
+        let toggleColor = function (){
+            //target.classList.toogle('with-color');
+            target.classList.contains('with-color') && removeColor() || addColor() ;
+        };
+
+        target.addEventListener("click", toggleColor);
+        // target.removeEventListener("click", first);
+
+        document.addEventListener("click", delegateDocumentToRemoveColor,true);
+
+        /**
+            output is:
+                first
+                second
+        */
+    </script>
+</body>
+</html>

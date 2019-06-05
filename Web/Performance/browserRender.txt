@@ -1,0 +1,134 @@
+************ parse 
+vocabulary
+syntax rules 
+	syntax: how words and phrases can be put together to form sentences
+	
+	
+lexical analysis
+	lexer (tokenizer)
+	
+parse tree
+syntax  analysis
+
+Vocabulary: 
+	Our language can include integers, plus signs and minus signs.
+	**********************
+		
+Syntax:
+	1. The language syntax building blocks are expressions, terms and operations.
+	2. Our language can include any number of expressions.
+	3. An expression is defined as a "term" followed by an "operation" followed by another term
+	4. An operation is a plus token or a minus token
+	5. A term is an integer token or an expression
+	
+---------------------------
+vocabulary:
+	INTEGER: 0|[1-9][0-9]*
+	PLUS: +
+	MINUS: -
+syntax:
+	expression: term operation term
+	operation: PLUS | MINUS
+	term: INTERGER | expression
+---------------------------
+
+grammar: 语法
+	1. lexical  词法
+	2. syntax 句法
+	
+*********	
+The parsing process is reentrant. 
+For other languages, the source doesn't change during parsing, 
+but in HTML, dynamic code (such as script elements containing document.write() calls) can add extra tokens, 
+so the parsing process actually modifies the input.
+
+****************************
+Tokenization is the lexical analysis, parsing the input into tokens. 
+Among HTML [tokens] are 
+	start tags, 
+	end tags, 
+	attribute names and attribute values.
+
+-------------------------------------------------------------------------------------------------------------
+StyleSheet  -> css file
+	StyleRule   --> css ruleset
+		Selector     --> .nav  #archor
+		Declaration  --> margin: 0px;
+		
+document parsing
+	--> during this process
+	1. load script and execute script
+		--> during this process
+		1.  access style info
+			load and execute style parsing
+			
+Render Tree: (element: renderer or render object)
+	[** A renderer knows how to layout and paint itself and its children. **]
+	class RenderObject{
+	  virtual void layout();
+	  virtual void paint(PaintInfo);
+	  virtual void rect repaintRect();
+	  Node* node;  //the DOM node
+	  RenderStyle* style;  // the computed style
+	  RenderLayer* containingLayer; //the containing z-index layer
+	}
+	Each renderer represents a rectangular area usually corresponding to a node's CSS box
+	
+	
+	
+	
+The render tree relation to the DOM tree
+	1. Non-visual DOM elements will not be inserted in the render tree <head display:none>
+	2. select < input dropdown>
+	3. text < multiple line >
+	
+	
+In WebKit the process of resolving the style and creating a renderer is called "attachment". 
+[** Every DOM node has an "attach" method. **]
+Attachment is synchronous, node insertion to the DOM tree calls the new node "attach" method.
+
+Style computation
+	Building the render tree requires calculating the visual properties of each render object.
+	1. Style data is a very large construct, holding the numerous style properties, this can cause memory problems.
+	2. Finding the matching rules for each element can cause performance issues if it's not optimized. 
+	   Traversing the entire [[rule list]] for each element to find matches is a heavy task. 
+	   Selectors can have complex structure that can cause the matching process to start on a seemingly promising path that is proven to be futile and another path has to be tried.
+	3. Applying the rules involves quite complex cascade rules that define the hierarchy of the rules.
+
+When the renderer is created and added to the tree, it does not have a position and size. Calculating these values is called layout or reflow.
+
+Dirty bit system
+	In order not to do a full layout for every small change, browsers use a "dirty bit" system. 
+	A renderer that is [[changed or added]] marks itself and [[its children]] as "dirty": needing layout.
+
+Global and incremental layout
+	Layout can be triggered on the entire render tree
+	Layout can be incremental, only the dirty renderers will be laid out
+
+Asynchronous and Synchronous layout
+	Incremental layout is done asynchronously
+	Scripts asking for style information, like "offsetHeight" can trigger incremental layout synchronously. 
+	Global layout will usually be triggered synchronously.
+
+Painting
+	Global and Incremental
+The painting order
+	background color
+	background image
+	border
+	children
+	outline
+
+The browsers try to do the minimal possible actions in response to a change.
+
+block: generates a block box.
+inline: generates one or more inline boxes.
+none: no box is generated.
+
+****
+	display
+	position
+	float
+	z-index
+	opaque
+***

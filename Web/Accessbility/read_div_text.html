@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .recording{
+            width: 500px;
+            outline: solid 1px blue;
+            padding: 0 50px;
+            display: flex;
+            flex-direction: column;
+        }
+        .recording div, .recording p{
+            width: 100%;
+            height: 150px;
+        }
+        .recording p:focus{
+            background: yellow;
+        } 
+    </style>
+</head>
+<body>
+    <div class="recording" tabindex="-1">
+        <p class="head-text" >Recording consent</p> 
+        <p class="head-tip" >leave or consent!</p> 
+        <div class="buttons">
+            <button class="btn-first">leave</button>
+            <button class="btn-second">continue</button>
+        </div>
+        
+    </div>
+    <div role="dialog" aria-labelledby="title" aria-describedby="content">
+        <p id="title">recording consent</p>
+        <p id="content">you have to choose consent or leave?</p>
+    </div>
+    <script>
+        pTextDom = document.querySelector('.head-text');
+        btnFirstDom = document.querySelector('.btn-first');
+        btnSecondDom = document.querySelector('.btn-second');
+        btnFirstDom.addEventListener('click', function(e){
+            
+            // pTextDom.focus();
+            btnSecondDom.focus();
+
+        })
+    </script>
+</body>
+</html>

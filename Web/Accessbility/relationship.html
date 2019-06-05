@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> menu relationship (tree) </title>
+</head>
+<body>
+    <div role="menu" aria-owns="menuitem1 submenu1 menuitem2 submenu2 menuitem3 submenu3">
+        <div role="menuitem" id="menuitem1">
+            first menu item
+        </div>
+        <div role="menuitem" id="menuitem2">
+            second menu item
+        </div>
+        <div role="menuitem" id="menuitem3">
+            third menu item
+        </div>
+    </div> <!-- end of first level menu-->
+
+    <div role="menu" id="submenu1"></div>
+    <div role="menu" id="submenu2"></div>
+    <div role="menu" id="submenu3"></div>
+</body>
+</html>

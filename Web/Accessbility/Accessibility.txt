@@ -1,0 +1,199 @@
+Perceivable
+Operable
+Understandable
+Robust
+
+situational
+temporary
+pernament
+
+Focus
+Semantics
+Styling
+
+Tab order 
+	Working with native elements is a great way to learn about focus behavior 
+	because they are automatically inserted into the tab order based on their position in the DOM.
+	despite of thier screen order(float, position) ,just dom order
+	1. reading order
+	2. navigation order(tab)
+	
+Offscreen content:
+	1. documet.activeElement
+	2?. if an element is display: none can it receive foucs?
+	3?. if an element is visibility: hidden can it receive focus?
+	
+tabIndex
+	Using tabindex, you can 
+		specify an explicit order for focusable page elements, 
+		insert an otherwise unfocusable element into the tab order, 
+		and remove elements from the tab order.
+	the natural tab order
+tabindex="0": Inserts an element into the natural tab order.
+tabindex="-1": Removes an element from the natural tab order,
+
+Using a tabindex greater than 0 is considered an anti-pattern.
+if it's not something the user can interact with, there's no reason to make it focusable.
+keeps the user's perceived context in sync with the site's visual content.
+
+
+
+
+:focus {
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+how an element can be foucsed?
+	1. keybord hit (tab)
+	2. clicked by mouse
+	3. js ele.focus()
+	
+roving tabindex 
+
+visual interface
+programmatically expressed semantics
+	affordance
+		This non-visual exposure of an affordance's use is called its semantics.
+		
+	* The element's [role or type], if it is specified (it should be).
+	* The element's [name], if it has one (it should).
+	* The element's [value], if it has one (it may or may not).
+	* The element's [state], e.g., whether it is enabled or disabled (if applicable).
+
+
+The Accessibility Tree
+	Imagine that you're building a user interface for screen reader users only
+		1. 
+		To summarize, all images should have an alt attribute, but they need not all have text. 
+		Important images should have descriptive alt text that succinctly describes what the image is, 
+		while decorative images should have empty alt attributes — that is, alt="".
+Text Alternatives for Images 
+	alt="xxx" alt=""
+	
+Semantics and Navigating Content
+	heading h1 h2
+	links
+	form controls
+web rotor
+
+
+ARIA
+	express semantics that HTML can't express on its own.
+
+		<li tabindex="0" class="checkbox" checked>
+		  Receive promotional offers
+		</li>
+		
+		<li tabindex="0" class="checkbox" role="checkbox" checked aria-checked="true">
+		  Receive promotional offers
+		</li>
+	** ARIA works by changing and augmenting the standard DOM accessibility tree.
+		role
+			radiogroup
+			menu
+				menuitem aria-haspopup="true" aria-owns="someId"
+		aria-*attribute*
+			aria-label
+			aria-labelledby
+			aria
+			
+			
+			
+enabled / disabled
+checked (radio, checkbox)
+seletced (select/option)
+
+Style
+	An alternative solution to the problem of removing the focus ring is to give your element the same hover and focus styles
+	:hover, :focus {
+	  background: #c0ffee;
+	}
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		Setting width=device-width will match the screen's width in device-independent pixels, 
+		and setting initial-scale=1 establishes a 1:1 relationship between CSS pixels and device-independent pixels. 
+		Doing this instructs the browser to fit your content to the screen size, 
+		so users don't just see a bunch of scrunched-up text.
+	designing with a grid means your content will reflow when the [page] changes size.
+	A minimum recommended touch target size is around 48 device independent pixels on a site with a properly set mobile viewport. 
+	
+	
+	
+？？？？？？？？？？？
+	当屏幕被zoom的时候，page size 变化了没有？？？
+
+
+？？？？？
+	当要一个页面被加载时，那个元素获得了focus ？？
+
+？？？？？
+	盲人是如何借助assistive tools来阅读 文章的 ？？？ 包含在p标签里面的文本。
+
+
+
+有时候对一个 widget (component) 我们需要存储他的一些flag,state，不得不存储到全局的空间中。
+如果自己构建一个对象，像是vue的实例，把所有的flag,state放到对象里面去，就很好了。
+
+
+
+
+
+
+
+
+
+
+function trapTabKey(e) {
+    // Check for TAB key press
+    if (e.keyCode === 9) {
+
+      // SHIFT + TAB
+      if (e.shiftKey) {
+        if (document.activeElement === firstTabStop) { // 是不是说明此时activeElement还没有没浏览器改变？？
+          e.preventDefault();
+          lastTabStop.focus();
+        }
+
+      // TAB
+      } else {
+        if (document.activeElement === lastTabStop) {
+          e.preventDefault();
+          firstTabStop.focus();
+        }
+      }
+    }
+
+    // ESCAPE
+    if (e.keyCode === 27) {
+      closeModal();
+    }
+}
+
+
+class Person{
+
+  constructor(age){
+    this._age = 1;
+  }
+  
+  grow(){
+    this.age++;
+  }
+
+  set age(age){
+    this._age = age;
+  }
+  get age(){
+    return this._age;
+  }
+  
+  static birth(){
+	console.log("happy birthday");
+  }
+  static birthday = "1993-02-25"
+  
+} // copy these to babel repl
+
+
+
+

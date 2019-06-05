@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body{
+            width: 100%;
+            height: 50%;
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            background: #fff;
+            height: 100%;
+            width: 100%;
+        }
+        
+
+        @media screen and (min-width: 500px){
+            .container{
+                background: blue;
+            }
+        }
+        @media screen and (min-width: 800px){
+            .container{
+                background: yellow;
+            }
+        }
+
+        .section-container{
+            /* width: 100%; */
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            /* flex
+                当父元素的宽度不足以容纳所有的子元素的时候，他会shrink所有的子元素的宽度，即使子元素指定了width
+                默认flex会将有的子元素放在一行上，不会换行
+                如果父元素的宽度很大，他会把没有指定具体宽度的子元素给grow，有具体宽度的子元素则不会grow.
+             */
+             outline: solid 1px olive;
+             margin-top: 10px;
+        }
+        .section-item{
+            /* width: 200px;
+            outline: 2px solid blue;
+            flex-shrink: 0; */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+        }
+        .ivory{
+            background: ivory;
+            width: 100%
+        }
+        .gray{
+            background: gray;
+            width: 50%
+        }
+        .navy{
+            background: navy;
+            width: 50%;
+        }
+        .cyan{
+            background: cyan;
+            width: 33.33%
+        }
+        .lime{
+            background: lime;
+            width: 33.33%
+        }
+        .fuchsia{
+            background: fuchsia;
+            width: 33.33%
+        }
+        .brown{
+            background: brown;
+            width: 25%;
+        }
+        .crimson{
+            background: crimson;
+            width: 25%;
+        }
+        .olive{
+            background: olive;
+            width: 25%;
+        }
+        .green{
+            background: green;
+            width: 25%;
+        }
+    </style>
+
+</head>
+<body>
+   <main class="container">
+        main container
+   </main> 
+   <section class="section-container">
+       <section class="section-item ivory">1</section>
+       <section class="section-item gray" >2</section>
+       <section class="section-item navy">2</section>
+       <section class="section-item cyan">3</section>
+       <section class="section-item lime">3</section>
+       <section class="section-item fuchsia">3</section>
+       <section class="section-item brown">4</section>
+       <section class="section-item crimson">4</section>
+       <section class="section-item olive">4</section>
+       <section class="section-item green">4</section>
+   </section>
+</body>
+</html>

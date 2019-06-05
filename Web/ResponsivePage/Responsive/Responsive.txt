@@ -1,0 +1,117 @@
+css中1px并不是固定大小
+
+像素分为两种类型：
+	css像素
+	物理像素(设备像素）
+	
+视口（viewport)
+	1. 布局视口 (layout viewport)
+	2. 视觉视口 ( visual viewport)
+	3. 理想视口(ideal viewport)
+	
+分辨率 <==> 理想视口
+
+分辨率 VS 设备像素
+
+Hardware Pixel
+	A hardware pixel is an individual dot of light in the display.
+Software Pixel
+	also called a CSS pixel in the web world, is a unit of measurement.
+Device Pixel Ratio	
+	The device manufacturer determines how many hardware pixels equals one software pixel
+Pixels Per Inch
+Dots   Per Inch
+DIP : Device Independent Pixel （设备无关的像素）
+
+设备像素比： DPR (Device  Pixel Ratio) = Hardware Pixels / Software Pixels  (一个 逻辑像素 等于几个 物理像素)
+
+我自己的名词：
+	px : 写css的时候指定的单位
+	PX : 逻辑像素 / 分辨率的unit
+	
+1 DPR = 物理像素／分辨率
+
+在不缩放的情况下
+**** 像素 VS px *****
+1 css 像素 = 1 DPR = DP / Resolution
+
+<meta id="viewport" name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1; user-scalable=no;">
+该声明将 布局视口 设置成 理想视口
+
+通常PC的布局视口为：980px
+移动端iphone6为： 375 * 667 : 布局视口在理想的情况下为375px
+
+-----------------***********************---------------------
+
+苹果手机：
+	主屏尺寸:     4.7英寸
+	主屏分辨率:   1920像素 * 1080像素
+	屏幕像素密度: 469ppi
+	
+华为荣耀7手机的屏幕参数：
+	主屏尺寸:     5.2英寸
+	主屏分辨率:   1920像素 * 1080像素
+	屏幕像素密度: 424ppi
+	
+	5.2英寸是手机屏幕对角线的长度
+	1 inch = 25.6 mm
+	
+	像素是分辨率的单位
+	像素是没有实际的物理尺寸的
+	一个像素其实就是一个色彩块
+	
+	像素这个东西，在苹果手机上变小了
+	
+	屏幕像素密度(pixel per inch) PPI 
+	每英寸屏幕所拥有的像素数
+	在一个对角线长度为1英寸的正方形内所拥有的像素数
+	
+	PPI = Math.sqrt(横向像素^2 + 竖向像素^2) / 屏幕的尺寸
+		= Math.sqrt(1920^2 + 1080^2) / 5.2 = 423.6
+	
+	在同一个设备上，它的像素个数是固定的
+	只有不同的设备之间，才有像素大小的区别
+
+window.innerWidth
+documentElement.clientWidth
+vertical scroll bar's visibility will affect values above !!!!
+
+由于不同的设备的分辨率不同，把是viewport.width设置成 device.width 之后，对于不同的设备就会出现viewport的不同，
+所以尽量避免 绝对的 尺寸：如果div.witdh = 500px , img.width = 500px , div.left = 500px 之类的，会让页面出现水平的
+滚动，或者显示在viewport之外
+如果没有通过设定meta设定viewport浏览器会把viewport设定为980px
+
+百分比的响应式：
+	1. 百分比的参照
+		* 参照[父元素]的 [width]
+			- width
+			- left
+			- right
+			- margin-top / margin-bottom ***
+			- margin-left / margin-right 
+			- padding-top / padding-bottom ***
+			- padding-left / padding-right
+
+		* 参照[父元素]的 [height]
+			- height
+			- top
+			- bottom
+
+		* 参照 [子元素]自身的 width/height
+			- border-radius
+			- translate ***
+			- background-size *** 
+
+RWD:
+	1. start small 从小的屏幕开始编写视图，可以让最主要的内容呈现出来，也利于优化性能
+
+设计页面的时候先把页面调到最小的尺寸，然后逐步的增加尺寸，找到你需要的break point。
+break point的确定要根据页面的内容来确定，
+responsive web design is a art rather than a science.
+
+!!!!!
+响应式的设计是为了让页面，在不同大小的设备上都能正常的显示。
+设备打开页面的时候，就确定了他的显示结果。
+如果一个设备可以改变他的大小，那么这不是响应式所处理的。
+
+
