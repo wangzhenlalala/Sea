@@ -1,0 +1,51 @@
+* clientWidth, offsetWidth， scrollWidth, scrollLeft 是HTMLElement实例的属性，每个元素都拥有
+* 每个元素都是可以看成是一个容器，里面都是自己的内容(子元素)
+* 只要自己的子元素的尺寸超出了自己的尺寸(overflow), 自己的scrollLeft,scrollHeight才有意义，否则为0
+************* 以下都只在chrome浏览器中看到的
+* scroll bar的尺寸，是算在元素的content width中的。（boxing-size）
+* chrome 下scroll bar 的宽度为 17px；
+* ---如果元素
+father{
+    box-sizing: content-box;
+    height： 100px;
+    padding: 20px;
+}
+child{
+    box-sizing: content-box;
+    border: 0;
+    padding: 0;
+};
+child.style.heigt = 100 - 17 = 83px的时候，
+可以看成child刚好在竖直方向上填满了father的竖直尺寸。father刚好不出现竖直滚动条
+当child.style.height > 83px的时候，father就会有竖直方向的滚动条。
+
+father.scrollWidth的值：
+    1. 子元素 溢出时 (**无论**是否出现竖向scrollbar)
+       father.scrollWidth = father.paddingLeft + child.offsetWidth
+
+    2. 子元素 不 溢出
+        father.scrollWidth = father.clientWidth
+
+father.scrollLeft
+    1. 子元素 溢出
+        * 无竖向scrollbar
+            father.scrollLeft(Max) = child.offsetWidth - father.(content width) - father.paddingRight
+        * 有竖向scrollbar
+            father.scrollLeft(Max) = child.offsetWidth - father.(content width) - father.paddingRight + scrollBarWidth
+    2. 子元素 不溢出
+        father.scrollLeft = 0
+father.scrollTop
+ 1. 子元素 溢出
+    * 即使没有任何的滚动，father.scrollTop(Min) = child.borderTopWidth + father.borderTopWidth
+ 2. 子元素 不溢出
+    * father.scrollTop = 0
+对于水平滚动，我们可以拖动滚动条，是的子元素的right border的最外侧边，到达，父元素的right border的内侧边（无verticl scroll bar），
+或者是vertical scroll bar的内侧边。
+  
+但是对于竖直滚动, father.clientHeight, father.scrollHeight 真的是非常的诡异 ！！！
+
+
+如果指定了fatehr： overflow: scroll
+及时child没有超过father的空间，father也会出现scrollbar !!!!!!!!!!!
+有无滚动条对于
+father.client
