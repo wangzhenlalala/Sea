@@ -1,0 +1,11 @@
+
+如何导入“C:\mycode\yourmodule.py”中第一的myfunc()函数
+
+import sys
+sys.path.append("C:\\mycode")
+from  yourmodule  import  myfunc
+
+
+OK!!!!!!!!!!!!!!!!!!!
+
+在Windows的cmd 中运行 pip install pillow

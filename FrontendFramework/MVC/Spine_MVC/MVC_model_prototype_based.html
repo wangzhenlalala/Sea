@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content = "text/html;charset=utf-8">
+        <title> </title>
+        <style type="text/css">
+           span{
+            margin-right:10px;
+            display:inline-block;
+            min-width:150px;
+           }
+           li span:nth-child(odd){
+            background:yellow;
+           }
+           li span:nth-child(even){
+            background: lightblue;
+           }
+           .colored{
+            background:lime;
+           }
+        </style>
+        <script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+        <script src="mvc.js"></script>
+        <script type="text/javascript">
+            if(!Object.create)
+                Object.create=function(obj){
+                    function Constructor(){};
+                    Constructor.prototype = obj;
+                    return new Constructor();
+                };
+           
+            window.onload=function(){
+                /**********创建一个控制器*********/
+
+                var mod = new Controler;
+                mod.change_class=function(e){
+                    this.view.toggleClass("colored");
+                };
+
+                mod.load(function(){
+                    this.view = $("div");
+                    this.view.mouseover(this.proxy(this.change_class));
+                    this.view.mouseout(this.proxy(this.change_class));
+                });
+
+                /**********创建一个控制器*********/
+               var family = Model.create();
+               family.attributes=["name","duty"];
+               // var num1 = family.init({name:"wangzhen",duty:"dad"});
+               // var num2 = family.init({name:"fanghua",duty:"mom"});
+               // var num3 = family.init({name:"hechen",duty:"son"});
+               // var num4 = family.init({name:"woruo",duty:"daughter"});
+               // num1.save();
+               // num2.save();
+               // num3.save();
+               // num4.save();
+               // family.saveLocal("myfamily");
+               // alert("done");
+               //alert(localStorage["myfamily"]);
+               family.loadLocal("myfamily");
+               myul = document.createElement("ul");
+               mydiv = document.getElementsByTagName("div")[0];
+               for(var item in family.records){
+                    var ele = family.records[item].attributes();
+                    var myli = document.createElement("li");
+                    for(var i in ele){
+                        myspan = document.createElement("span");
+                        var tt = i + ' : ' + ele[i] ;
+                        $(myspan).html(tt);
+                        myli.appendChild(myspan);
+                    }
+                    myul.appendChild(myli);
+               }
+                mydiv.appendChild(myul);
+            }
+        </script>
+    </head>
+
+    <body>
+      
+            <div style="height:250px;border:solid red 2px">
+                div : i read thses data from localStorage with a Model
+            </div>
+           
+       
+    </body>
+
+
+</html>
+

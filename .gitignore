@@ -87,3 +87,12 @@ lerna-debug.log
 # System Files
 .DS_Store
 Thumbs.db
+
+*.exe
+*.o
+*.swp
+*.~
+
+/__pycache__
+__pycache__/
+*.pyc

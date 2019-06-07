@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- 
+    这是用MVC思想 控制器实现的一个TAB的切换，没有添加  模型 和 视图 的部分。
+    而且使用了jQuery的事件的委托
+ -->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content = "text/html;charset=utf-8">
+        <title>控制器下的tab切换</title>
+        <script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            (function($,exports){
+                var mod={};
+                mod.create = function(includes){
+                    var sub = function(){
+                        this.init.apply(this,arguments);
+                    };
+                    sub.fn = sub.prototype;
+                    sub.fn.init = function(){};
+                    sub.fn.proxy = function(func){
+                        return $.proxy(func,this);
+                    }
+
+                    if(includes) $.extend(sub.fn,includes);
+                    return sub;
+                };
+                exports.Controller = mod;
+            })(jQuery,window);
+
+            window.onload=function(){
+                Tabs = Controller.create({
+                    init:function(selector){
+                        this.view = $(selector);
+                        this.registerAll(); 
+                        this.view.find("ul li:first").css("backgroundColor","yellow");
+                        this.view.find("div:nth-of-type(1)").css("display","block");
+                    },
+
+                    events:{
+                        "on_off":"click li",
+                    },
+
+                    pattern:/^(\w+)\s*(.*)$/,
+
+                    on_off:function(event){
+                        var tabName = $(this).attr("tab_name");
+                        $("#tabs li").css("backgroundColor","lightblue");
+                        $(this).css("backgroundColor","yellow");
+                        $("#tab_holder > div[tab_name]").css("display","none");
+                        $("#tab_holder").find("div[tab_name='"+tabName+"']").css("display","block");
+                    },
+
+                    registerAll:function(){
+                        for(var key in this.events){
+                            var callbackName = key;
+                            var callback = this[callbackName];
+                            var result = this.events[key].match(this.pattern);
+                            var eventName = result[1];
+                            var selector = result[2];
+                            $(selector,this.view).bind(eventName,callback);
+                        }
+                    }
+                });
+                new Tabs("#tab_holder");
+            }
+        </script>
+        <style type="text/css">
+            #tab_holder,ul,li{
+                padding:0;
+                margin:0;
+                list-style-type: none;
+            }
+            #tab_holder{
+                border:solid red 1px;
+                width:300px;
+                height:300px;
+            }
+            #tab_holder div{
+                width:300px;
+                height:280px;
+                background: lime;
+                display:none;
+                text-align: center;
+                line-height:280px;
+                font-size:5em;
+            }
+            ul#tabs{
+                
+                margin:0 15px 0 15px;
+                height:20px;
+            }
+            ul#tabs li{
+                width:90px;
+                font-size: 16px;
+                line-height:20px;
+                text-align: center;
+                display:inline-block;
+                background: lightblue;
+                cursor:pointer;
+                float:left;
+            }
+        </style>
+    </head>
+
+    <body>
+       <div id="tab_holder">
+            <ul id="tabs">
+                <li tab_name="first">first</li>
+                <li tab_name="second">second</li>
+                <li tab_name="third">third</li>
+            </ul>
+            <div tab_name="first" >first</div>
+            <div tab_name="second">second</div>
+            <div tab_name="third">third</div>
+       </div>
+    </body>
+
+
+</html>

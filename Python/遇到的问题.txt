@@ -1,0 +1,4 @@
+1.如何在py中import指定路径path下的文件file.py
+	---import sys
+	---sys.path.append(r"path")
+	---import file

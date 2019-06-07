@@ -1,0 +1,65 @@
+1. Const (where to be stored )
+	The qualifier const can be applied to the declaration of any variable to specify that its value will not be changed
+	( Which depends upon where const variables are stored, we may change value of const variable by using pointer ).
+	1. const type Identifier
+		const int age;
+		const float price;
+	** const and pointer
+		1. int const* pointer; or const int * pointer;
+			pointer points to a int variable that can not be changed !!
+		2. int * const pointer; 
+			pointer can't be change via pointer !!
+		3. int const * const pointer;
+			both pointer or variable pointer points to  can not be changed !!
+		---------
+		void func(int const* from, const int* to); //can not change contents pointed by from and to in the func body;
+
+2. pointer vs function 
+	1. indirection
+	2. return type
+	3. deferecne (load operation)
+	4. store operation
+
+	int* (*fp)(int, int) : a pointer to a function 
+	int* fp(int, int) : a function return a value of int *
+
+3. sizeof 
+	1. it is an operator not a function
+
+	sizeof(array): give the total bytes that a array occupies.
+	sizeof(array) / sizeof(array[0]) == array element counts;
+
+5. type
+	1. determines a set of values an object can have 
+	2. and what operations can be performed on it !!!
+
+6. integer arithmatic
+	
+	*. for % (module) operation 
+		1. can not be applied to float type !!
+		2. the sign of the result is machine-dependent for negative operands. (overflow and undeflow)!
+	*. for / (divide) operation 
+		1. fractional part will be truncated !!
+		2. direction of truncation is machine-dependent
+7. sorting algorithm
+	1. A soring algorithm takes an array as input and outputs a permutation of that array
+		There is only one permutation of a list that is sorted, but n! possible lists, 
+		so the chances that the input is already sorted is very unlikely, 
+		and on average, the list will not be very sorted.
+	2. 
+		* comparsion sort: lower bound n*log(n) (no faster than n*log(n) )
+			- Merge Sort
+			- Insertion Sort
+			- Bubble Sort 
+			- Quick Sort 
+			- Heap Sort
+			
+		* integer sort
+	3. 
+		* time complexity
+		* space complexity
+	4. 
+		stability
+	5.
+		* sorted partition
+		* unsorted partition
