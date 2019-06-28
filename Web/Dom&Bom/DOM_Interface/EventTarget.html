@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dom Interface - EventTarget</title>
+</head>
+<body>
+   <h1>Dom EventTarget</h1> 
+   <button id="emit_ok">emit ok</button>
+   <button id="emit_no">emit no</button>
+   <script>
+       let btnOk = document.querySelector("#emit_ok");
+       let btnNo = document.querySelector("#emit_no");
+       let et = new EventTarget();
+       btnOk.addEventListener('click', fireET_OK);
+       btnNo.addEventListener('click', fireET_NO);
+       et.addEventListener('ok', function(){console.log('you said OK')});
+       et.addEventListener('no', function(){console.log('you said NO')})
+       function fireET_OK(){
+            var ev = new Event("ok", {bubbles:true})
+            var event = new CustomEvent("ok", {"detail":{"hazcheeseburger":true}})
+            et.dispatchEvent(ev);
+       }
+       function fireET_NO(){
+            var ev = new Event("no", {bubbles:true})
+            et.dispatchEvent(ev);
+       }
+   </script>
+</body>
+</html>

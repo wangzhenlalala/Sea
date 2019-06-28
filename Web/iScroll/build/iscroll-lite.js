@@ -5,7 +5,7 @@ var rAF = window.requestAnimationFrame	||
 	window.mozRequestAnimationFrame		||
 	window.oRequestAnimationFrame		||
 	window.msRequestAnimationFrame		||
-	function (callback) { window.setTimeout(callback, 1000 / 60); };
+	function (callback) { window.setTimeout(callback, 1000 / 60); }; //每个帧的开始时刻
 
 var utils = (function () {
 	var me = {};
@@ -26,8 +26,8 @@ var utils = (function () {
 	})();
 
 	function _prefixStyle (style) {
-		if ( _vendor === false ) return false;
-		if ( _vendor === '' ) return style;
+		if ( _vendor === false ) return false; //不支持 改属性
+		if ( _vendor === '' ) return style; //原生支持 不用前缀
 		return _vendor + style.charAt(0).toUpperCase() + style.substr(1);
 	}
 
@@ -83,7 +83,7 @@ var utils = (function () {
 	var _transform = _prefixStyle('transform');
 
 	me.extend(me, {
-		hasTransform: _transform !== false,
+		hasTransform: _transform !== false, 
 		hasPerspective: _prefixStyle('perspective') in _elementStyle,
 		hasTouch: 'ontouchstart' in window,
 		hasPointer: !!(window.PointerEvent || window.MSPointerEvent), // IE10 is prefixed
@@ -129,7 +129,7 @@ var utils = (function () {
 	});
 
 	me.hasClass = function (e, c) {
-		var re = new RegExp("(^|\\s)" + c + "(\\s|$)");
+		var re = new RegExp("(^|\\s)" + c + "(\\s|$)"); // (^|\\s)light(\\s|$)
 		return re.test(e.className);
 	};
 
@@ -153,6 +153,7 @@ var utils = (function () {
 	};
 
 	me.offset = function (el) {
+        //不用考虑兼容性的吗， offsetLeft在不同浏览器下的度量方式？？
 		var left = -el.offsetLeft,
 			top = -el.offsetTop;
 
@@ -320,8 +321,7 @@ function IScroll (el, options) {
 	this.scrollerStyle = this.scroller.style;		// cache style for better performance
 
 	this.options = {
-
-// INSERT POINT: OPTIONS
+        // INSERT POINT: OPTIONS
 		disablePointer : !utils.hasPointer,
 		disableTouch : utils.hasPointer || !utils.hasTouch,
 		disableMouse : utils.hasPointer || utils.hasTouch,

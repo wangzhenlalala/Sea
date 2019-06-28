@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+	<a href="Default.html">Default.html</a>
+	<head>
+	<meta charset="utf-8"/>
+	<title></title>
+    <script type="text/javascript">
+        var localStream = null;
+		if (navigator.getUserMedia) {
+            navigator.getUserMedia(
+			// constraints
+            {
+                video: true,
+                audio: true
+            },
+			// successCallback
+			function (localMediaStream) {
+				var video = document.querySelector('video');
+                // video.src = window.URL.createObjectURL(localMediaStream);
+                video.srcObject = localMediaStream;
+				// do whatever you want with the video
+                localStream = localMediaStream;
+                video.play();
+            },
+			// errorCallback
+			function (err) {
+                console.log("The following error occured: " + err);
+            });
+        } else {
+            alert("getUserMedia not supported by your web browser or Operating system version");
+        }
+	</script>
+	</head>
+	<body>
+		<h2>Media Capture and Streaming</h2>
+		<p>Let's stream our video!</p>
+		<video autoplay></video>
+	</body>
+</html>
