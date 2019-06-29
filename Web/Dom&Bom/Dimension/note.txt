@@ -5,6 +5,17 @@
 * scroll bar的尺寸，是算在元素的content width中的。（boxing-size）
 * chrome 下scroll bar 的宽度为 17px；
 * ---如果元素
+
+
+Element.
+    clientWidth: 
+        it's the inner width of an element in pixels. 
+        It includes padding but excludes borders, margins, and vertical scrollbars (if present).
+    offsetWidth:
+        offsetWidth is a measurement in pixels of the element's CSS width, 
+        including any borders, padding, and vertical scrollbars (if rendered). 
+        It does not include the width of pseudo-elements such as ::before or ::after.
+        
 father{
     box-sizing: content-box;
     height： 100px;
