@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>font size</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <style>
+        .parent{
+            font-size: 16px;
+        }
+        .child{
+            font-size: 20px;
+            width: 2em; /* 相对于元素自身的font-size的大小不是父元素的大小； */
+            /* 如果元素没有指定font-size，会从父元素哪里继承 */
+            /* 
+            font choice, 
+            sizing, 
+            spacing, and 
+            text alignment.
+             */
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">child</div>
+    </div>
+</body>
+</html>
