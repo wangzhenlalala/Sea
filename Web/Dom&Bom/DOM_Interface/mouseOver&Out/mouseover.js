@@ -25,6 +25,16 @@ function Tooltip(selector){
     this.state = 'hide';
 }
 
+/*
+    如果这样设计Tooltip的话，每次为一个element添加tooltip都要保留一个Tooltip的实例的引用，
+    以便在以后对该tooltip进行hide, dispose
+    但是
+        1. show和hide/dispose的地方可能不是在一个地方，可能在两个不同的函数里面；因此 Tooltip的实力就要成为一个全局的变量
+        2. 如果在不需要tooltip的时候，如果不释放Tooltip实例的引用，会memory leak
+    当是每个tooltip都必须保留自己的状态，
+        如过把这些状态放在 element里面，把tooltip做成是一个函数，接受一个element参数，那么就不需要有Tooltip的实例了。
+        tooltip函数就是一个纯函数。。。
+*/
 Tooltip.uid = 1;
 Tooltip.template = `
     <div class="tooltip" role="tooltip">
@@ -51,6 +61,7 @@ Tooltip.prototype.show = function(){
     document.body.appendChild(ttEle);
     return this;  
 }
+
 Tooltip.prototype.hide = function(){
     this.state = 'hide';
     let ttEle = document.querySelector(`[data-tooltip-id="${this.uid}"]`);
