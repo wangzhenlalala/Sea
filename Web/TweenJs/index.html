@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>play tween js</title>
+    <style>
+        html,
+        body,
+        ul{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .dotter{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 20px;
+            background: red;
+        }
+        ul{
+            list-style: none;
+        }
+        .controls{
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            border-left: 2px solid coral;
+            background: wheat;
+        }
+        ul li{
+            cursor: pointer;
+            margin: 2vh 10px;
+            padding: 1vh;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .easing-type li{
+            background: coral;
+        }
+        .easing-item li{
+            background: pink;
+        }
+        
+        .selected-type{
+            box-shadow: 0px 0px 5px 5px #888888;
+        }
+        .selected-item{
+            box-shadow: 0px 0px 5px 5px plum;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="dotter"></div>
+    <aside class="controls">
+        <ul class="easing-type">
+        </ul>
+        <ul class="easing-item">
+        </ul>
+    </aside>
+   <script src="Tween.js"></script> 
+   <script src="play.js"></script>
+</body>
+</html>
