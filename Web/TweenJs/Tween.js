@@ -9,7 +9,7 @@
 
 
 var _Group = function () {
-	this._tweens = {};
+	this._tweens = {}; //用一个对象，而不是一个数组；当从多次添加同一个元素时， 自动覆盖了，也就去重了
 	this._tweensAddedDuringUpdate = {};
 };
 
@@ -43,8 +43,11 @@ _Group.prototype = {
 	},
 
 	update: function (time, preserve) {
-
-		var tweenIds = Object.keys(this._tweens);
+        /*
+        首先生成 this._tweens 的<< 视图 >>， 或者叫 << 快照 >> snapshot
+        根据 视图 来到 this._tweens 当中去获取 需要的对象
+        */
+		var tweenIds = Object.keys(this._tweens); 
 
 		if (tweenIds.length === 0) {
 			return false;
@@ -62,7 +65,7 @@ _Group.prototype = {
 			for (var i = 0; i < tweenIds.length; i++) {
 
 				var tween = this._tweens[tweenIds[i]];
-
+                //time在while循环之前就确定了,所以一个group下面的所有的tween都是接受同样的时间基准，向前的步调是一致的 sync 
 				if (tween && tween.update(time) === false) {
 					tween._isPlaying = false;
 
@@ -131,7 +134,7 @@ TWEEN.Tween = function (object, group) {
 	this._isPlaying = false;
 	this._reversed = false;
 	this._delayTime = 0;
-	this._startTime = null;
+	this._startTime = null; // DaDa 
 	this._easingFunction = TWEEN.Easing.Linear.None;
 	this._interpolationFunction = TWEEN.Interpolation.Linear;
 	this._chainedTweens = [];
@@ -141,9 +144,8 @@ TWEEN.Tween = function (object, group) {
 	this._onRepeatCallback = null;
 	this._onCompleteCallback = null;
 	this._onStopCallback = null;
-	this._group = group || TWEEN;
+	this._group = group || TWEEN; //保存一份对自己 [容器 | 父亲] 的引用
 	this._id = TWEEN.nextId();
-
 };
 
 TWEEN.Tween.prototype = {
@@ -157,7 +159,7 @@ TWEEN.Tween.prototype = {
 
 	to: function (properties, duration) {
 
-		this._valuesEnd = Object.create(properties);
+		this._valuesEnd = Object.create(properties); // 这不也是proxy 一个数据对象的一种方法吗！和Object.defineProperty() 相比。
 
 		if (duration !== undefined) {
 			this._duration = duration;
@@ -183,7 +185,7 @@ TWEEN.Tween.prototype = {
 		this._startTime = 
 			time !== undefined 
 				? 
-					typeof time === 'string' 
+					typeof time === 'string' //相对的时间增量 "+100"
 						? TWEEN.now() + parseFloat(time) 
 						: time 
 				: 
