@@ -42,7 +42,7 @@ _Group.prototype = {
 
 	},
 
-	update: function (time, preserve) {
+	update: function (time, preserve) { //什么时候会传来 preserve: false
         /*
         首先生成 this._tweens 的<< 视图 >>， 或者叫 << 快照 >> snapshot
         根据 视图 来到 this._tweens 当中去获取 需要的对象
@@ -190,7 +190,7 @@ TWEEN.Tween.prototype = {
 						: time 
 				: 
 					TWEEN.now();
-		this._startTime += this._delayTime;
+		this._startTime += this._delayTime; //dalay
 
 		for (var property in this._valuesEnd) {
 
@@ -212,8 +212,11 @@ TWEEN.Tween.prototype = {
 				continue;
 			}
 
-			// Save the starting value.
-			this._valuesStart[property] = this._object[property];
+            // Save the starting value.
+            /*
+            每次start的时候，重新设置初始的状态，是从_object中来设置的。中间的状态就会被设置成一个新的起始状态 [那duration是不是也重新开始算呢？？]
+            */
+			this._valuesStart[property] = this._object[property]; 
 
 			if ((this._valuesStart[property] instanceof Array) === false) {
 				this._valuesStart[property] *= 1.0; // Ensures we're using numbers, not strings
@@ -232,7 +235,9 @@ TWEEN.Tween.prototype = {
 		if (!this._isPlaying) {
 			return this;
 		}
-
+        /**
+         * 一旦停止，就不能在被 [调度] 了, 从group中移除了
+         */
 		this._group.remove(this); //## attention hold a reference to its group
 		this._isPlaying = false;
 
@@ -240,6 +245,7 @@ TWEEN.Tween.prototype = {
 			this._onStopCallback(this._object);
 		}
 
+        //如果duration没有走完，_object就停留在当前的状态
 		this.stopChainedTweens();
 		return this;
 
@@ -260,6 +266,8 @@ TWEEN.Tween.prototype = {
 
 	},
 
+    //还可以改变当前tween的group吗！！！！
+    //当时如果之前的groupA已经开始调度了，再去变成groupB,groupB如何知道，当前的tween被加入到自己的调度中了呢
 	group: function (group) {
 		this._group = group;
 		return this;
@@ -349,14 +357,14 @@ TWEEN.Tween.prototype = {
 
 	},
 
-	update: function (time) { //## time有什么作用
+	update: function (time) { //## time有什么作用 ；Group传过来的同步时间
 		// tween是可以支持dynamic to的，
 		var property;
 		var elapsed;
 		var value;
 
 		if (time < this._startTime) {
-			return true; //## true 代表什么
+			return true; //## true 代表什么；下次还可以继续调度我
 		}
 
 		if (this._onStartCallbackFired === false) {
@@ -367,25 +375,28 @@ TWEEN.Tween.prototype = {
 
 			this._onStartCallbackFired = true;
 		}
-
-		elapsed = (time - this._startTime) / this._duration;
+        /* 
+        如果在上次的duration没有完成中间，改变了_valuesEnd，.to().start() 那么就重新设置 initial state -> end state了
+        上次的就被截胡了
+        */
+		elapsed = (time - this._startTime) / this._duration; //百分比 [0,1] 
 		elapsed = (this._duration === 0 || elapsed > 1) ? 1 : elapsed;
 
-		value = this._easingFunction(elapsed);
+		value = this._easingFunction(elapsed); //由easing function 接受一个当前progress的百分比，来给出当前的_object属性变化 的百分比
 
-		for (property in this._valuesEnd) {
+		for (property in this._valuesEnd) { //到_valuesEnd中去取；如果中途通过to(), 改变了_valuesEnd，那么上次有，这次没有的属性就不再改变了。。。 一直留在上次的状态了
 
 			// Don't update properties that do not exist in the source object
 			if (this._valuesStart[property] === undefined) {
 				continue;
 			}
 
-			var start = this._valuesStart[property] || 0;
+			var start = this._valuesStart[property] || 0; //_valueStart在整个duration中间，都不更新，只在在start()中被初始化
 			var end = this._valuesEnd[property];
 
 			if (end instanceof Array) {
 
-				this._object[property] = this._interpolationFunction(end, value);
+				this._object[property] = this._interpolationFunction(end, value); //更新_object的属性值
 
 			} else {
 
