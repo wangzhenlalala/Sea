@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <style>
+            html,
+            body{
+                padding: 0;
+                margin: 0;
+            }
+            ul{
+                padding: 0;
+                margin: 0;
+                list-style-type: none;
+            }
+            .container{
+                width: 100%;
+                height: 600px;
+                overflow: hidden;
+                position: relative;
+                
+            }
+
+            .list-container{
+               width: 100%;
+               height: 100%;
+               overflow: scroll;
+               position: absolute;
+               left: 0;
+               top: 0;
+               transform: translate(0, 0);
+               transition: transform 0.3s ease-in;
+               will-change: transform;
+               display: block;
+            }
+            .container.detail-mode .list-container{
+                transform: translate(-100%, 0);
+                transition: transform 0.5s ease-out;
+            }
+            .list-item{
+                width: 100%;
+                line-height: 1.5;
+                text-align: center;
+            }
+            :nth
+            .list-item:nth-child(2n){
+                background: lime;
+            }
+            .list-item:nth-child(2n+1){
+                background: pink;
+            }
+            .detail-view{
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translate(100%, 0);
+                transition: transform 0.3s ease-in;
+                will-change: transform;
+            }
+            .container.detail-mode .detail-view{
+                transform: translate(0, 0);
+                transition: transform 0.5s ease-out;
+            }
+            .back{
+                margin: 2rem auto;
+                font-size: 2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="list-container">
+                <ul>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                    <li class="list-item">click me</li>
+                </ul>
+            </div>
+            <div class="detail-view">
+                <button class="back">back</button>
+            </div>
+        </div>
+        <script>
+            let container = document.querySelector(".container");
+            let listContainer = document.querySelector('.list-container');
+            let detailView = document.querySelector('.detail-view');
+            let btn = document.querySelector('.back');
+            listContainer.addEventListener('click', function(){
+                container.classList.add('detail-mode');
+            })
+            btn.addEventListener('click', function(){
+                container.classList.remove('detail-mode');
+            })
+        </script>
+    </body>
+</html>

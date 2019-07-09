@@ -1,10 +1,11 @@
 ## file access
-1. FILE struct [file pointer]
+
+# FILE struct [file pointer] (Stream)
     1. buffer
     2. current char position
     3. mode read/write
     4. error/eof
-#Stream
+
 ## stream can be redirected
 > a binary stream && a text stream.
 
@@ -37,12 +38,12 @@ return EOF
 2. int fprintf(FILE *fp, char *format, ...)
 
 ## line read/write
-char *fgets(char* buffer, int maxChars, FILE* fp)
+1. char *fgets(char* buffer, int maxChars, FILE* fp)
     1. return NULL for error/eof
     2. read AT MOST maxChars - 1 characters and padding with '\0' and return
     3. including the new-line characters  and return
 
-int fputs(char* line, FILE *fp)
+2. int fputs(char* line, FILE *fp)
 
 ## Direct input/output: [Block Input/Output]
 1. size_t fread(void *ptr, size_t size, size_t count, FILE *fp)
