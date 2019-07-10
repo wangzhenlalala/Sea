@@ -222,7 +222,7 @@ TWEEN.Tween.prototype = {
 				this._valuesStart[property] *= 1.0; // Ensures we're using numbers, not strings
 			}
 
-			this._valuesStartRepeat[property] = this._valuesStart[property] || 0;
+			this._valuesStartRepeat[property] = this._valuesStart[property] || 0; //这个是什么作用？？
 
 		}
 
@@ -253,7 +253,7 @@ TWEEN.Tween.prototype = {
 
 	end: function () {
 
-		this.update(Infinity); //## 什么操作
+		this.update(Infinity); //## 将_object设置未最终的状态
 		return this;
 
 	},
@@ -380,7 +380,7 @@ TWEEN.Tween.prototype = {
         上次的就被截胡了
         */
 		elapsed = (time - this._startTime) / this._duration; //百分比 [0,1] 
-		elapsed = (this._duration === 0 || elapsed > 1) ? 1 : elapsed;
+		elapsed = (this._duration === 0 || elapsed > 1) ? 1 : elapsed;  //如果time 是 Infinity 那么这里的elapsed，应该是1
 
 		value = this._easingFunction(elapsed); //由easing function 接受一个当前progress的百分比，来给出当前的_object属性变化 的百分比
 
@@ -391,7 +391,7 @@ TWEEN.Tween.prototype = {
 				continue;
 			}
 
-			var start = this._valuesStart[property] || 0; //_valueStart在整个duration中间，都不更新，只在在start()中被初始化
+			var start = this._valuesStart[property] || 0; //_valueStart在整个duration中间，都不更新，只在在start()/和需要repeat的开始点出 被初始化
 			var end = this._valuesEnd[property];
 
 			if (end instanceof Array) {
@@ -400,13 +400,15 @@ TWEEN.Tween.prototype = {
 
 			} else {
 
-				// Parses relative end values with start as base (e.g.: +10, -3)
+                // Parses relative end values with start as base (e.g.: +10, -3)
+                //"+100" 的意思是 终值是 start+100, 
+                //而不是每次更新都加100的意思啊
 				if (typeof (end) === 'string') {
 
 					if (end.charAt(0) === '+' || end.charAt(0) === '-') {
 						end = start + parseFloat(end);
 					} else {
-						end = parseFloat(end);
+						end = parseFloat(end); //以字符串的形式给出终值 "500"
 					}
 				}
 
@@ -418,11 +420,11 @@ TWEEN.Tween.prototype = {
 			}
 
 		}
-
+        //更新完成
 		if (this._onUpdateCallback !== null) {
-			this._onUpdateCallback(this._object, elapsed);
+			this._onUpdateCallback(this._object, elapsed); //并没有_onUpdateCallback.bind(this), 所以在_onUpdateCallback里面this不是指向当前的_object
 		}
-
+        //更新完成之后，查看是否已经结束了一个round，是否需要继续下一个round
 		if (elapsed === 1) {
 
 			if (this._repeat > 0) {
@@ -431,8 +433,10 @@ TWEEN.Tween.prototype = {
 					this._repeat--;
 				}
 
-				// Reassign starting values, restart by making startTime = now
-				for (property in this._valuesStartRepeat) {
+                // Reassign starting values, restart by making startTime = now
+                //为什么要通过_valuesStartRepeat对象来中转？？？？？？？？？？？？？？？？？？？？？？
+                //_valuesStartRepeat 始终和 _valuesStart 一样的啊？？？？？？
+				for (property in this._valuesStartRepeat) { 
 
 					if (typeof (this._valuesEnd[property]) === 'string') {
 						this._valuesStartRepeat[property] = this._valuesStartRepeat[property] + parseFloat(this._valuesEnd[property]);
@@ -466,7 +470,7 @@ TWEEN.Tween.prototype = {
 				return true;
 
 			} else {
-
+                //不需要再repeat了， 所有的repeat执行完成后，才算是本个tween的结束
 				if (this._onCompleteCallback !== null) {
 
 					this._onCompleteCallback(this._object);
