@@ -123,10 +123,10 @@ else {
 
 
 TWEEN.Tween = function (object, group) {
-	this._object = object;
-	this._valuesStart = {};
-	this._valuesEnd = {};
-	this._valuesStartRepeat = {};
+	this._object = object; // object只能设置一次， 
+	this._valuesStart = {}; // 只是object的一个子集
+	this._valuesEnd = {}; // 只是object的一个子集
+	this._valuesStartRepeat = {}; // 始终和_valuesEnd一样，你存在的意义是什么？？
 	this._duration = 1000;
 	this._repeat = 0;
 	this._repeatDelayTime = undefined;
@@ -253,7 +253,7 @@ TWEEN.Tween.prototype = {
 
 	end: function () {
 
-		this.update(Infinity); //## 将_object设置未最终的状态
+		this.update(Infinity); //## 将_object设置成最终的状态
 		return this;
 
 	},
@@ -370,6 +370,7 @@ TWEEN.Tween.prototype = {
 		if (this._onStartCallbackFired === false) {
 
 			if (this._onStartCallback !== null) {
+                // start 的通知
 				this._onStartCallback(this._object);
 			}
 
@@ -421,8 +422,9 @@ TWEEN.Tween.prototype = {
 
 		}
         //更新完成
+        // update 的通知
 		if (this._onUpdateCallback !== null) {
-			this._onUpdateCallback(this._object, elapsed); //并没有_onUpdateCallback.bind(this), 所以在_onUpdateCallback里面this不是指向当前的_object
+			this._onUpdateCallback(this._object, elapsed); //并没有_onUpdateCallback.call(this), 所以在_onUpdateCallback里面this不是指向当前的_object
 		}
         //更新完成之后，查看是否已经结束了一个round，是否需要继续下一个round
 		if (elapsed === 1) {
@@ -463,6 +465,7 @@ TWEEN.Tween.prototype = {
 					this._startTime = time + this._delayTime;
 				}
 
+                // repeat 的通知
 				if (this._onRepeatCallback !== null) {
 					this._onRepeatCallback(this._object);
 				}
@@ -472,7 +475,7 @@ TWEEN.Tween.prototype = {
 			} else {
                 //不需要再repeat了， 所有的repeat执行完成后，才算是本个tween的结束
 				if (this._onCompleteCallback !== null) {
-
+                    // complete 的通知
 					this._onCompleteCallback(this._object);
 				}
 
@@ -482,7 +485,7 @@ TWEEN.Tween.prototype = {
 					this._chainedTweens[i].start(this._startTime + this._duration);
 				}
 
-				return false;
+				return false; // 任务完成， 别再找我了
 
 			}
 
