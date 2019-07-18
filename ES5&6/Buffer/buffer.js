@@ -6,6 +6,7 @@
 5. parseInt(number, 进制)
 6. DOMString: is UTF-16
 7. URL.createObjectURL(blob)
+8. TypedArray
 **/
 
 // browser will show ‘王镇’
