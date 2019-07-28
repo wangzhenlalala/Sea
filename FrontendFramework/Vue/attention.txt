@@ -1,0 +1,28 @@
+*. nvm install 不要 no-install
+*. nvm install 10, 会安装node 10.0,npm 5.6,但是 npm5.6 不支持 node10
+*. nvm install 10.16.0 会带 npm6.9.0
+*. npm install @vue/cli@3.9.3 --registry http://registry.npm.taobao.org
+如果不自定cli的版本，会安装@lastest ，但是在淘宝镜像里面找不到
+* vue create project的时候，window7,cmd， gitbash，都会出错， 在vscode的terminal中去可以正常工作
+*. form 元素的  状态和状态改变的事件 
+    - text,textarea -> value, input
+    - checkbox, radio -> checked, change
+    - select  -> value of select, change
+* babel transpile
+    - syntax transforms {...obj} () => {} *transpiled*
+    - ability Array.isArray() 可能需要重写Array.prototype [polyfills] *polyfilled*
+* 在public里面的文件，默认会被拷贝到dist下面去
+    Any static assets placed in the public folder will simply be copied and not go through webpack. 
+    You need to reference them using absolute paths
+    data () {
+        return {
+            publicPath: process.env.BASE_URL // by definePlugin
+        }
+    }
+* webpack只处理 js import, template/html, css的相对引用，不处理绝对路径的引用 
+* MODE AND Environment variable
+    .env
+    .env.local
+    .env.mode
+    VAR1=i am good! // available by webpack plugin and 
+    VUE_APP_LOVE=this is true love! // accessed by client mode via webpack.definePlugin

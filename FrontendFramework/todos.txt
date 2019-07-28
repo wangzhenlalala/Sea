@@ -1,0 +1,4 @@
+* 配置vue/cli把css提取出来到单独的文件
+    + production 下自动的把css抽出来
+    - vue inspect --mode production
+* vue.config.js(和package.json同级)

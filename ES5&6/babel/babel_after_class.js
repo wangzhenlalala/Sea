@@ -4,7 +4,7 @@ class Person {
     }
     say(){
     }
-    specis  = 'human'
+    specis  = 'human' // no let , var , const just name
     static eat(){}
     static alter = '333'
 }
