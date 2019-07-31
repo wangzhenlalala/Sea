@@ -1,0 +1,9 @@
+目的：
+    * 想知道
+        - @babel/polyfill 和 
+        - @babel/transform-runtime-plugin @babel/runtime
+      的区别
+    * polyfill是如何修改 global的
+    * transform又是如何避免 修改global， 又能实现功能的
+
++ 
