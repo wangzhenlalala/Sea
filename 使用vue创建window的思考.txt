@@ -1,0 +1,52 @@
+1. vue是一个框架，定义了逻辑流，控制流，和一个使用这些功能的 contract 契约
+2. options参数，就是contract: data，template, watcher...
+3. vue(options)
+4. vue的单文件组件
+	* template: el || render
+	* script: name, mixins, components, data, prop, methods, computed, watch, mounted, update ...
+	* style
+	??? 最后得到的是一个 options contract,然后交给vue来处理
+
+懒加载 (Vue && Webpack)
+	- 什么东西懒加载？？？ 什么样的个体 ？？ 变量， 函数， 组件， 文件 ？？？？
+
+* Template 使用data，来呈现自己
+* Data 状态，决定了模板的样子
+
+* Expression vs Value
+	Evaluate( Expression ) => Value
+* vue是如何把data里面的属性代理到 vm 实例上的 ???
+* vue是如何缓存computed属性的value的 ????
+* 当一个vm实例/组件 被destroyed的时候，vue做了哪些工作 ????
+
+* Vue是一个类 new Vue(options)是实例化一个vue实例 ???
+	Vue.components(component-name, options) 
+	是不是就是创建了一个Vue的子类 component-name ???
+
+	<component-name></component-name>
+	是不是就创建了一个 component-name 的实例 ???
+	// Components are reusable Vue instances with a name ！！！
+
+* 组件的注册
+	To use these components in templates, they must be registered so that Vue knows about them. 
+	There are two types of component registration: global and local.
+	Globally registered components can be used in the template of any root Vue instance (new Vue) 
+	[[ Root Vue instance ]] vue的根实例,根组件
+
+* 如果一个实例的data中有一个属性是好几层的对象，vue会深度对他进行 observe 吗？
+	每次该属性改变的时候，都会重新 深度 observe吗
+
+* 访问一个 reactive属性，就是声明了对该属性的依赖， 改依赖被 reactive属性 收集起来
+
+
+* Component VS DataObj VS Template
+	Component has a DataObj
+	Component has a Template
+	Component 类 是 DataObj和 Template的组合
+
+	Component 集合
+	DataObj 集合
+	Template 集合
+
+	ComponentSet = DataObjSet X Template (笛卡尔积)
+	Component = (DataObj, Template) 的 binary tuple 二元组

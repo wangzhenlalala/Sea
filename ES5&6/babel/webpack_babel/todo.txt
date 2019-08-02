@@ -6,4 +6,4 @@
     * polyfill是如何修改 global的
     * transform又是如何避免 修改global， 又能实现功能的
 
-+ 
++ you can do without polluting the global scope altogether by using the [transform runtime] plugin instead of [@babel/polyfill].
