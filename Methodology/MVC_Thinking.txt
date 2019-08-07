@@ -2,3 +2,20 @@ modal 的更新会触发 view的更新，
 	modal和view的 ***粒度*** 的确定
 	modal和view的绑定 （数据和模板的绑定)
 	就需要好好设计
+
+
+![相关的链接，可以看一下](https://www.javaworld.com/article/2077258/observer-and-observable.html)	
+## Modal
+> The model is the object that represents the data in the program. It manages the data and conducts all transformations on that data. 
+The model has no specific knowledge of either its controllers or its views -- it contains no internal references to either. 
+Rather, the system itself takes on the responsibility of maintaining links between the model and its views and notifying the views 
+when the model changes.
+
+## View
+> The view is the object that manages the visual display of the data represented by the model. It produces the visual representation of 
+the model object and displays the data to the user. It interacts with the model via a reference to the model object itself.
+
+## Controller
+> The controller is the object that provides the means for user interaction with the data represented by the model. 
+It provides the means by which changes are made, either to the information in the model or to the appearance of the view. 
+It interacts with the model via a reference to the model object itself.

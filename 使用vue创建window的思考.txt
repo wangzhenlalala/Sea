@@ -50,3 +50,69 @@
 
 	ComponentSet = DataObjSet X Template (笛卡尔积)
 	Component = (DataObj, Template) 的 binary tuple 二元组
+
+* Component 可以是自给自足的
+* ComponentA(DataObjA, TemplateA)
+				|
+				|  可以通过props来把DataObjA中的响应式属性传给ComponentB，使得ComponentB形成对改属性的依赖
+				!
+* ComponentB(DAtaObjB, TemplateB)
+
+* Store Vuex的状态管理器，可以看作一个DataObj的集合
+
+* 每个Vue实例都实现了 subscribe/dispatch 订阅/发布 接口
+	- vm.$emit
+	- vm.$on
+
+* import CompA from 'xx.vue'
+* {
+	components: {
+		'com-custom': CompA //options object
+	}
+  } 
+
+ * $options 
+ * vm.$watch(expOrFn, callback, options);
+
+ * Models are just plain JavaScript objects, When you modify them, the view updates.
+
+ * dependency tracking 
+ * 什么是依赖？ 谁才是依赖？ 谁依赖谁？ 
+ * Modal是数据源，他们发生变化，他们的变化需要被别人知道。 别人依赖于他们的变化。 
+ * 所以 watcher depends on data
+ * watcher 依赖于 数据； 数据是watcher的依赖
+ * watcher {
+ 	has deps
+ }
+
+ * Every component instance has a corresponding watcher instance, 
+ * which records any properties “touched” during the component’s render as dependencies. 
+ * Later on when a dependency’s setter is triggered, 
+ * it notifies the watcher, which in turn causes the component to re-render.
+
+
+
+ * [ Event loop and requestAnimaionFrame ] 没有任何关系，，
+ * 仅仅都可以作为 实现异步操作的 方式 ！！！！！！
+
+
+ * In order to wait until Vue.js has finished updating the DOM after a data change, 
+ * you can use Vue.nextTick(callback) immediately after the data is changed. 
+ * The callback will be called after the DOM has been updated.  
+
+ * $nextTick() returns a promise
+
+
+```
+	Observer -- any object that wishes to be notified when the state of another object changes
+	Observable -- any object whose state may be of interest, and in whom another object may register an interest
+```
+
+Modal(observable) <---> watcher <---> View(observer)
+								<---> 任何想监听Modal变化的对象
+View作为一个整体，依赖于很多的Modal属性，由watcher来统一的管理View的依赖
+任何想监听Modal变化的对象，都可以通过watcher来声明对很多个Modal属性的依赖
+从而可以减少Modal的subscriber的逻辑
+还可以通过watcher来对重复的依赖/不再需要的依赖进行过滤
+
+* multiple, synchronized presentations of the same data.
