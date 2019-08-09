@@ -116,3 +116,7 @@ View作为一个整体，依赖于很多的Modal属性，由watcher来统一的�
 还可以通过watcher来对重复的依赖/不再需要的依赖进行过滤
 
 * multiple, synchronized presentations of the same data.
+
+
+* Html attributes
+* Dom properties
