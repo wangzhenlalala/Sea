@@ -34,8 +34,14 @@
     2. The second part of the process involves taking all the style rules from the matching selectors and figuring out what final styles the element has.
 ## Reduce the number of elements being styled
 	
+# Reason
+[什么时候会强制relayout,google链接](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/)
+> The problem with this code is that, in each animation frame, 
+it changes the style for each square, and then queries the position of each square on the page. 
+Because the styles changed, the browser doesn't know if each square's position changed, 
+so it has to re-layout the square in order to compute its position. 	
 	
-	
+![](./images/reflow.png)
 	
 	
 	
