@@ -41,6 +41,7 @@
 
 <https://googlechrome.github.io/devtools-samples/jank/>
 
+<https://calendar.perfplanet.com/2013/the-runtime-performance-checklist>
 
 > The problem with this code is that, in each animation frame, 
 it changes the style for each square, and then queries the position of each square on the page. 
@@ -67,3 +68,11 @@ so it has to re-layout the square in order to compute its position.
 ```	
 
 > In this example I’m looping through a bunch of paragraphs and setting the width of each to match some target div. When you map this to the work that the browser has to do you’ll see that offsetWidth gets the width of the div, which requires a layout (read) and this is immediately followed by setting the first paragraph’s width (write). The write invalidates the read’s layout calculations because part of the render tree has changed. So when the browser hits the second paragraph it has to do layout again, and this is once again invalidated by mutating styles.
+
+##
+1. visiual property
+    > background, text color, border radius, shadows
+2. geomentry property
+    > width, height, clientWidth, offsetWidth, scrollWidth
+3. position property
+    > top, left, offsetLeft, scrollLeft

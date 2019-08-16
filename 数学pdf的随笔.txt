@@ -1,0 +1,9 @@
+*. order set
+	* 可能由 great, least, maximal, minimal elements; 最值和极值
+	* 一个集合上的order relation， 可以按照element的某种特性trait，将元素排序
+	* 一个元素最好有方法来判断，自己是不是自己，其他人是不是自己 a === b ？？？
+
+* combine relations
+	- product order (not necessarily keep totality)
+		# (S1, R1), (S2, R2) => we have relation 笛卡尔积(R1, R2) over 笛卡尔积(S1, S2)
+	- lexicographical order （keep totality)
