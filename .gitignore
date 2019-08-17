@@ -92,6 +92,9 @@ Thumbs.db
 *.o
 *.swp
 *.~
+**/bin
+# in order to let git ignore such files a.out/a  that do not have a extension type
+# i put them into a directory into /bin
 
 /__pycache__
 __pycache__/
