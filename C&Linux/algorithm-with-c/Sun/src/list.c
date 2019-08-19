@@ -3,7 +3,7 @@
  为了在删除 list中的第一个元素的时候，不影响外部的使用
 */
 
-
+#include "include/common.h"
 #include "include/list.h"  //相对的路径,尽量不要写 ../** or ./**
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,6 +12,21 @@ struct Node {
     ElementType Element;
     Position Next;
 };
+
+// 创建一个List
+List MakeList(List L)
+{
+    List Head = (List)malloc( sizeof(struct Node) );
+    if(Head == NULL){
+        // memory error
+        FatalError( "Out of space!!!" );
+    }
+    if(Head != NULL){
+        L = Head;
+    }
+    return Head;
+    // return L == NULL ? Head : L = Head; // 感觉这样写也可以
+}
 
 int IsEmpty( List L )
 {
@@ -74,7 +89,7 @@ Position FindPrevious( ElementType X, List L )
 {
     Position P;
     P = L;
-    if(!P->Next && P->Next->Element != X )
+    if(P->Next != NULL && P->Next->Element != X )
         P = P->Next;
     return P; //如果 X在L中不存在， 就返回最后一个元素
 }
@@ -89,6 +104,21 @@ void Insert( ElementType X, List L, Position P )
     TmpCell->Next = P->Next;
     TmpCell->Element = X;
     P->Next = TmpCell;
+}
+
+//删除一个List
+void DeleteList( List L )
+{
+    Position P;
+    Position Tmp;
+    P = L->Next;
+    L->Next = NULL;
+    while(P != NULL)
+    {
+        Tmp = P->Next;
+        free(P);
+        P = Tmp;
+    }
 }
 
 
