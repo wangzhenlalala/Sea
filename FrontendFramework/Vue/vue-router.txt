@@ -1,0 +1,49 @@
+* all we need to do is map our components to the routes and let Vue Router know where to render them
+* dynamic route match: dynamic segment in the path -> map routes with the given pattern  to the same component
+	- /user/:id  -> $route.params.id
+	- watch: $route
+	- beforeRouteUpdate
+* nested route 
+	- route
+	- component <router-view>
+	- children [{}]
+* named route
+	to: {
+		path,
+		name,
+		params,
+		query
+	}
+* named views
+	- not nested, but listed // same level
+	- <router-view name="default"></router-view>
+	  <router-view name="topBar"></router-view>
+	  <router-view name="sideBar"></router-view>
+	- 
+	  path: '/home',
+	  components: {
+	  	default: ComA,
+	  	topBar: ComTop,
+	  	sideBar: ComBar
+	  }
+* redirect
+	- {
+		 path: '\a',
+		 redirect: "\b",
+		 path: '/dynamic-redirect/:id?',
+	     redirect: to => {
+	     	// dynamic-redirect/:id? is "to" object, other url jumps to this url
+	        const { hash, params, query } = to
+	        if (query.to === 'foo') {
+	          return { path: '/foo', query: null }
+	        }
+	        if (hash === '#baz') {
+	          return { name: 'baz', hash: '' }
+	        }
+	        if (params.id) {
+	          return '/with-params/:id'
+	        } else {
+	          return '/bar'
+	        }
+	      }
+	}
