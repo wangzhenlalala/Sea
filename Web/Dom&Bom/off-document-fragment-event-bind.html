@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+	<script>
+		let root = document.createElement('div');
+		let button = document.createElement('button');
+		button.textContent = "click me";
+		button.style.background = "blue";
+		button.style.color = "white";
+		button.addEventListener('click', function(e) {
+			console.log(`click ${e.pageX}`);
+		});
+		root.appendChild(button);
+		document.body.append(root);
+	</script>
+</html>

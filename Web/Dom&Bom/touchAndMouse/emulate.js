@@ -26,7 +26,7 @@
       return;
     }
 
-    event.preventDefault();
+    event.preventDefault(); // 这句话就不会在让浏览器触发后面的mouse事件了: mouseover mousemove mousedown mouseup click
 
     var touch = event.originalEvent.changedTouches[0],
         simulatedEvent = document.createEvent('MouseEvents');
