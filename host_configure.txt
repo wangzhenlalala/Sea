@@ -1,0 +1,31 @@
+1. 安装python3 and pip3
+	a. apt install python3
+	b. apt install pythoh3-setuptools
+	c. apt install python3-pip
+
+2. 安装 shadowsocks
+	pip3 install shadowsocks
+
+3. 修改openssl.py
+	/usr/local/lib/python3.6/dist-packages/crypo/openssl.py
+	cleanup -> reset
+
+4. 安装nodejs
+	a. nvm
+		curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+		source ~/.bashrc
+		nvm install 10
+	b. pm2
+		npm install pm2 -g
+5. create /root/shadowsocks.json 
+	{
+		"server": "255.255.255.255",
+		"server_port": 1000,
+		"local_address": "127.0.0.1",
+		"password": "*****",
+		"timeout": 300,
+		"method": "rc4-md5"		
+	}
+   create /root/shadowsocks.sh
+   		sserver -c /root/shadowsocks.sh
+   pm2 start /root/shadowsocks.sh
