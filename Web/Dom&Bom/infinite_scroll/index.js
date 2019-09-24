@@ -1,21 +1,22 @@
 /**
 	1. 所有的元素都是absoulte定位，容器的滚动条是如何做到比例变化的？？？
 **/
+let container = document.querySelector('.container');
+let scroller = document.querySelector('.scroller');
+let store = new Store();
+
 function initApp(){
-	let store = new Store();
-	let container = document.querySelector('.container');
-	let scroller = document.querySelector('.scroller');
-	appendItems(scroller, store.generateData());
+	appendItems(scroller, store.generateData(60, 90));
+	bindEvent();
 }
 
 function bindEvent() {
-	let container = document.querySelector('.container');
 	container.addEventListener('scroll', function(e) {
 		// 收到scroll事件的时候，滚动已经发生了？？？
 		// layout， paint已经完成了吗？？
 		// 还是我们只是收到一个事件，并且可以获得页面的将到达的一个状态？？
 		// e.preventDefault(); // 并不能阻止滚动的发生，因为滚动已经发生了， keyUP, keyDown, mouseWhell事件，会触发scroll事件，应该在那里阻止scroll事件的
-		console.log(e);
+		console.log(container.scrollTop);
 	})
 
 	container.addEventListener('keydown', function(e) {

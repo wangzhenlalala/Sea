@@ -7,15 +7,21 @@ function Store() {
 }
 
 Store.prototype.getItemHeight = function() {
-	return getRandomInt(30, 60);
+	return getRandomInt(100, 200);
 }
 
 Store.prototype.getBgColor = function() {
 	return `rgb(${getRandomInt(0, 255)}, ${getRandomInt(0, 255)}, ${getRandomInt(0, 255)})`;
 }
 
-Store.prototype.generateData = function() {
-	let number = getRandomInt(25, 60);
+Store.prototype.generateData = function(lower, higher) {
+	let number = 0;
+	if(lower === undefined)
+		number = 30;
+	else if(higher === undefined) 
+		number = lower;
+	else
+		number = getRandomInt(lower, higher);
 	let list = [];
 	for(; number > 0; number--) {
 		list.push({
