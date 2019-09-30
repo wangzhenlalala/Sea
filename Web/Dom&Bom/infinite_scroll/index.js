@@ -31,16 +31,24 @@ function bindEvent() {
 function appendItems(parent, dataList) {
 	let offDoc = document.createDocumentFragment();
 	for(let i=0; i < dataList.length; i++) {
-		let item = dataList[i];
-		let domItem = document.createElement('div');
-		domItem.classList.add('item');
-		domItem.setAttribute('data-id', item.id);
-		domItem.style.height = item.height + 'px';
-		domItem.style.width = "100%";
-		domItem.style.background = item.bgColor;
-		offDoc.appendChild(domItem);
+		offDoc.appendChild( renderItem(dataList[i]) );
 	}
 	parent.appendChild(offDoc);
 }
+
+// 根据数据生成一个dom
+function renderItem(item) {
+	let domItem = document.createElement('div');
+	domItem.classList.add('item');
+	domItem.setAttribute('data-id', item.id);
+	domItem.style.height = item.height + 'px';
+	domItem.style.width = "100%";
+	domItem.style.background = item.bgColor;
+	return domItem;
+}
 // start
 initApp();
+
+
+// 在touchmove中调用preventDefault()
+// Ignored attempt to cancel a touchstart/touchmove event with cancelable=false, for example because scrolling is in progress and cannot be interrupted

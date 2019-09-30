@@ -1,0 +1,65 @@
+1. 结构
+	container
+		scroller
+			item
+			item
+			item
+			...
+2. scroll 下的item的定位方式
+	不能是按照标准流的方式，因为如果去除顶部超出viewport的item的时候，
+	a. viewport中的item会自动顶上去。
+	b. 引起浏览器的reflow
+	所有item的位置因该由js来手动控制，并且是非static的定位方式。
+	 1. 使用absolute定位 -> reflow
+	 2. 使用translate定位 -> 硬件加速
+
+3. 但是非static的定位会使得scroller的高度无法被撑开，滚动条就不出现，
+	a. 如何显示滚动条
+	b. 如何让滚动条成比例的显示
+
+4. 每个item元素的高度可能不一致，改如何处理
+
+5. 
+	a. 什么时候移除 超出viewport的元素
+	b. 什么时候添加 进入viewport的元素
+
+6. 什么时候添加 tombstone 元素
+
+
+
+
+
+
+
+
+
+
+
+/****************************** steps ************************************/
+step 1:
+	不考虑【移除】超出vierport的元素
+	不考虑【添加】进入viewport的元素
+	不考虑 item data 数据的异步加载， 假设元素都在内存里，随用随取
+	不考虑 item dom 高度不一致的情况
+
+	使用transform: translate定位item
+	滚动scroller使得 每个item的定位正确
+
+step 2:
+	不考虑 item data 数据的异步加载， 假设元素都在内存里，随用随取
+	不考虑 item dom 高度不一致的情况
+
+	移除超出viewport的元素
+	添加进入viewport的元素
+
+step 3:
+	不考虑 item data 数据的异步加载， 假设元素都在内存里，随用随取
+	不考虑 item dom 高度不一致的情况
+	维护container的滚动条
+
+step 4:
+	考虑 item data 数据的异步加载， 添加tombstone
+	不考虑 item dom 高度不一致的情况
+
+step 5:
+	考虑 item dom 高度不一致的情况

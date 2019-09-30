@@ -17,10 +17,13 @@ Store.prototype.getBgColor = function() {
 Store.prototype.generateData = function(lower, higher) {
 	let number = 0;
 	if(lower === undefined)
+		// 没有传递参数，默认30个
 		number = 30;
-	else if(higher === undefined) 
+	else if(higher === undefined)
+		// 传递一个 
 		number = lower;
 	else
+		// 传递二个
 		number = getRandomInt(lower, higher);
 	let list = [];
 	for(; number > 0; number--) {
