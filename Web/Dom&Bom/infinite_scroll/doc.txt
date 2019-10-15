@@ -63,3 +63,11 @@ step 4:
 
 step 5:
 	考虑 item dom 高度不一致的情况
+
+
+data -> offdoc dom -> document dom(被用户看到)
+question:
+	1. 每次scroll的时候，我们是想看到viewport之外的内容。
+	2. 如果想要看到的内容还没有加载过来，就显示一个tombstone， 并去请求相应的数据
+	3. 等到对应的内容加载完成之后，替换对应的tombstone
+	4. 用户看到的内容完全都是由 我们自己控制的， 对浏览器的依赖很少了

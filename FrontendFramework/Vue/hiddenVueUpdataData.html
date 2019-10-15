@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+</head>
+<body>
+	<div id="root" v-show="show">
+		<div class="content" >
+			<h1>{{name}}</h1>
+			<p>{{age}}</p>	
+		</div>		
+	</div>
+	<script>
+		var p = new Vue({
+			el: "#root",
+			data() {
+				return {
+					name: 'wangzhen',
+					age: 26,
+					show: false
+				}
+			},
+		})
+	</script>
+</body>
+</html>

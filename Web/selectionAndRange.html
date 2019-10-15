@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>range</title>
+	<style>
+		textarea {
+			resize: false;
+		}
+		.white {
+			width: 100px;
+			outline: 1px solid blue;
+		}
+		.normal {
+			white-space: normal;
+		}
+		.nowrap {
+			white-space: nowrap;
+		}
+		.pre {
+			white-space: pre;
+		}
+	</style>
+</head>
+<body>
+	<!-- 
+	xx的内容包含了 value = xx.childNodes[0].nodeValue
+	value.charCodeAt(0): 10 enter 
+	value.charCodeAt(1): 9 tab 
+	value.charCodeAt(2): 9 tab
+	-->
+	<div contenteditable id="xx">
+		123456789
+	</div>
+	<!-- <div contenteditable id="xx">123456789</div> -->
+	<div class="controls">
+		<label for="pos" class="setCaretPos"> set caret position </label>
+		<input id="pos"/>
+	</div>
+	
+	<script>
+		var xx = document.getElementById('xx');
+		var sel = null;
+		var preContent = "";
+		var label = document.querySelector('.setCaretPos');
+		var pos = document.querySelector('#pos');
+		// xx.addEventListener("mousedown", function() {
+		// 	sel = window.getSelection();
+		// 	console.log(sel.anchorNode);
+		// 	console.log(sel.anchorOffset);
+		// });
+
+		function getCaretPos() {
+			var selection = document.getSelection();
+            var anchor =  selection.anchorNode;
+            var focus = selection.focusNode; 
+            if(!anchor || !focus || anchor != focus ) {
+            	console.log('anchor inequals focus, one is null');
+            	return;
+            }
+            return {
+        		isCollapsed: selection.isCollapsed,
+        		from: selection.anchorOffset,
+        		to: selection.focusOffset
+        	}
+        }
+
+        /*
+			paste之后，xx 当中已经有了很多的 text node了，此时设置caret的位置，就不能直接传入 xx.childNodes[0]了，	
+
+			?? xxxxx1yyyyyy
+			这种情况 selectioin的， 首位是哪些node？？？   
+			{ 
+				anchorNode: nodex,
+				anchorOffset: 5,
+				focusNode: nodeY,
+				focusOffset: 0
+			}	是这样的吗？？？？？？？？？？
+
+			1. 1xxxxx1yyy1yy1
+			2. xxxxx1xxx
+			3. x1xxxxxx
+			处在一个元素的 start
+			处在一个元素的中间
+			处在一个元素的 end
+    	*/	
+
+        function setCaretPos(node, pos) {
+        	
+        	// !!!!!! important !!!!!!
+        	// 如果要在某个元素中设置caret的位置，那么改元素在设置之前必须是，focusd and editable !!!
+        	// The Selection.collapse() method collapses the current selection to a single point. 
+        	// The document is not modified. If the content is focused and editable, the caret will blink there.
+            let range = document.createRange();
+            let selection = document.getSelection();
+
+            /* 这样做有可能使得 pos + 1,不再node的length范围内，从而报错
+	            range.setStart(node, pos);
+	            range.setEnd(node, pos + 1); 
+	            range.collapse(true); // move end to start; 
+            */
+
+            range.setStart(node, pos-1);
+            range.setEnd(node, pos); 
+            range.collapse(); // move start to end
+
+            selection.empty(); // selection.removeAllRanges();
+            selection.addRange(range);
+        }
+
+////////////////////////// for contenteditable element
+		oContent = {
+			sPreText: "",
+			iTextLimits: 50,
+		};
+
+        oContent.onMouseup = function(e) {
+        	console.log( getCaretPos() );
+        };
+
+        oContent.onCopy = function(e) {
+        	// A handler for this event can modify the clipboard contents by calling setData(format, data) on the event's  ClipboardEvent.clipboardData property, 
+        	// and cancelling the event's default action using event.preventDefault().
+        	// However, the handler cannot read the clipboard data.
+        	// console.log(e);
+        	// e.clipboardData.setData("text/plain", "helloeorld");
+        	// e.preventDefault();
+        };
+
+        oContent.onPaste = function(e){
+			// console.log(e, 'paste');
+			// 首先获取 当前的 selection 区域，然后记录其中的内容
+			// 记录当前
+			// 然后过去剪切板的内容
+			let selection = document.getSelection();
+			if(selection.rangeCount == 0) {
+				return;
+			}
+			let sPasteText = e.clipboardData.getData('text');
+			let sSelectedText = selection.toString();
+			let iInterval = oContent.preContent.length + sPasteText.length - sSelectedText.length - oContent.iTextLimits;
+			if( iInterval <= 0) {
+				// 没有超过字数限制, 让浏览器处理
+				return;
+			};
+
+			selection.deleteFromDocument(); 
+			let textNode = document.createTextNode(sPasteText.slice(0, sPasteText.length - iInterval)); // 插入text节点后，getCarPos就不对了
+			selection.getRangeAt(0).insertNode(textNode);
+			e.preventDefault(); // 不要插入，我们自己处理
+			/**
+				粘贴过后，光标留在的地方，他的archorNode是谁？？
+				粘贴过后，如果输入一个字符，此时caret的地方的anchorNode是谁？？ (此时该字符可能是超出的一个字符，需要删除，并把caret放到该字符之前的一个位置
+			**/
+		};
+
+        oContent.onInput = function(e) {
+        	// 每次input 只能输入一个字符
+			if(e.target.textContent.length > oContent.iTextLimits) {
+				// 在这个事件中，已经输入到xx当中了，并且caret的位置，也已经被browser给更新了
+				// e.target.textContent = oContent.preContent; // 重新设置xx的innerText，会使得caret回到开头的位置
+				let pos = getCaretPos();
+				e.target.textContent = oContent.preContent;
+				// xx.focus();
+				setCaretPos(xx.childNodes[0], pos.from - 1);
+				return;
+			}
+			oContent.preContent = e.target.textContent;
+        }
+
+        let events = [
+        	'input',
+        	'paste',
+        	'mouseup',
+        	'copy',
+        ];
+        events.forEach( function(event) {
+        	let handlerFn = 'on' + event[0].toUpperCase() + event.slice(1);
+        	xx.addEventListener(event, oContent[handlerFn]);
+        });
+
+/////////////////////////////////////////// for controls
+		function onClickSetPos(e) {
+        	e.preventDefault();
+			xx.focus();
+			setCaretPos(xx.childNodes[0], parseInt(pos.value));
+        };
+		label.addEventListener('click', onClickSetPos);
+
+		function initApp() {
+			// let sContent = xx.textContent;
+			// sContent.replace(/^\s*/, "");
+			// sContent.replace(/\s*$/, "");
+			// console.log("innerText", xx.innerText);
+			// console.log("sContent", sContent);
+			xx.textContent = xx.innerText; // 去除首位的whitespace
+			oContent.preContent = xx.textContent;
+		}
+
+		initApp();
+	</script>
+</body>
+</html>
+
+<!-- 
+	textContent 包含首尾 \n \t , \s 
+	innerText 不包含首尾的whitespace
+-->
