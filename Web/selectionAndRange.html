@@ -3,8 +3,14 @@
 <head>
 	<title>range</title>
 	<style>
-		textarea {
+		.editor {
 			resize: false;
+			width: 100px;
+			padding: 10px 5px;
+			height: auto;
+			border: 2px solid blue;
+			outline: none;
+			border-radius: 8px;
 		}
 		.white {
 			width: 100px;
@@ -28,7 +34,7 @@
 	value.charCodeAt(1): 9 tab 
 	value.charCodeAt(2): 9 tab
 	-->
-	<div contenteditable id="xx">
+	<div class="editor" contenteditable id="xx">
 		123456789
 	</div>
 	<!-- <div contenteditable id="xx">123456789</div> -->
@@ -60,11 +66,14 @@
             return {
         		isCollapsed: selection.isCollapsed,
         		from: selection.anchorOffset,
-        		to: selection.focusOffset
+        		anchorNode: anchor,
+        		to: selection.focusOffset,
+        		focusNode: focus,
         	}
         }
 
         /*
+        	这里只在contenteditable的元素中，全部为 text 的时候测试的 ！！！
 			paste之后，xx 当中已经有了很多的 text node了，此时设置caret的位置，就不能直接传入 xx.childNodes[0]了，	
 
 			?? xxxxx1yyyyyy
@@ -82,6 +91,12 @@
 			处在一个元素的 start
 			处在一个元素的中间
 			处在一个元素的 end
+			根据观察：
+			如果光标在一个node中间，anchorNode, 和focusNode都是同一个node,
+			如果光标不再任何一个node的中间，而是处在某个(某些)node的边缘，
+				1. 如果光标前面有node，那么chanorNode, focusNode都是前面的node
+				2. 如果光标前面没有node，后面有node(到达开头)，那么chanorNode, focusNode都是后面的node
+				3. 如果前后都没有，内容为空，那么chanorNode, focusNode都是 parent node
     	*/	
 
         function setCaretPos(node, pos) {
@@ -107,10 +122,26 @@
             selection.addRange(range);
         }
 
+        // 删除 光标前面的一个字符，并且把贯标移动到前面; 
+        // 1. 此时页面没有内容被选中 ！！！！
+        // 2. 光标前面一定要有字符 ！！
+
+        function deleteOneCharBeforeCaret() {
+        	let selection = document.getSelection();
+        	let anchorNode = selection.anchorNode;
+        	let anchorOffset = selection.anchorOffset;
+        	let range = document.createRange();
+        	range.setStart(anchorNode, anchorOffset - 1);
+        	range.setEnd(anchorNode, anchorOffset);
+        	selection.removeAllRanges();
+        	selection.addRange(range);
+        	selection.deleteFromDocument();
+        };
+
 ////////////////////////// for contenteditable element
 		oContent = {
 			sPreText: "",
-			iTextLimits: 50,
+			iTextLimits: 12,
 		};
 
         oContent.onMouseup = function(e) {
@@ -143,10 +174,17 @@
 				return;
 			};
 
-			selection.deleteFromDocument(); 
+			selection.deleteFromDocument(); //删除选中的内容 
 			let textNode = document.createTextNode(sPasteText.slice(0, sPasteText.length - iInterval)); // 插入text节点后，getCarPos就不对了
 			selection.getRangeAt(0).insertNode(textNode);
+			// 插入之后 整个文本都会被选中，呈现蓝色
+			if(true) {
+				// 将选中去除
+				selection.collapseToEnd();	
+			}
 			e.preventDefault(); // 不要插入，我们自己处理
+			// 记得更新 content 啊
+			oContent.preContent = e.target.textContent;
 			/**
 				粘贴过后，光标留在的地方，他的archorNode是谁？？
 				粘贴过后，如果输入一个字符，此时caret的地方的anchorNode是谁？？ (此时该字符可能是超出的一个字符，需要删除，并把caret放到该字符之前的一个位置
@@ -158,10 +196,7 @@
 			if(e.target.textContent.length > oContent.iTextLimits) {
 				// 在这个事件中，已经输入到xx当中了，并且caret的位置，也已经被browser给更新了
 				// e.target.textContent = oContent.preContent; // 重新设置xx的innerText，会使得caret回到开头的位置
-				let pos = getCaretPos();
-				e.target.textContent = oContent.preContent;
-				// xx.focus();
-				setCaretPos(xx.childNodes[0], pos.from - 1);
+				deleteOneCharBeforeCaret();
 				return;
 			}
 			oContent.preContent = e.target.textContent;
@@ -205,3 +240,32 @@
 	textContent 包含首尾 \n \t , \s 
 	innerText 不包含首尾的whitespace
 -->
+
+
+加入webinar, placeholder
+	输入密码 .div-password
+	register 邮箱  .register-name
+
+video mirror
+	默认打开
+
+
+	1. joinmeeting 
+		- meeting id
+		- name
+	2. sign in
+		- email
+		- password
+		- sso company domain
+		- enter email addredd
+	3.  - enter meeting password
+	4. registration
+		- name
+		- email
+
+
+弹窗口：initMove
+	join bo
+	小video
+	settings
+	close caption
