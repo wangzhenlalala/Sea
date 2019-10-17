@@ -11,9 +11,9 @@ function InfiniteScroll(store, scroll) {
     let sentinel = document.createElement('div');
     sentinel.style.cssText = `
         position: absolute;
-        transform: translate(0, 0);
-        width: 0;
-        height: 0;
+        transform: translate(0, 1400px);
+        width: 1px;
+        height: 1px;
         opacity: 0;
     `;
     scroll.appendChild(sentinel);

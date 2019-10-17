@@ -9,8 +9,27 @@ body {
 	box-sizing: border-box;
 }
 
-
-
+.controls {
+    width: 100%;
+    height: 200px;
+    overflow: auto;
+    background: rgb(208, 248, 170);
+}
+.scroller {
+    height: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    background: rgb(153, 178, 199);
+    position: relative;
+    outline: 1px solid rgb(138, 64, 119); 
+    overflow: auto; /* important  不然scroller就不会有滚动条，而是body之类的元素*/
+}
 .sentinel {
-    position: absolute;
+    /* 不是绝对定位也可以 仅仅通过他的translateY 就可以撑开scroller的高度，使得scroller产生滚动高度 
+    就好像sentinel上面真的具有普通的文档流的元素存在
+    */
+    position: absolute; 
+    background: red;
+    width: 20px;
+    height: 20px;
 }
