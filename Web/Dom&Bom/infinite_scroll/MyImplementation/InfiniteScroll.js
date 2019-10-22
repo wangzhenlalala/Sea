@@ -26,7 +26,7 @@ function InfiniteScroll(store, scroller, config) {
     this._loadedItemNumber = 0; // 已经异步加载来的数据的数目
     this._tombstones = [];
     this._startIndex = 0;
-    this._endIndex = 0; // 生成dom，的item的范围
+    this._endIndex = 0; // 生成dom，的item的范围 _endIndex也会被渲染出来
     this.FRONT_NUMBER = 3; // 滚动方向，前方的数量
     this.BACK_NUMBER = 3;
     this._sentinelTranslateY = 0;
@@ -79,7 +79,7 @@ InfiniteScroll.prototype = {
     },
     // 计算距离item offset长度的item,offset > 0 : 向下； offset < 0 : 向上 
     calculateAnchoredItem(anchorItem, offset) {
-        console.log('calculateAnchoredItem begin :', anchorItem, offset);
+        console.count('calculateAnchoredItem begins');
         if(offset == 0) return anchorItem;
         offset = offset + anchorItem.offset;
         let index = anchorItem.index;
@@ -133,7 +133,6 @@ InfiniteScroll.prototype = {
             offset -= tombstones * this._tombstoneHeight; 
             index = index + tombstones;
         }
-        console.log('calculateAnchoredItem end : ', `offset: ${offset}, index: ${index}`);
         return {
             index: index,
             offset: offset
@@ -182,7 +181,7 @@ InfiniteScroll.prototype = {
                 if(this._items[i].node.classList.contains("_tombstone_")) {
                     this._tombstones.push(this._items[i].node);
                     this._tombstones[this._tombstones.length - 1].classList.add('invisible');
-                } else {
+                 } else {
                     unusedNodes.push(this._items[i].node);
                 }
                 this._items[i].node = null;
@@ -279,7 +278,9 @@ InfiniteScroll.prototype = {
     },
     addItem() {
         // 填充一个空的占位元素
-        if(this._items.length > 3000) debugger;
+        if(this._items.length > 3000) {
+            debugger;
+        }
         this._items.push({
             node: null,
             top: 0,
