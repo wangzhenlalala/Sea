@@ -33,3 +33,25 @@ body {
     width: 20px;
     height: 20px;
 }
+
+.tombstone {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    background: lightsalmon;
+}
+
+.item {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    background: lime;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.invisible {
+    display: none!important;
+}

@@ -157,11 +157,13 @@ scope.InfiniteScroller.prototype = {
    *     scroll should be anchored to.
    */
   calculateAnchoredItem: function(initialAnchor, delta) {
+    // 认为 tombstone 的出现都是连续的
     if (delta == 0)
       return initialAnchor;
     delta += initialAnchor.offset;
     var i = initialAnchor.index;
     var tombstones = 0;
+    // 向index减小的方向如果发现一个tombstone，则再往前都是tombstone
     if (delta < 0) {
       while (delta < 0 && i > 0 && this.items_[i - 1].height) {
         delta += this.items_[i - 1].height;
@@ -169,6 +171,8 @@ scope.InfiniteScroller.prototype = {
       }
       tombstones = Math.max(-i, Math.ceil(Math.min(delta, 0) / this.tombstoneSize_));
     } else {
+      // 向index增大的方向，第一个tombstone，以及之后，再往前都是tombstone的位置
+      // delta 有可能 < 0 吗？？？
       while (delta > 0 && i < this.items_.length && this.items_[i].height && this.items_[i].height < delta) {
         delta -= this.items_[i].height;
         i++;
@@ -295,6 +299,7 @@ scope.InfiniteScroller.prototype = {
     // Position all nodes.
     var curPos = this.anchorScrollTop - this.anchorItem.offset;
     i = this.anchorItem.index;
+    // 以下将curPos定位到 this
     while (i > this.firstAttachedItem_) {
       curPos -= this.items_[i - 1].height || this.tombstoneSize_;
       i--;

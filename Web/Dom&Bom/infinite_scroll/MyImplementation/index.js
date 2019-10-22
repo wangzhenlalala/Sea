@@ -7,5 +7,9 @@
 
 let scroller = document.querySelector('.scroller');
 let store = new Store();
-let iscroller = new InfiniteScroll(store, scroller);
+let config = {
+    itemHeight: 150,
+    tombstoneHeight: 150
+}
+let iscroller = new InfiniteScroll(store, scroller, config);
 
