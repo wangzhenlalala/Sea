@@ -71,3 +71,13 @@ question:
 	2. 如果想要看到的内容还没有加载过来，就显示一个tombstone， 并去请求相应的数据
 	3. 等到对应的内容加载完成之后，替换对应的tombstone
 	4. 用户看到的内容完全都是由 我们自己控制的， 对浏览器的依赖很少了
+
+
+
+
+1. onScorll: cursor startIndex --> endIndex
+2. 根据cursor的位置更新dom树，
+	A. 回首dom 不再范围内的回收
+	B. 生成dom 刚刚进入范围内的生成dom
+3. 如果滚动到cursor范围内的数据，还没有到达，添加一个tombsone
+4. 等到数据到达的时候, goto step 2
