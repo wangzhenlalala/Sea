@@ -6,8 +6,18 @@ function Store() {
 	this._id = 0;
 }
 
-Store.prototype.getItemHeight = function() {
-	return getRandomInt(100, 200);
+Store.prototype.getItemHeight = function(lower, higher) {
+    let height = 0;
+	if(lower === undefined)
+		// 没有传递参数，默认100px
+		height = 100;
+	else if(higher === undefined)
+		// 传递一个 
+		height = lower;
+	else
+		// 传递二个
+		height = getRandomInt(lower, higher);
+	return height;
 }
 
 Store.prototype.getBgColor = function() {

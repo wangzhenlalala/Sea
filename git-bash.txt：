@@ -1,0 +1,5 @@
+git-bash中输入绝对的路径：
+	/g/MyCode/java/data/largeT.txt
+	java BinarySearch  /g/MyCode/java/data/largeW.txt  < /g/MyCode/java/data/largeT.txt
+git-bash 乱码	
+	https://blog.csdn.net/lovexlsforever/article/details/78062259

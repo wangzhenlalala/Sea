@@ -4,6 +4,10 @@
 let container = document.querySelector('.container');
 let scroller = document.querySelector('.scroller');
 let store = new Store();
+let anchoredItem = {
+    id: -1,
+    offset: 0
+}
 
 function initApp(){
 	appendItems(scroller, store.generateData(60, 90));
@@ -43,7 +47,7 @@ function renderItem(item) {
 	domItem.setAttribute('data-id', item.id);
 	domItem.style.height = item.height + 'px';
 	domItem.style.width = "100%";
-	domItem.style.background = item.bgColor;
+    domItem.style.background = item.bgColor;
 	return domItem;
 }
 // start

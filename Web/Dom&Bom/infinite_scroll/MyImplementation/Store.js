@@ -11,7 +11,7 @@ Store.prototype.generateData = function() {
 // 每次异步获取count条数据
 // 放回 长度为count 的 [item] 数组
 Store.prototype.fetch = function(count) {
-    let requestDelay = 2000; // ms
+    let requestDelay = 1000; // ms
     return new Promise((resolve, reject) => {
         setTimeout( () => {
             let items = [];

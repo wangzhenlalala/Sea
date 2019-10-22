@@ -139,20 +139,20 @@ InfiniteScroll.prototype = {
         }
     },
     fill(start, end) {
-        console.log('fill begins: ', `start: ${start}, end: ${end}`);
         // 为[start, end] 范围内的item生成对应的dom
         this._startIndex = Math.max(0, start);
         this._endIndex = end;
-        for(let i = this._startIndex; i <= this._endIndex; i++ ) {
-            if(this._items.length <= i) {
-                this._items.push({
-                    node: null,
-                    top: 0,
-                    data: null,
-                    height: 0,
-                });
-            }
-        }
+        console.log('[fill items] fill begins: ', `start: ${this._startIndex}, end: ${this._endIndex}`);
+        // for(let i = this._startIndex; i <= this._endIndex; i++ ) {
+        //     if(this._items.length <= i) {
+        //         this._items.push({
+        //             node: null,
+        //             top: 0,
+        //             data: null,
+        //             height: 0,
+        //         });
+        //     }
+        // }
         this.attachContent();
     },
     getTombstone(dom) {
@@ -172,8 +172,9 @@ InfiniteScroll.prototype = {
         let unusedNodes = [];
         let i = 0;
         console.log(`collect unused nodes begins`);
-        for(let i = 0; i++; i < this._items.length) {
-            if(i >= this._startIndex) {
+        for(let i = 0; i < this._items.length; i++) {
+            // if(i >= this._startIndex) { // infinite loop
+            if(i == this._startIndex) {
                 i = this._endIndex + 1;
                 continue;
             };
@@ -187,10 +188,10 @@ InfiniteScroll.prototype = {
                 this._items[i].node = null;
             }
         }
-        console.log(`collect unused nodes ends`);
-        console.log(`unusedNodes: ${unusedNodes.length}`, )
+        // console.log(`collect unused nodes ends`);
+        // console.log(`unusedNodes: ${unusedNodes.length}`, )
         // 更新dom 
-        console.log(`update dom begins`);
+        console.log(`update dom begins from ${this._startIndex} to ${this._endIndex}`);
         for (i = this._startIndex; i <= this._endIndex; i++) {
             // 可以放在fill里面做
             while (this._items.length <= i) {
@@ -221,11 +222,11 @@ InfiniteScroll.prototype = {
         }
 
         // 删除无用的dom
-        console.log(`delete unless item nodes begins.`);
+        // console.log(`delete unless item nodes begins.`);
         while(unusedNodes.length) {
             this._scroller.removeChild(unusedNodes.pop()) // 从document中删除
         };
-        console.log(`delete unless item nodes ends. ${unusedNodes.length}`);
+        // console.log(`delete unless item nodes ends. ${unusedNodes.length}`);
 
         // 到这里 [_startIndex, _endIndex] 里面的每个item都对应有node
         // 更新每个dom的位置, 插入到document中
@@ -249,13 +250,13 @@ InfiniteScroll.prototype = {
         console.log(`set current position to _startIndex: ${index} -- ${curPos}`);
 
         // position dom
-        console.log(`position dom begins`);
+        // console.log(`position dom begins`);
         for(let i = this._startIndex; i <= this._endIndex; i++) {
             this._items[i].top = curPos;
             this._items[i].node.style.transform = `translateY(${curPos}px)`;
             curPos += this._items[index].data ? this._itemDomHeight : this._tombstoneHeight; 
         }
-        console.log(`position dom ends`);
+        // console.log(`position dom ends`);
 
         this._sentinelTranslateY = Math.max(this._sentinelTranslateY, curPos + this._distanceAfterEndIndex); // 如果向下滚动很多后， 有向上滚动，sentinel的位置是不变的
         this._sentinel.style.transform = `translateY(${this._sentinelTranslateY}px)`;
@@ -265,38 +266,34 @@ InfiniteScroll.prototype = {
     },
     maybeRequestConent() {
         if(this._isRequestInProgress) return;
-        let count = this._endIndex - this._loadedItemNumber ;
-        if(count < 0)  return;
+        let count = this._endIndex + 1 - this._loadedItemNumber ;
+        if(count <= 0)  return;
         // 需要请求数据
         this._isRequestInProgress = true;
-        console.log(`need to fetch more date - ${count}`);
+        console.log(`[fetch data] need to fetch more data - ${count}`);
         this._store.fetch(count).then( items => {
-            console.log(`fetch data ok: ${items.length}`);
+            console.log(`[fetch data] fetch data ok: ${items.length}`);
             this.addItems(items);
         })
 
     },
     addItem() {
         // 填充一个空的占位元素
-        if(this._items.length > 3000) {
-            debugger;
-        }
         this._items.push({
             node: null,
             top: 0,
             data: null,
-            height: 0,
         });
     },
     addItems(items){
         // 数据到达，填充数据
         this._isRequestInProgress = false;
-        let i = 0;
-        while(this._loadedItemNumber < this._items.length) {
-            if(this._items.length <= this._loadedItemNumber) this.addItem();
-            this._items[this._loadedItemNumber++].data = items[i++]; 
+        for(let i = 0; i < items.length; i++) {
+            if(this._loadedItemNumber < this._items.length) {
+                // if(this._items.length <= this._loadedItemNumber) this.addItem();
+                this._items[this._loadedItemNumber++].data = items[i];
+            }
         }
-        console.log(`add fetched data to _items ok`);
         this.attachContent();
     }
 }

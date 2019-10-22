@@ -1,0 +1,8 @@
+1. 
+	/helloworld/src
+	/helloworld/resources/  标记为resource settings -> modules -> resources
+		static/largeT.txt
+	--compile-->
+	out/production/helloworld/
+		resources/static/largeT.txt
+		helloworld.class
