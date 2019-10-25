@@ -16,7 +16,6 @@ function InfiniteScroll(scroller, config) {
     this._sentinel = document.createElement('div');
     this._sentinel.style.cssText = `
         position: absolute;
-        transform: translate(0, 1400px);
         width: 1px;
         height: 1px;
         opacity: 0;
@@ -78,7 +77,6 @@ InfiniteScroll.prototype = {
          */
     },
     refresh: function(viewport_height, item_height, item_list) {
-        console.count('refresh');
         // 每次之渲染固定个数的元素
         this.viewport_height = viewport_height;
         this.item_height = item_height;
@@ -88,33 +86,34 @@ InfiniteScroll.prototype = {
         // 1. 更新实例的数据
 
         // 2. 计算应该渲染哪些元素
-        let view_item_count = Math.ceil(this.viewport_height / this.item_height) + 2 * 5; // 上下各5个
-        let startIndex = Math.max(this.anchorIndex - this.extra_count, 0);
-        let endIndex = Math.min(this.anchorIndex + view_item_count + 5, this.item_list.length - 1); 
-
+        let view_item_count = Math.ceil(this.viewport_height / this.item_height);
+        let startIndex = Math.max(this.anchorIndex - this.extra_count, 0); // 这里不对，开始的extra_count内，都是0，定位就错了 ！！！
+        let endIndex = Math.min(this.anchorIndex + view_item_count + this.extra_count, this.item_list.length - 1); 
+        console.log('refresh', `anchor - start - end`, `${this.anchorIndex} - ${startIndex} - ${endIndex}`);
         // 3. 更新范围内元素的dom
         let curPos = this.anchorIndex * this.item_height
-        let offDoc = document.createDocumentFragment(); // 把sentinel 也移除了
+        // let offDoc = document.createDocumentFragment(); // 把sentinel 也移除了
+
         let oldDoms = this.scroller.querySelectorAll('.item');
-        oldDoms.forEach(dom => {
-            this.scroller.removeChild(dom);
-        })
-       
-        for(let i = startIndex; i <= endIndex; i++) {
+        oldDoms = Array.prototype.slice.call(oldDoms);
+        for(let i = startIndex, j = 0; i <= endIndex; i++) {
             // 定位每个item
             // dom在哪里
             // 如何复用已经存在于docuemnt中的dom元素呢
-            let dom = this.render(this.item_list[i]);
+            let dom = this.render(this.item_list[i], oldDoms.pop());
             dom.style.cssText = `
                 position: absolute;
                 transform: translateY(${curPos}px);
                 background: ${this.item_list[i].background};
             `
-            offDoc.appendChild(dom);
+            this.scroller.appendChild(dom);
             curPos += this.item_height;
         }
-        this.scroller.appendChild(offDoc);
-        this._sentinel.style.tranform = `translateY(${curPos}px)`;
+        while(oldDoms.length > 0) {
+            this.scroller.removeChild(oldDoms.pop());
+        }
+        // this.scroller.appendChild(offDoc);
+        this._sentinel.style.transform = `translateY(${this.item_list.length * this.item_height}px)`;
         // 4. 更新当前的状态
     }
 }
