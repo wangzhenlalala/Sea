@@ -38,3 +38,47 @@ Store.prototype.render = function(item, dom) {
     dom.innerText = item.id;
     return dom;
 }
+Store.prototype.getRandomInt = function (from, to) {
+    return Math.round( from + Math.random() * (to - from) );
+}
+
+Store.prototype.getItemHeight = function(lower, higher) {
+    let height = 0;
+	if(lower === undefined)
+		// 没有传递参数，默认100px
+		height = 100;
+	else if(higher === undefined)
+		// 传递一个 
+		height = lower;
+	else
+		// 传递二个
+		height = this.getRandomInt(lower, higher);
+	return height;
+}
+
+Store.prototype.getBgColor = function() {
+	return `rgb(${this.getRandomInt(0, 255)}, ${this.getRandomInt(0, 255)}, ${this.getRandomInt(0, 255)})`;
+}
+
+Store.prototype.produceData = function(lower, higher) {
+	let number = 0;
+	if(lower === undefined)
+		// 没有传递参数，默认30个
+		number = 30;
+	else if(higher === undefined)
+		// 传递一个 
+		number = lower;
+	else
+		// 传递二个
+		number = this.getRandomInt(lower, higher);
+	let list = [];
+	for(; number > 0; number--) {
+		list.push({
+			id: this._id++,
+			height: this.getItemHeight(),
+			bgColor: this.getBgColor()
+		})
+	}
+	return list;
+}
+
