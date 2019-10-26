@@ -82,16 +82,18 @@ InfiniteScroll.prototype = {
         this.item_height = item_height;
         this.item_list = item_list;
         this.anchorIndex = Math.floor(this.scroller.scrollTop / this.item_height);
- 
+        // console.log(`${this.scroller.scrollTop} / ${this.item_height} = `, `${this.scroller.scrollTop / this.item_height}`)
         // 1. 更新实例的数据
 
         // 2. 计算应该渲染哪些元素
         let view_item_count = Math.ceil(this.viewport_height / this.item_height);
-        let startIndex = Math.max(this.anchorIndex - this.extra_count, 0); // 这里不对，开始的extra_count内，都是0，定位就错了 ！！！
+        let startIndex = this.anchorIndex >= this.extra_count ? this.anchorIndex - this.extra_count
+                                                              : this.anchorIndex;
+
         let endIndex = Math.min(this.anchorIndex + view_item_count + this.extra_count, this.item_list.length - 1); 
-        console.log('refresh', `anchor - start - end`, `${this.anchorIndex} - ${startIndex} - ${endIndex}`);
+        console.log('refresh', `view_item, anchor - start - end`, `${view_item_count} - ${this.anchorIndex} - ${startIndex} - ${endIndex}`);
         // 3. 更新范围内元素的dom
-        let curPos = this.anchorIndex * this.item_height
+        let curPos = startIndex * this.item_height
         // let offDoc = document.createDocumentFragment(); // 把sentinel 也移除了
 
         let oldDoms = this.scroller.querySelectorAll('.item');

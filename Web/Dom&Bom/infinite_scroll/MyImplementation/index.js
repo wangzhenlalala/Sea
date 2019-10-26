@@ -8,7 +8,7 @@
 let scroller = document.querySelector('.scroller');
 let store = new Store();
 let items = [];
-let viewport_height = 750;
+let viewport_height = 1200;
 let item_height = 150;
 for(let i = 0; i < 100; i++) {
     items.push({
