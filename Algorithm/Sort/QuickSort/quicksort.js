@@ -22,11 +22,14 @@ class QuickSort {
 		let j = endIndex + 1; // x >= j && exist(list[x]) ==> list[x] > pivot;
 		while( true ) {
 			while( QuickSort.lessEq(list[++i], list[startIndex]) ) { // 小于等于
-				if(i == endIndex) break;
+				if(i == endIndex) break; // i不会越过j, 但是要确保i在本次partition的index范围内
 			}
 			while( QuickSort.lessEq(list[startIndex], list[--j]) ) { // 大于等于
-				if(j == startIndex) break;
-			}
+                // if(j == startIndex) break; // 停下的位置，是 <= 切分元素的； 如果越过了i,那么j，一定实在所有 <= 切分元素 的子数组的最右边，
+                break;
+            }
+            // 如果两个指针没有相遇，就交换对应的元素
+            // 如果相遇就说明本次的partition已经完成了
 			if(i < j) { // important
 				QuickSort.swap(list, i, j);
 			}
