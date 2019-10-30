@@ -20,6 +20,17 @@ class SortClass {
 		list[i] = temp;
 	}
 
+    static compare(itemA, itemB) {
+        let sign = itemA - itemB;
+        if( sign > 0 ) {
+            return 1;
+        } else if( sign == 0 ) {
+            return 0;
+        } else {
+            return -1;
+        }
+    }
+    
 	static isSorted(list){
 		for(let i = 0; i < list.length - 1; i++) {
 			if(!SortClass.lessEq(list[i], list[i+1])) return false;
