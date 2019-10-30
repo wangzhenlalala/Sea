@@ -21,10 +21,10 @@ class QuickSort {
 		let i = startIndex; // x <= i ==> list[x] <= pivot
 		let j = endIndex + 1; // x >= j && exist(list[x]) ==> list[x] > pivot;
 		while( true ) {
-			while( QuickSort.lessEq(list[++i], list[startIndex]) ) { // 小于等于
+			while( QuickSort.less(list[++i], list[startIndex]) ) { // 小于等于
 				if(i == endIndex) break; // i不会越过j, 但是要确保i在本次partition的index范围内
 			}
-			while( QuickSort.lessEq(list[startIndex], list[--j]) ) { // 大于等于
+			while( QuickSort.less(list[startIndex], list[--j]) ) { // 大于等于
                 // if(j == startIndex) break; // 停下的位置，是 <= 切分元素的； 如果越过了i,那么j，一定实在所有 <= 切分元素 的子数组的最右边，
                 break;
             }
