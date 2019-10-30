@@ -5,13 +5,15 @@ class QuickSort3Way {
 	static Sort(list) { // 大写的sort
 		QuickSort3Way.sort(list, 0, list.length - 1);
 	}
-	static sort(list, startIndex, endIndex) { // 消息的sort
+    static sort(list, startIndex, endIndex) { // 消息的sort
+        console.log(`start - end: ${startIndex} - ${endIndex}`);
 		if(startIndex >= endIndex) return;
         let lt = startIndex;
         let gt = endIndex;
         let i = lt + 1;
+        let pivot = list[startIndex]; // 要预先存起来，
         while( i <= gt ) {
-            let flag = QuickSort3Way.compare(list[i], list[startIndex]);
+            let flag = QuickSort3Way.compare(list[i], pivot);
             if(flag > 0){
                 // 右边子数组要增长
                 QuickSort3Way.swap(list, i, gt--); // i 不能增加
@@ -23,7 +25,8 @@ class QuickSort3Way {
                 i++;
             } 
         }
-        QuickSort3Way.sort(list, lt - 1, gt + 1);
+        QuickSort3Way.sort(list, startIndex, lt - 1);
+        QuickSort3Way.sort(list, gt + 1, endIndex);
 	}
 	
 	static lessEq(itemA, itemB) {
@@ -59,9 +62,10 @@ class QuickSort3Way {
 
 	static main() {
 		// for test
-		let list = [];
-		for(let i=0; i<20; i++) {
-			list.push(chance.integer({min: 1, max: 9999}));
+        let list = [];
+        let count = 5;
+		for(let i = 0; i < count; i++) {
+			list.push(chance.integer({min: 1, max: 20}));
 		}
 		console.log('before sort', list);
 		QuickSort3Way.Sort(list);

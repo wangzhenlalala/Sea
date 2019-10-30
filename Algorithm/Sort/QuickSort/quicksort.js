@@ -75,4 +75,3 @@ class QuickSort {
 	}
 }
 
-QuickSort.main();
