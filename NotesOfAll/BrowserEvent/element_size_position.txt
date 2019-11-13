@@ -1,0 +1,30 @@
+* 相对于window的位置
+	- clientX, clientY
+	-- element.getBoundingClientRect()
+	-- {
+		x,
+		y,
+		top,
+		left,
+		width,
+		height
+	}
+
+document.elementFromPoint(clientX, clientY)
+	- 返回clientX,clientY 坐标下的元素，
+	- 如果clientX, clientY不再视口的范围内，返回null
+
+* 相对于document的位置
+	- pageX, pageY
+	-- pageX = element.getBoundingClientRect().left + window.pageXoffset
+	-- pageY = element.getBoundingClientRect().top + window.pageYoffset
+	--- document.documentElement.scrollTop == window.pageYoffset
+
+
+
+
+
+element.
+	- clientWidth / clientHeight // content + padding
+	- offsetWidth / offsetHeight // content + padding + border 
+	- scrollWidth / scrollHeight
