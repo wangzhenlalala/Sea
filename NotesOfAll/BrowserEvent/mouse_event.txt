@@ -1,0 +1,28 @@
+// https://javascript.info/mousemove-mouseover-mouseout-mouseenter-mouseleave
+
+* mouseout / mouseover 
+* mouseenter / mouseleave
+
+鼠标的移入/移除，
+	* 从谁那里出来，到谁那里啦
+		- event.target
+		- event.relatedTarget
+
+<eleA>
+	<eleChildA>
+		<eleChildB>
+		</eleChildB>
+	</eleChildA>
+</eleA>
+
+* mouseout / mouseover
+	- 鼠标 eleA的子元素，也算是移出了 eleA
+	- 移入到eleChildB后，其收到mouseover事件，
+	- mouseover事件会冒泡到eleA，eleA会收到该事件，但是此时e.target == eleChildB, 
+	  可以根据e.relatedTarget来判定，鼠标是否移出了eleA,还是进入其 子元素了
+
+
+* mouseenter / mouseleave
+	- 进入其子元素不会触发mouseleave
+	- 离开元素，触发mouseleave, 但是mouseleave事件，【不会冒泡】
+	  无法进行事件代理 event delegation

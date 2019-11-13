@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>image offset</title>
+</head>
+<body>
+	<div id="template" style="display: none">
+		<div class="item">
+			<p class="name"></p>
+			<p class="desc"></p>
+			<img src="" />
+		</div>
+	</div>
+	<script>
+		$template = document.querySelector('#template');
+		$item = $template.querySelector('.item').cloneNode(true);
+		$name = $item.querySelector('.name');
+		$desc = $item.querySelector('.desc');
+		$img = $item.querySelector('img');
+		$name.textContent = "this my name";
+		$desc.textContent = "DOM recycling is a underutilized technique to keep the DOM node count low. The general idea is to use already created DOM elements that are off-screen instead of creating new ones. Admittedly, DOM nodes themselves are cheap, but they are not free, as each of them adds extra cost in memory, layout, style and paint. Low-end devices will get noticeably slower if not completely unusable if the website has too big of a DOM to manage. Also keep in mind that every relayout and reapplication of your styles – a process that is triggered whenever a class is added or removed from a node – grows more expensive with a bigger DOM. Recycling your DOM nodes means that we are going to keep the total number of DOM nodes considerably lower, making all these processes faster.";
+		$img.width = 100 ;
+		$img.height = 200 ;
+
+		document.documentElement.appendChild($item);
+		console.log($item.offsetHeight);
+	</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+Num is a typeclass 
+    — a group of types
+    — which includes all types which are regarded as numbers.[3] The (Num a) => part of the signature restricts a to number types 
+    – or, in Haskell terminology, instances of Num.
