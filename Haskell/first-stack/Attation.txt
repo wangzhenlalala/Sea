@@ -1,0 +1,6 @@
+* 自己手动下载stack的压缩包 
+* 设置清华的源
+    在~/.stack/config.yaml
+* stack配置ghc错误
+    xcode-select --install # Install Command Line Tools if you haven't already.
+    sudo xcode-select --switch /Library/Developer/CommandLineTools # Enable command line tools
