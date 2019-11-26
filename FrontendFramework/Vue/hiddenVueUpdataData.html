@@ -9,19 +9,99 @@
 		<div class="content" >
 			<h1>{{name}}</h1>
 			<p>{{age}}</p>	
-		</div>		
+		</div>	
+		<div>
+			<button @click="onAdd">Add</button> <br>
+			<button @click="onDel">Delete</button> <br>
+			<button @click="onAddDel">Add then Delete</button><br>
+			<button @click="setParticipantObj">Set Participant Object</button><br>
+			<div v-for="(item, index) in list" :key="index">
+				{{item.name}}
+			</div>
+			<hr>
+			<div v-for="(item, index) in children" :key="index">
+				{{item.name}}
+			</div>
+			<hr>
+			<div>{{participantObj ? participantObj.name : "Null"}}</div>
+		</div>	
 	</div>
 	<script>
+		let source = {
+			name: 'wangzhen',
+			age: 26,
+			show: true,
+			address: {
+				province: 'anhui',
+				dist: {
+					first: 'xinhua',
+					last: 'yuhu'
+				}
+			},
+			children: [
+				{
+					name: 'hechen'
+				},
+				{
+					name: 'woruo'
+				}
+			],
+			list: [],
+			index: 0,
+			participantObj: null,
+		}
 		var p = new Vue({
 			el: "#root",
 			data() {
-				return {
-					name: 'wangzhen',
-					age: 26,
-					show: false
-				}
+				return source
 			},
+			watch: {
+				"address.dist": function(newValue) {
+					console.log("dist change to: ", newValue);
+				},
+				"children.length": function(newLength) {
+					alert('length change');
+				},
+				"list.length": {
+					handler(newLen) {
+						console.log('watch for list length: ', newLen);
+					}
+				},
+				list(newV) {
+					console.log('watch for list: ', newV.length);
+				}
+
+			},
+			methods: {
+				onAdd() {
+					this.list.push({
+						name: this.index++
+					})
+				}, 
+				onDel() {
+					this.list.pop();
+				},
+				onAddDel() {
+					this.onAdd();
+					this.onDel();
+				},
+				setParticipantObj() {
+					this.participantObj = this.children[0];
+				}
+			}
 		})
 	</script>
 </body>
 </html>
+
+<!-- 
+	<div :class="$style['operate-btns']" :style="operateBtnsStyleObj" v-if="managingAttendee && managingAttendee.id == item.id">
+	    <button tabindex="2" v-if="managingAttendee.isRaiseHand">Lower Hand</button>
+	    <button tabindex="2" 
+	        v-if="op"
+	    >Mute</button>
+	    <button tabindex="2" v-if="operateBtnsObj.unmute">Unmute</button>
+	    <button tabindex="2" v-if="operateBtnsObj.rename">Rename</button>
+	    <button tabindex="2" v-if="operateBtnsObj.more">More</button>
+	</div>
+ -->

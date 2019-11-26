@@ -1,0 +1,68 @@
+Slot: 内容分发 (Content Distribution)
+	allow us to Compose Components in a different way.
+	用另一种方式来组合组件
+
+	-- App.vue
+		import F from  './F';
+		<template>
+			<F>
+				<template v-slot:default>
+					<C1></C1>
+				</template>
+
+				<template v-slot:first>
+					<C2 ></C2>
+				</template>
+			</F>
+		</template>
+
+	-- F.vue
+		<template>
+			<slot name="default"><slot>
+			<slot name="first"></slot>
+		</template>
+	这些 F 渲染的内容是有F的使用者决定的，可以动态的改变指定
+	** slot template
+	** slot 的内容需要用template标签包装
+
+	和下面相比：
+	-- F.vue
+		  import C1 from './C1';
+		  import C2 from './C2';
+		  <template>
+		  	  <C1></C1>
+			  <C2></C2>
+		  </template>
+	这样写 F 组件所要渲染的内容就只能是C1，C2，不能动态的改变
+
+Scoped Slots
+	-- Sometimes, it’s useful for [slot content] to have access to data only available in the [child component].
+	-- Slot Template
+	-- Slot Props
+
+	-- App.vue
+		import F from  './F';
+		<template>
+			<F>
+				<template v-slot:default="defaultProps">
+					<C1 :address="defaultProps.address"></C1>
+				</template>
+
+				<template v-slot:first="firstProps">
+					<C2 :user="firstProps.user"></C2>
+				</template>
+
+				<template v-slot:second="{address, user}">
+					<C2 :user="user" :address="address"></C2>
+				</template>
+			</F>
+		</template>
+
+	-- F.vue
+		<template>
+			<slot name="default" v-bind:address="this.user.address"><slot>
+			<slot name="first" v-bind:user="this.user" v-bind:address="this.user.address"></slot>
+			<slot name="second" v-bind:user="this.user" v-bind:address="this.user.address"></slot>
+		</template>
+
+
