@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue2.6.10.js"></script>
+</head>
+<body>
+   <div id="app">
+        <button @click="onAdd">Add</button><br>
+        <button @click="onDel">Delete</button><br>
+        <button @click="onAlter">alter one</button><br>
+        <button @click="onAddDel">add and then delete</button><br>
+       <div class="item" v-for="item in list" :key="item.name">
+            {{item.name}}
+       </div>
+    </div> 
+   <script>
+       let app = new Vue({
+           el: '#app',
+           data() {
+               return {
+                   list: [],
+                   index: 1,
+               }; 
+           },
+           watch: {
+                "list.length": {
+                    handler(newLen) {
+                        console.log('list length changed to: ', newLen) ;
+                    },
+                    immediate: true,
+                }
+           },
+           methods: {
+               onAdd() {
+                   this.list.push( {
+                        name: this.index++
+                   })
+               },
+               onDel() {
+                   this.list.pop();
+               },
+               onAlter() {
+                   let i = 2;
+                   this.list.splice(i, 1, {name: this.index++});
+               },
+               onAddDel() {
+                   this.onAdd();
+                   this.onDel();
+               }
+           }
+
+       })
+   </script>
+</body>
+</html>
