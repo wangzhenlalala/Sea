@@ -4,7 +4,7 @@
         <div :class="$style['sentinel']" :style="sentinelStyle"></div>
         <div 
             v-for="(item, index) in renderList" 
-            :key="item[item.itemKeyName] || index" 
+            :key="item && item[item.itemKeyName] || index" 
             :style="itemStyle(item, index)" 
             :class="$style.scrollItem"
         >
@@ -45,7 +45,7 @@ export default {
     data() {
         return {
             firstIndex: 0, // 在scrollList中的下标
-            lastIndex: 0, // 在scrollList中的下标 lastIndex -> [0, this.scrollList.length - 1]
+            lastIndex: 0, // 在scrollList中的下标 lastIndex -> [0, this.scrollList.length]
             actualLastIndex: 0, // 如过计算的lastIndex超过了当前的scrollList的长度，我们是不能显示还不存在的元素，但是我们根据这个标志去判断是是否需要请求数据
             anchorIndex: 0, // 在scrollList中的下标
             anchorOffset: 0, 
@@ -62,11 +62,16 @@ export default {
         }
     },
     watch: {
-        scrollList(newV) {
-            // 1. length change
-            // 2. reassigned a new list
-            // go here
-            this.updateRenderList();
+        scrollList: {
+            handler: function(newV){
+                // 1. length change
+                // 2. reassigned a new list
+                // go here
+                console.log("participants: flatscroll list: watch scrollList", newV);
+                this.updateRenderListRange(this.anchorIndex); // 每次长度变化的时候，lastIndex有可能需要变化 否则最开始 [], lastIndex == firstIndex == 0 =>  renderLit == [] 
+                this.updateRenderList();
+            },
+            immediate: true
         },
         listHeight(newV) {
             this.updateRenderListRange(this.anchorIndex);
@@ -119,17 +124,18 @@ export default {
         },
         updateRenderListRange(anchorIndex) {
             // anchorIndex -> viewportHeigt -> (firstIndex, endIndex)
+            console.log("participants: flatscrollList: update render list range:", this.scrollList);
             let viewCount = Math.ceil(this.listHeight / this.unitHeight);
             let first = this.anchorIndex - this.extraCounts;
             let last = this.anchorIndex + viewCount + this.extraCounts;
             this.firstIndex = Math.max(first, 0);
-            this.lastIndex = Math.min(last, this.scrollList.length - 1);
+            this.lastIndex = Math.min(last, this.scrollList.length);
             this.actualLastIndex = last;
         },
         updateRenderList() {
             // (firstIndex, endIndex) -> renderList
             let result = [];
-            for(let i = this.firstIndex; i <= this.lastIndex; i++) {
+            for(let i = this.firstIndex; i < this.lastIndex; i++) {
                 result.push(this.scrollList[i]);
             }
             this.renderList = result;
@@ -139,7 +145,7 @@ export default {
             if(this.isRequesting) return;
             this.isRequesting = true;
             let count = this.actualLastIndex - this.scrollList.length;
-            if(count >= 0) {
+            if(count > 0) {
                 this.$emit('fetchMoreData', count); // 由父组件提供的函数
             }
         },

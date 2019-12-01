@@ -14,46 +14,47 @@
 			<button @click="onAdd">Add</button> <br>
 			<button @click="onDel">Delete</button> <br>
 			<button @click="onAddDel">Add then Delete</button><br>
-			<button @click="setParticipantObj">Set Participant Object</button><br>
-			<div v-for="(item, index) in list" :key="index">
+			<button @click="setParticipantObj">Set Participant Object to null</button><br>
+			<div v-for="(item, index) in list" :key="index" @click="onClickItem(item)">
+				{{item.index}} <button @click.stop="item.index++">add me</button>
+			</div>
+			<hr>
+			<div v-for="(item, index) in children" :key="index + 'child'" >
 				{{item.name}}
 			</div>
 			<hr>
-			<div v-for="(item, index) in children" :key="index">
-				{{item.name}}
-			</div>
-			<hr>
-			<div>{{participantObj ? participantObj.name : "Null"}}</div>
+			<div>{{participantObj ? participantObj.index : "Null"}}</div>
 		</div>	
 	</div>
 	<script>
-		let source = {
-			name: 'wangzhen',
-			age: 26,
-			show: true,
-			address: {
-				province: 'anhui',
-				dist: {
-					first: 'xinhua',
-					last: 'yuhu'
-				}
-			},
-			children: [
-				{
-					name: 'hechen'
-				},
-				{
-					name: 'woruo'
-				}
-			],
-			list: [],
-			index: 0,
-			participantObj: null,
-		}
 		var p = new Vue({
 			el: "#root",
 			data() {
-				return source
+				return {
+					name: 'wangzhen',
+					age: 26,
+					show: true,
+					address: {
+						province: 'anhui',
+						dist: {
+							first: 'xinhua',
+							last: 'yuhu'
+						}
+					},
+					children: [
+						{
+							name: 'hechen',
+							index: 1
+						},
+						{
+							name: 'woruo',
+							index: 2
+						}
+					],
+					list: [],
+					index: 0,
+					participantObj: null,
+				}
 			},
 			watch: {
 				"address.dist": function(newValue) {
@@ -75,7 +76,7 @@
 			methods: {
 				onAdd() {
 					this.list.push({
-						name: this.index++
+						index: this.index++
 					})
 				}, 
 				onDel() {
@@ -86,7 +87,10 @@
 					this.onDel();
 				},
 				setParticipantObj() {
-					this.participantObj = this.children[0];
+					this.participantObj = null;
+				},
+				onClickItem(item) {
+					this.participantObj = item;
 				}
 			}
 		})
