@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Partition Median</title>
+</head>
+<body>
+   <script>
+       // 利用切分求中位数
+       // index: sourceList中第N大的元素
+       // sourceList :: [Integer]
+       function findNthMax(N, sourceList) {
+            if(N > sourceList.length) {
+                console.log('wrong arguments')
+                return;
+            }
+            // 暂时假定sourlist.length % 2 = 1, 是奇数；
+            return findNthElement(N, 0, sourceList.length - 1, sourceList);
+       }
+
+       function findNthElement(N, start, end, list) {
+           let fixedI = partition(start, end, list);
+           if(fixedI == N - 1) {
+               return fixedI;
+           } else if (fixedI > N - 1){
+               return findNthElement(N, start, fixedI - 1, list);
+           } else {
+               return findNthElement(N, fixedI + 1, end, list);
+           }
+       }
+       // 原位修改
+       function partition(start, end, list) {
+           if(list.length <= 1) {
+                return start;
+           };
+           let pivot = start;
+           let left = start;
+           let right = end + 1;
+           // x <= start --> list[x] <= list[left];
+           // y >= right --> list[y] >= right
+           // x, y 下的元素的位置都是，已经被确定的，
+           // left < z < right 位置都是未确定的，当该范围缩小为0的时候，切分完成
+           while(left < right) {
+               while(left < end && list[++left] < list[pivot]);
+               while(right > start && list[--right] > list[pivot]);
+               if(left >= right) break;
+               exchange(left, right, list);
+           }
+           exchange(right, pivot, list);
+           return right;
+       }
+
+       function exchange(i, j, list) {
+            let temp = list[i];
+            list[i] = list[j];
+            list[j] = temp; 
+       }
+
+       let source = [1, 2, 3, 8, 5, 6, 7];
+       console.log(source[ findNthMax(4, source) ]);
+   </script> 
+</body>
+</html>
