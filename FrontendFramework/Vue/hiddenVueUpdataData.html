@@ -3,97 +3,94 @@
 <head>
 	<title></title>
 	<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+	<style>
+		.item {
+			background: pink;
+			margin-bottom: 5px;
+		}
+	</style>
 </head>
 <body>
-	<div id="root" v-show="show">
-		<div class="content" >
-			<h1>{{name}}</h1>
-			<p>{{age}}</p>	
-		</div>	
-		<div>
-			<button @click="onAdd">Add</button> <br>
-			<button @click="onDel">Delete</button> <br>
-			<button @click="onAddDel">Add then Delete</button><br>
-			<button @click="setParticipantObj">Set Participant Object to null</button><br>
-			<div v-for="(item, index) in list" :key="index" @click="onClickItem(item)">
-				{{item.index}} <button @click.stop="item.index++">add me</button>
-			</div>
-			<hr>
-			<div v-for="(item, index) in children" :key="index + 'child'" >
-				{{item.name}}
-			</div>
-			<hr>
-			<div>{{participantObj ? participantObj.index : "Null"}}</div>
-		</div>	
+	<div id="root">
+		<list-template :list="list">
+			<template v-slot:default="props">
+				<div class="item" 
+					:key="props.item.id" 
+					@click="onClickItem(props.item)" 
+					@mouseenter="onMouseEnter(props.item)" 
+					@mouseleave="onMouseLeave(props.item)">
+					<button @click.stop="setCurrentItem(props.item)">set me to current</button>
+					<button @click.stop="delMe(props.item)">delete this item</button>
+					{{props.item.name}}
+				</div>
+			</template>
+		</list-template>
+		<div v-if="currentItem">
+			{{currentItem.name}}
+		</div>
 	</div>
+
+	<div id="list-template">
+		<div>
+			<slot name="default" v-for="item in list" :item="item"></slot>
+		</div>
+	</div>
+
 	<script>
+		Vue.component("list-template", {
+			template: "#list-template",
+			props: {
+				list: {
+					type: Array,
+					default: []
+				},
+				
+			}
+		});
+
+
 		var p = new Vue({
 			el: "#root",
 			data() {
 				return {
-					name: 'wangzhen',
-					age: 26,
-					show: true,
-					address: {
-						province: 'anhui',
-						dist: {
-							first: 'xinhua',
-							last: 'yuhu'
-						}
-					},
-					children: [
-						{
-							name: 'hechen',
-							index: 1
-						},
-						{
-							name: 'woruo',
-							index: 2
-						}
+					list: [
+						{id: 0, name: 0},
+						{id: 1, name: 1},
+						{id: 2, name: 2},
+						{id: 3, name: 3},
 					],
-					list: [],
-					index: 0,
-					participantObj: null,
+					currentItem: null,
 				}
 			},
 			watch: {
-				"address.dist": function(newValue) {
-					console.log("dist change to: ", newValue);
-				},
-				"children.length": function(newLength) {
-					alert('length change');
-				},
-				"list.length": {
-					handler(newLen) {
-						console.log('watch for list length: ', newLen);
-					}
-				},
 				list(newV) {
 					console.log('watch for list: ', newV.length);
 				}
 
 			},
 			methods: {
-				onAdd() {
-					this.list.push({
-						index: this.index++
-					})
-				}, 
-				onDel() {
-					this.list.pop();
-				},
-				onAddDel() {
-					this.onAdd();
-					this.onDel();
-				},
-				setParticipantObj() {
-					this.participantObj = null;
-				},
 				onClickItem(item) {
-					this.participantObj = item;
+					item.name = item.name + "_" + item.name.toString().slice(0, 1);
+				},
+				setCurrentItem(item) {
+					console.log("set current: ", item);
+					this.currentItem = item;
+				},
+				delMe(item){
+					let index = this.list.findIndex( e => e.id == item.id);
+					if(index >= 0) {
+						this.list.splice(index, 1);
+					}
+				},
+				onMouseLeave(item) {
+					console.log("leave: ", item.name);
+				},
+				onMouseEnter(item) {
+					console.log("enter: ", item.name);
 				}
 			}
-		})
+		});
+		
 	</script>
 </body>
 </html>
