@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Partition Median</title>
+    <script src="https://cdn.bootcss.com/chance/0.7.2/chance.js"></script>
 </head>
 <body>
    <script>
@@ -17,7 +18,7 @@
                 return;
             }
             // 暂时假定sourlist.length % 2 = 1, 是奇数；
-            return findNthElement(N, 0, sourceList.length - 1, sourceList);
+            return sourceList[ findNthElement(N, 0, sourceList.length - 1, sourceList) ];
        }
 
        function findNthElement(N, start, end, list) {
@@ -30,25 +31,32 @@
                return findNthElement(N, fixedI + 1, end, list);
            }
        }
+
        // 原位修改
+       // return :: Int
        function partition(start, end, list) {
            if(list.length <= 1) {
                 return start;
            };
-           let pivot = start;
            let left = start;
            let right = end + 1;
            // x <= start --> list[x] <= list[left];
            // y >= right --> list[y] >= right
            // x, y 下的元素的位置都是，已经被确定的，
            // left < z < right 位置都是未确定的，当该范围缩小为0的时候，切分完成
-           while(left < right) {
-               while(left < end && list[++left] < list[pivot]);
-               while(right > start && list[--right] > list[pivot]);
+
+           // 调用的时候，list.length > 1, 
+           while(true) {
+               while(list[++left] < list[start]) {
+                   if(left == end) {
+                       break;
+                   }
+               };
+               while(list[--right] > list[start]) {};
                if(left >= right) break;
                exchange(left, right, list);
            }
-           exchange(right, pivot, list);
+           exchange(right, start, list);
            return right;
        }
 
@@ -57,9 +65,23 @@
             list[i] = list[j];
             list[j] = temp; 
        }
-
-       let source = [1, 2, 3, 8, 5, 6, 7];
-       console.log(source[ findNthMax(4, source) ]);
+       function main() {
+           let testArray = [];
+           let  len = 10;
+           for( i = 0; i < len; i++) {
+                testArray.push(chance.integer({min: 0, max: 20}));
+           };
+           console.log("original", testArray);
+           let nth = 4;
+           let copied = testArray.slice(0).sort((a,b) => a - b);
+           console.log('sorted: ', copied);
+           console.log("by sorted: nth is -> ", copied[nth-1]);
+           
+           let cal = findNthMax(nth, testArray);
+           console.log('partitioned: ', testArray);
+           console.log("by findNth: nth is -> ", cal);
+       }
+       main();
    </script> 
 </body>
 </html>
