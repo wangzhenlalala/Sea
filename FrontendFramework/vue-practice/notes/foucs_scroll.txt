@@ -1,0 +1,1 @@
+* 在一个scrollList中，通过tab键，不断的改变focus，浏览器会自动的滚动list

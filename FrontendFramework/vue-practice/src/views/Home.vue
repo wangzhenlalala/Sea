@@ -9,25 +9,29 @@
         @fetchMoreData="fetchMoreData"
         @onScroll="onScroll"
         ref="flatScrollList"
-        :class="$style['waiting-list-list']"
-    >
+        :class="$style['waiting-list-list']">
         <template v-slot:default="{item}">
             <div :class="$style.item">
                 {{item.name}}
             </div>
         </template>
     </FlatScrollList>
+
+   <FocusRoving></FocusRoving> 
+
 </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import FlatScrollList from '@/components/FlatScrollList.vue'
+import FocusRoving from '@/components/FocusRoving.vue'
 
 export default {
   name: 'home',
   components: {
     FlatScrollList,
+    FocusRoving,
   },
   created() {
 
