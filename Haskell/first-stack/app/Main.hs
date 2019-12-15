@@ -1,6 +1,7 @@
 module Main where
 
 import Lib
+import SimpleJSON
 
 main :: IO ()
-main = someFunc
+main = print (JObject [("name", JString "wangzhen"), ("age", JNumber 26)])
