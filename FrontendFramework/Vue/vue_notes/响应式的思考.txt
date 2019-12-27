@@ -1,0 +1,25 @@
+* vue会把data的每个属性都递归的添加get,set吗？？？？
+	-- 会的，initData, 调用defineReactive(obj, key, val, customeSetter, shallow)的时候，没有指定shallow,就为undefined，
+	-- 所以 !shallow && observe(obj) 就执行了。
+	-- 递归的把数据变成响应式 and 深度的收集依赖 不是一回事！！！！ 
+	-- initData and initWatch的任务不同
+	-- 去看下initWatch的实现
+
+* vue为什么要在每个isObject(obj), 的obj的里面添加一个 __ob__::Observer的对象
+	-- 是为了监听obj content的变化
+	-- 我自己把一个属性分为两个部分
+	-- obj.a = {name: 'xx'}
+	-- 1. value -> {name: 'xx'} [(key, value)]
+		  如果我们obj.a = {age: 'xx'}, 就改变了obj.a 的value 
+	   2. content -> {name: 'xx', age: 24}
+	   	  如果我们给value新添加了属性，那么依赖于obj.a的watcher，应该也要被通知变化
+	   content的变化监听，就是通过__ob__来完成的
+	Vue.set(obj, key, val)
+
+* content的依赖收集在 obj.__ob__.dep
+* value的依赖收集在 defineReactive()函数的闭包里定义的 dep = new Dep() 里面
+* 数组的push,pop, shift, unshift, splice等都被augument了
+
+
+？？？？？？？？？？？？？？？？ Questions ？？？？？？？？？？？？？？？？？？？
+1. Vue是如何管理父子组件之间的生命r周期的？？？？

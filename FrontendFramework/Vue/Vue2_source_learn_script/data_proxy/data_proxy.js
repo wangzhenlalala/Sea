@@ -2,15 +2,15 @@ console.log(Vue);
 let Me = {
     name : 'wangzhen', 
     age: 27,
-    family:{
-        name: 'fanghua',
-        role: 'wife'
-    }
+    family: [
+        {name: 'fanghua', role: 'wife', hobby: {basketball: true} },
+        {name: 'hechen', role: 'son', hobby: {basketball: true} },
+        {name: 'woruo', role: 'daughter', hobby: {basketball: true} },
+    ]
 }
 
 let vue1 = new Vue({
     name: 'me',
-    el: "#app",
     data(){
         return Me
     },
