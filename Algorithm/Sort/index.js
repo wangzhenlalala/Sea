@@ -5,9 +5,6 @@
 // 测试三路切分排序
 // QuickSort3Way.main();
 
-let testList = [2, 5, 9, 6, 1, 3];
-let heap = new Heap(testList);
+// 测试堆排序
 
-while(heap.size()) {
-    console.log(heap.delMin());
-}
+HeapSort.main();

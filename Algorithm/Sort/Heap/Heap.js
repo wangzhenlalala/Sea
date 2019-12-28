@@ -65,7 +65,3 @@ class Heap {
         return this.list.length;
     }
 }
-
-class HeapSort {
-    
-}
