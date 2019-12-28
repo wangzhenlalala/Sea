@@ -10,10 +10,10 @@ module SimpleJSON
     getObject,
     isNull
 ) where 
-data JValue = JNumber Double
-            | JString String
+data JValue = JNull 
             | JBool Bool
-            | JNull
+            | JNumber Double
+            | JString String
             | JObject [(String, JValue)]
             | JArray [JValue]
             deriving(Show, Eq, Ord)
