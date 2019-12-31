@@ -11,11 +11,18 @@
 <body>
     <div id="app">
         <p>{{ name }}</p>
+        <div v-for="item in list" :key="item.id" @click="onClick(item)">{{item.name}}</div>
     </div>
     <button id="btn2">delete source</button>
     <script>
         let source = {
             name: "wngzhen",
+            list: [
+                {name: '1', id: 1},
+                {name: '2', id: 2},
+                {name: '3', id: 3},
+                {name: '4', id: 4},
+            ]
         }
 
         let vm = new Vue({
@@ -23,12 +30,15 @@
             data: function() {
                 return source;
             },
+            methods: {
+                onClick(item) {
+                    Object.assign(item, {name: item.name + " #"})
+                }
+            }
         });
 
         document.querySelector('#btn2').addEventListener('click', function(e) {
-            source = {
-                name: 'changed',
-            }
+            
         })
     </script>
 </body>
