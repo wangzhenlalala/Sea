@@ -3,10 +3,15 @@
  * 2. 集合元素的有序性，是由 key 决定的
  * 3. key extends Comparable
  */
-
+/**
+    data Tree a = Empty
+                | Node (Tree a) a Node (Tree a)
+    不要把叶子节点(leaf node)看成是一棵树的终点，Empty才是。
+    这样思考更容易理解null，在代码中的作用
+ */
 class Node {
     constructor(props) {
-        if(props.key === null || props.key === undefined) throw Error('you must give a key!!!');
+        if(props.key === null || props.key === undefined) throw new Error('you must give a key!!!');
         this.key = props.key;
         this.value = props.value || null;
         this.left = props.left || null;
@@ -27,6 +32,7 @@ class BST {
     get(key) {
         return this._get(this.root, key);
     }
+    // Node -> Key -> Value
     _get(node, key) {
         if(node === null) return null;
         let cmp = this.compare(key, node.key);
@@ -38,7 +44,7 @@ class BST {
     put(key, value) {
         this.root = this._put(this.root, key, value);
     }
-    /** return::Node */
+    // Node -> Key -> Value -> Node
     _put(node, key, value) {
         // 递归的做法有很多不必要的left,right更新
         if(node == null) return new Node({key: key, value, value});
@@ -62,6 +68,7 @@ class BST {
         if(this.root === null) return null;
         return this._min(this.root).value;
     }
+    // Node -> Node
     _min(node) {
         if(node.left === null) return node;
         else return this._min(node.left);
@@ -71,6 +78,7 @@ class BST {
         if(this.root === null) return null;
         return this._max(this.root).value;
     }
+    // Node -> Node
     _max(node) {
         if(node.right === null) return node;
         else return this._max(node.right);
@@ -79,6 +87,7 @@ class BST {
     select(k) {
         return this._select(this.root, k);
     }
+    // Node -> Int -> Node
     _select(node, k) {
         if(node == null) return null;
         let size = this.size(node.left);
@@ -89,8 +98,13 @@ class BST {
 
     /** 返回key是第几个元素，key的下标，从0开始 */
     /** 返回 所有比key小的元素的个数*/
-    rank(key) {}
+    rank(key) {
 
+    }
+    // Node -> Key -> Number
+    _rank(node, key) {
+
+    }
     /** 所有比key大的元素中，最小的key */
     ceiling(key) {}
 
