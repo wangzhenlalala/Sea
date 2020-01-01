@@ -1,11 +1,13 @@
 /**
- * 1. { (key, value) }的集合
- * 2. 集合元素的有序性，是由什么来决定的， key? value?
+ * 1. { (key, value) }的集合 [key is a member of well-ordered set]
+ * 2. 集合元素的有序性，是由 key 决定的
  * 3. key extends Comparable
  */
 
 class Node {
     constructor(props) {
+        if(props.key === null || props.key === undefined) throw Error('you must give a key!!!');
+        this.key = props.key;
         this.value = props.value || null;
         this.left = props.left || null;
         this.right = props.right || null;
@@ -17,37 +19,71 @@ class BST {
     constructor() {
         this.root = null;
     }
-    /** 查找指定的key，并返回对应的value */
-    get(key) {}
-
+    compare(a,b) {
+        // 当初始化一个实例后，为实例赋值该方法，来覆盖默认的方法
+        return a - b;
+    }
+    /** 查找指定的key，并返回对应的 node */
+    get(key) {
+        return this._get(this.root, key);
+    }
+    _get(node, key) {
+        if(node === null) return null;
+        let cmp = this.compare(key, node.key);
+        if(cmp === 0) return node.value;
+        else if(cmp < 0) return this._get(node.left, key);
+        else return this._put(node.right,  key);
+    }
     /** 插入/更新 key 对应的value */
     put(key, value) {
-        
+        this.root = this._put(this.root, key, value);
     }
     /** return::Node */
     _put(node, key, value) {
-        if(node == null) return new Node({value, value});
-        let cmp = 0;
+        // 递归的做法有很多不必要的left,right更新
+        if(node == null) return new Node({key: key, value, value});
+        let cmp = this.compare(key, node.key);
+        if(cmp == 0) {
+            node.value = value;
+        }else if(cmp < 0) {
+            node.left = this._put(node.left, key, value);
+        } else {
+            node.right = this._put(node.right, key, value);
+        }
+        node.childNodeCount = this.size(node.left) + this.size(node.right) + 1;
+        return node;
     }
 
     /** 删除key， 以及对应的value */
     delete(key) {}
 
     /** 查找最小值 */
-    min() {}
-
+    min() {
+        if(this.root === null) return null;
+        return this._min(this.root).value;
+    }
+    _min(node) {
+        if(node.left === null) return node;
+        else return this._min(node.left);
+    }
     /** 查找最大值 */
-    max() {}
-
+    max() {
+        if(this.root === null) return null;
+        return this._max(this.root).value;
+    }
+    _max(node) {
+        if(node.right === null) return node;
+        else return this._max(node.right);
+    }
     /** 找到第k个元素,下标为k 从0开始 */
     select(k) {
         return this._select(this.root, k);
     }
     _select(node, k) {
         if(node == null) return null;
-        let size = this.size(node);
-        if     ( size == 0 ) return node;
-        else if( size >  0 ) return this._select(node.left, k);
+        let size = this.size(node.left);
+        if     ( size == k ) return node;
+        else if( size >  k ) return this._select(node.left, k);
         else                 return this._select(node.right, k - size -1);
     }
 
@@ -65,5 +101,35 @@ class BST {
     size(/** BST */ node) {
         if(node === null) return 0;
         return node.childNodeCount;
+    }
+    // 中序遍历
+    traverse(func) {
+        this._traverse(this.root, func);
+    }
+
+    _traverse(node, func) {
+        if(node === null) return;
+        this._traverse(node.left, func);
+        func(node.key, node.value);
+        this._traverse(node.right, func);
+    }
+
+    keys() {
+        let result = [];
+        let getKey = (key, value) => result.push(key);
+        this.traverse(getKey);
+        return result;
+    }
+    values() {
+        let result = [];
+        let getValue = (key, value) => result.push(value);
+        this.traverse(getValue);
+        return result;
+    }
+    pairs() {
+        let result = [];
+        let getPair = (key, value) => result.push([key, value]);
+        this.traverse(getPair);
+        return result;
     }
 }
