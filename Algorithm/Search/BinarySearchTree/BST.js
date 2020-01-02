@@ -70,7 +70,7 @@ class BST {
     }
     // Node -> Node
     _min(node) {
-        if(node.left === null) return node;
+        if(node === null || node.left === null) return node;
         else return this._min(node.left);
     }
     /** 查找最大值 */
@@ -80,7 +80,7 @@ class BST {
     }
     // Node -> Node
     _max(node) {
-        if(node.right === null) return node;
+        if(node === null || node.right === null) return node;
         else return this._max(node.right);
     }
     /** 找到第k个元素,下标为k 从0开始 */
@@ -113,7 +113,26 @@ class BST {
     ceiling(key) {}
 
     /** 所有比key小的元素中，最大的key */
-    floor(key) {}
+    floor(key) {
+        return this._floor(this.root, key);
+    }
+    // Node -> Key -> Node
+    _floor(node, key) {
+        if(node == null) return null;
+        let cmp = this.compare(key, node.key);
+        if(cmp == 0) {
+           return this._max(node.left);
+        } else if(cmp < 0) {
+            return this._floor(node.left, key);
+        } else {
+            let min = this._min(node.right);
+            if(min === null || this.compare(min.key, key) >= 0) {
+                return node;
+            } else {
+                return this._floor(node.right, key);
+            }
+        }
+    }
 
     // 返回以node 为根节点的树的总的节点数量
     size(/** BST */ node) {
