@@ -99,11 +99,15 @@ class BST {
     /** 返回key是第几个元素，key的下标，从0开始 */
     /** 返回 所有比key小的元素的个数*/
     rank(key) {
-
+        return this._rank(this.root, key);
     }
     // Node -> Key -> Number
     _rank(node, key) {
-
+        if(node === null) return 0;
+        let cmp = this.compare(key, node.key);
+        if(cmp === 0)      return this.size(node.left);
+        else if(cmp < 0)   return this._rank(node.left, key);
+        else               return 1 + this.size(node.left) + this._rank(node.right, key);
     }
     /** 所有比key大的元素中，最小的key */
     ceiling(key) {}
