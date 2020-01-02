@@ -102,6 +102,7 @@ class BST {
         return this._rank(this.root, key);
     }
     // Node -> Key -> Number
+    // 小于key的key的数量
     _rank(node, key) {
         if(node === null) return 0;
         let cmp = this.compare(key, node.key);
@@ -110,8 +111,24 @@ class BST {
         else               return 1 + this.size(node.left) + this._rank(node.right, key);
     }
     /** 所有比key大的元素中，最小的key */
-    ceiling(key) {}
-
+    ceiling(key) {
+        return this._ceiling(this.root, key);
+    }
+    // Node -> Key -> Node 
+    // 大于key的所有key中的最小key
+    _ceiling(node, key) {
+        if(node === null) return null;
+        let cmp = this.compare(key, node.key);
+        if(cmp == 0) {
+            return this._min(node.right);
+        } else if(cmp > 0) {
+            return this._ceiling(node.right, key);
+        } else {
+            let max = this._max(node.left);
+            if(max === null || this.compare(key, max.key) >= 0) return node;
+            else return this._ceiling(node.left, key);
+        }
+    }
     /** 所有比key小的元素中，最大的key */
     floor(key) {
         return this._floor(this.root, key);
