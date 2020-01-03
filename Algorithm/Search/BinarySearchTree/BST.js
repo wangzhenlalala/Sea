@@ -63,6 +63,29 @@ class BST {
     /** 删除key， 以及对应的value */
     delete(key) {}
 
+    // Void -> Void
+    delMin() {
+        this.root = this._delMin(this.root);
+    }
+    // Node -> Node
+    _delMin(node){
+        if(node === null) return node;
+        if(node.left === null) return node.right;
+        node.left = this._delMin(node.left);
+        node.childNodeCount = this.size(node.left) + this.size(node.right) + 1;
+        return node;
+    }
+    delMax() {
+        this.root = this._delMax(this.root);
+    }
+    // Node -> Node
+    _delMax(node) {
+        if(node === null) return node;
+        if(node.right === null) return node.left;
+        node.right = this._delMax(node.right);
+        node.childNodeCount = this.size(node.left) + this.size(node.right) + 1;
+        return node;
+    }
     /** 查找最小值 */
     min() {
         if(this.root === null) return null;
@@ -133,6 +156,9 @@ class BST {
     floor(key) {
         return this._floor(this.root, key);
     }
+    // 我理解的floor和书上的有差别， 书上的意思和 Math.floor是一个意思
+    //  Math.floor(3.5) == 3; Math.floor(3) == 3
+    // 我理解的是 Math.floor(3.5) = 3; Math.floor(3) == 2所以过程不一样
     // Node -> Key -> Node
     _floor(node, key) {
         if(node == null) return null;
@@ -153,7 +179,7 @@ class BST {
 
     // 返回以node 为根节点的树的总的节点数量
     size(/** BST */ node) {
-        if(node === null) return 0;
+        if(node == null) return 0;
         return node.childNodeCount;
     }
     // 中序遍历
