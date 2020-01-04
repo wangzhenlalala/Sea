@@ -61,22 +61,28 @@ class BST {
     }
 
     /** 删除key， 以及对应的value */
-    delete(key) {}
+    delete(key) {
+        this.root = this._delete(this.root, key);
+    }
+    // Node -> Key -> Node
     _delete(node, key) {
         if(node === null) return null;
         let cmp = this.compare(key, node.key);
-        if(cmp < 0) return this._delete(node.left, key);
-        else if(cmp > 0) return this._delete(node.right, key);
-        else {
-            let min = this._min(node.right);
-            if(min == null) {
-                return node.left;
-            } else {
-                min.left = node.left;
-                node.right = this._delMin(node.right);
-                return min;
-            }
+        if(cmp < 0) {
+            node.left = this._delete(node.left, key);
         }
+        else if(cmp > 0) {
+            node.right = this._delete(node.right, key);
+        } else {
+            if(node.left === null) return node.right;
+            if(node.right === null) return node.left;
+            let oldNode = node;
+            node = this._min(node.right);
+            node.right = this._delMin(oldNode.right);
+            node.left = oldNode.left; 
+        }
+        node.childNodeCount = this.size(node.left) + this.size(node.right) + 1;
+        return node;
     }
     // Void -> Void
     delMin() {
