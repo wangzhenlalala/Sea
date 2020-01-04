@@ -62,7 +62,22 @@ class BST {
 
     /** 删除key， 以及对应的value */
     delete(key) {}
-
+    _delete(node, key) {
+        if(node === null) return null;
+        let cmp = this.compare(key, node.key);
+        if(cmp < 0) return this._delete(node.left, key);
+        else if(cmp > 0) return this._delete(node.right, key);
+        else {
+            let min = this._min(node.right);
+            if(min == null) {
+                return node.left;
+            } else {
+                min.left = node.left;
+                node.right = this._delMin(node.right);
+                return min;
+            }
+        }
+    }
     // Void -> Void
     delMin() {
         this.root = this._delMin(this.root);
