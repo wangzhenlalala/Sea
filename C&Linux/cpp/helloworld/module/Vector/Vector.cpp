@@ -17,6 +17,36 @@ Vector::~Vector() // destructor: release resources
 {
     delete[] elem; // delete[] 这都是什么语法啊！！！
 }
+
+// copy constructor
+Vector& Vector::Vector(Vector& a)
+    :elem(new double[a.sz]), sz(a.sz)
+{
+    for(int i=0; i<sz; i++)
+    {
+        elem[i] = 0.0;
+    }
+}
+
+// 类型转换
+Vector::Vector(int s)
+    :elem(new double[s]), sz(s)
+{
+
+}
+// copy assignment
+Vector& Vector::operator=(Vector& a)
+{
+    delete[] elem;
+    sz = a.sz;
+    elem = new double[a.sz];
+    for(int i=0; i<sz; i++)
+    {
+        elem[i] = a.elem[i];
+    }
+    return *this;
+}
+
 double& Vector::operator[](int i)
 {
     return elem[i];
@@ -36,3 +66,11 @@ int Vector::size()
 
 // Avoiding naked new and naked delete makes code far less error-prone a
 // nd far easier to keep free of resource leaks
+
+/*
+Before resorting to garbage collection, systematically use resource handles: Let each resource
+have an owner in some scope and by default be released at the end of its owners scope. In C++,
+this is known as RAII (Resource Acquisition Is Initialization) and is integrated with error handling
+in the form of exceptions. Resources can be moved from scope to scope using move semantics or
+‘‘smart pointers,’’ and shared ownership can be represented by ‘‘shared pointers’’ (§11.2.1).
+*/

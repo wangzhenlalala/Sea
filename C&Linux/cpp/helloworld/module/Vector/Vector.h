@@ -1,7 +1,10 @@
 class Vector {
 public:
     Vector(int s);
+    Vector(Vector& a); // copy constructor
+    explicit Vector(int s);
     ~Vector();
+    Vector& operator=(Vector& a); // copy assignment
     double& operator[](int i);
     int size() const;
 private:
