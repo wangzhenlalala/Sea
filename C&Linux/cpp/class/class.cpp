@@ -5,7 +5,7 @@
 // rather than just in our head, in a design document, or in some comments.
 
 
-/* concret class*/
+/* concrete class*/
 class Complex {
     double re, im; // representation
 public:
