@@ -10,13 +10,21 @@
 </head>
 <body>
     <div id="app">
-        <p>{{ name }}</p>
+
+        <child ref="child1" :name="name" :count="count" :age="333" id="35"></child>
         <div v-for="item in list" :key="item.id" @click="onClick(item)">{{item.name}}</div>
+        <div>
+            <button @click="onChangeName">change name</button>
+        </div>
+    </div>
+    <div id="child">
+        <div>child component props {{name}}</div>
     </div>
     <button id="btn2">delete source</button>
     <script>
         let source = {
-            name: "wngzhen",
+            name: 666,
+            count: 777,
             list: [
                 {name: '1', id: 1},
                 {name: '2', id: 2},
@@ -24,21 +32,64 @@
                 {name: '4', id: 4},
             ]
         }
+        Vue.component('child', {
+            props: ['name'],
+            template: '#child',
+            beforeUpdate() {
+                console.log('child before update', this.name, Date.now());
+            },
+            updated() {
+                console.log('child updated', this.name, Date.now());
+            },
+            watch: {
+                name: () => {
+                    performance.mark('changeName')
+                    console.log("child watch name", Date.now());
+                }
+            }
+        })
 
         let vm = new Vue({
             el: '#app',
             data: function() {
                 return source;
             },
+            beforeUpdate() {
+                console.log('parent before update', this.name, Date.now());
+            },
+            updated() {
+                // 通过this.$nextTick注册的回调函数的执行时机，是在什么时候？
+
+                performance.mark('changeName')
+                console.log('parent updated', this.name, Date.now());
+            },
             methods: {
                 onClick(item) {
                     Object.assign(item, {name: item.name + " #"})
+                },
+                onChangeName() {
+                    this.name = this.name + 1; // 父组件改变自己的name， 该name是子组件的props
+                    console.log('parent change name', Date.now());
+                    console.log('parent - get child name', this.$refs.child1.name, Date.now()); // 这个时候通过child是拿不到最新的name的，
+                    performance.mark('changeName')
                 }
             }
         });
 
         document.querySelector('#btn2').addEventListener('click', function(e) {
             
+        })
+
+        let p = Promise.resolve();
+        p.then( () => { // 向micro queue中加入一个 micro task
+            console.log('1111111111', 'in promise then');
+        });
+        console.log("1111111111", 'in script'); // 当前的执行栈执行
+        setTimeout(() => { // 向macro queue中加入一个 macro task
+            console.log('1111111111', 'in set timeout 0');
+        }, 0);
+        window.requestAnimationFrame(() => { // 在渲染下一帧前， 执行的队列任务
+            console.log('1111111111', 'in request animation frame');
         })
     </script>
 </body>

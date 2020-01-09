@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		.container {
+			width: 500px;
+			height: 500px;
+			margin: auto;
+			overflow: auto;
+			background: lightyellow;
+		}
+		.scroller {
+			width: 80%;
+			height: 80%;
+			background: lightblue;
+			margin: 0 auto;
+		}
+		.child {
+			width: 80%;
+			height: 80%;
+			margin: auto;
+			background: lightpink;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="scroller">
+			<div class="child">
+				
+			</div>
+		</div>
+	</div>
+	<div>
+		<button class="fake">emit event</button>
+	</div>
+	<script>
+		function addEvent(ele, eventName, listener, capture) {
+			ele.addEventListener(eventName, listener, !!capture);
+		}
+		function removeEvent(ele, eventName, listener, capture) {
+			ele.removeEventListener(eventName, listener, !!capture);
+		}	
+
+		let container = document.querySelector('.container');
+		let scroller = document.querySelector('.scroller');
+		let child = document.querySelector('.child');
+		let fakeBtn = document.querySelector('.fake');
+
+		function onScroll(e) {
+			e.preventDefault();
+			console.log(e.target.scrollTop);
+		}	
+		addEvent(container, 'scroll', onScroll);
+
+		function onClickContainer(e) {
+			console.log('on click container');
+		}
+		function onClickScroller(e) {
+			e.preventDefault();
+			e.stopPropagation();
+			console.log('on click scroller');
+		}
+		function onClickChild(e) {
+			console.log('on click child');
+		}
+
+		function onClickFake(e) {
+			let event = new MouseEvent('click', {
+				bubbles: true,
+				cancelable: true,
+				view: window,
+			});
+			// dispatchEvent == false, means some listeners called preventDefault
+			let canceled = !child.dispatchEvent(event);
+			if(canceled) {
+				console.warn('click prevent default is called');
+			} else {
+				console.log('not prevent default');
+			}
+		};
+
+		[
+			[container, onClickContainer],
+			[scroller, onClickScroller],
+			[child, onClickChild],
+			[fakeBtn, onClickFake]
+		].forEach(i => {
+			addEvent(i[0], 'click', i[1]);
+		})
+		
+	</script>
+</body>
+</html>
