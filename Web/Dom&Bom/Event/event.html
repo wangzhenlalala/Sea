@@ -2,15 +2,53 @@
 <html lang="en">
 <head>
     <title>Dom Event Model learn</title>
+    <style>
+        .target {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: lightblue;
+        }
+        .container {
+            height: 400px;
+            width: 200px;
+            overflow: auto;
+        }
+        .scroller {
+            height: 300%;
+            width: 100%;
+            background: lightgray;
+        }
+        .transitionBox {
+            position: relative;
+            margin: 20px 0;
+            width: 30px;
+            height: 30px;
+            background-color: red;
+        }
+    </style>
 </head>
 <body>
     <div class="root">
-        <div class="target"></div>
+        <div class="target">Target</div>
     </div>
     <div class="actions">
         <button class="trigger1">trigger event 1</button>
     </div>
+    <div class="container">
+        <div class="scroller">
+            scroller
+        </div>
+    </div>
+    <div class="transitionWrapper">
+        <div class="transitionBox">T</div>
+        <button class="start">start transition</button>
+        <button class="stop">stop transition</button>
+    </div>
+    
+
     <script src="../util.js"></script>
-   <script src="./event.js"></script> 
+   <script src="./event.js"></script>
+   <script src="./transition.js"></script>
 </body>
 </html>

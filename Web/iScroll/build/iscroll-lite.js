@@ -341,7 +341,7 @@ function IScroll (el, options) {
 		HWCompositing: true,
 		useTransition: true,
 		useTransform: true,
-		bindToWrapper: typeof window.onmousedown === "undefined"
+		bindToWrapper: typeof window.onmousedown === "undefined" // 什么意思
 	};
 
 	for ( var i in options ) {
@@ -457,7 +457,7 @@ IScroll.prototype = {
 		var point = e.touches ? e.touches[0] : e,
 			pos;
 
-		this.initiated	= utils.eventType[e.type];
+		this.initiated	= utils.eventType[e.typils.eventType[e.type];
 		this.moved		= false;
 		this.distX		= 0;
 		this.distY		= 0;
@@ -468,12 +468,13 @@ IScroll.prototype = {
 		this.startTime = utils.getTime();
 
 		if ( this.options.useTransition && this.isInTransition ) {
-			this._transitionTime();
+			this._transitionTime(); // 取消当前的动画
 			this.isInTransition = false;
 			pos = this.getComputedPosition();
 			this._translate(Math.round(pos.x), Math.round(pos.y));
 			this._execEvent('scrollEnd');
 		} else if ( !this.options.useTransition && this.isAnimating ) {
+            // 取消当前的js动画
 			this.isAnimating = false;
 			this._execEvent('scrollEnd');
 		}
@@ -854,6 +855,7 @@ IScroll.prototype = {
 	},
 
 	_transitionTime: function (time) {
+        // time不传就是取消动画
 		if (!this.options.useTransition) {
 			return;
 		}
@@ -866,6 +868,7 @@ IScroll.prototype = {
 		this.scrollerStyle[durationProp] = time + 'ms';
 
 		if ( !time && utils.isBadAndroid ) {
+            // 这是什么意思 ？？？
 			this.scrollerStyle[durationProp] = '0.0001ms';
 			// remove 0.0001ms
 			var self = this;
@@ -914,7 +917,7 @@ IScroll.prototype = {
 		var eventType = remove ? utils.removeEvent : utils.addEvent,
 			target = this.options.bindToWrapper ? this.wrapper : window;
 
-		eventType(window, 'orientationchange', this);
+		eventType(window, 'orientationchange', this); // this 指的是什么??
 		eventType(window, 'resize', this);
 
 		if ( this.options.click ) {

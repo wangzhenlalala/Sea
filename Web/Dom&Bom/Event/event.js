@@ -12,7 +12,8 @@
 let targetDiv = document.querySelector('.target');
 let rootDiv = document.querySelector('.root');
 let trigger1Btn = document.querySelector('.trigger1');
-
+let container = document.querySelector('.container');
+let scroller = document.querySelector('.scroller');
 
 function onHello(e) {
     console.log('event: hello -', e.currentTarget.className, e.detail);
@@ -22,22 +23,31 @@ function onTargetHello(e) {
     console.log('event: hello - in target - ', e.currentTarget.className, e.detail);
 }
 
-function onTargetClick(e) {
+function onClickTarget(e) {
     console.log('event: click - in target - ', e.currentTarget.className);
+    e.target.style.top = e.clientY + 'px';
+    e.target.style.left = e.clientX + 'px';
+}
+
+function onContainerWheel(e) {
+    console.log('event: wheel - ', e);
 }
 
 function onTrigger1(e) {
+    // 自定义的事件
     let customEvent = new CustomEvent("hello", {
         bubbles: false,
         detail: {msg: "i am alien"}
     });
 
+    // 浏览器的事件
     let clickEvent = new MouseEvent('click', {
-        clientX: window.clientWidth / 2,
-        clientY: window.clientHeight / 2,
+        clientX: window.innerWidth / 2,
+        clientY: window.innerHeight / 2,
         altKey: true
     });
 
+    // 派发事件给 实现EventTarget接口的对象
     targetDiv.dispatchEvent(customEvent);
     targetDiv.dispatchEvent(clickEvent);
 }
@@ -45,6 +55,8 @@ function onTrigger1(e) {
 addListener(targetDiv, 'hello', onHello);
 addListener(targetDiv, 'hello', onTargetHello);
 addListener(rootDiv, 'hello', onHello)
+addListener(targetDiv, 'click', onClickTarget);
+addListener(container, 'wheel', onContainerWheel);
 
 addListener(trigger1Btn, 'click', onTrigger1);
 

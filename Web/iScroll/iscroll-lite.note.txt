@@ -1,0 +1,6 @@
+1. _prefixStyle()
+
+iScroll对象的声明周期：
+    1. 初始化option 合并default 和 userDefined
+    2. init
+        * 初始化事件， 监听事件 click, mouse, touch, pointer
