@@ -1002,7 +1002,9 @@ IScroll.prototype = {
 
 		this.isAnimating = true;
 		step();
-	},
+    },
+    // The EventListener interface represents an object that can handle an event dispatched by an EventTarget object.
+    // EventListener.handleEvent()
 	handleEvent: function (e) {
 		switch ( e.type ) {
 			case 'touchstart':

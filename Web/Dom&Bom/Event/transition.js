@@ -35,9 +35,11 @@ function onToStopTransition(e) {
     // let wrapperRect = getRect(transitionWrapper);
     // let x = boxRect.left - wrapperRect.left;
 
-    transitionBox.style.transitionDuration = '0s'; 
-    transitionBox.style.transform = `translateX(${x}px)`; // 浏览器会立即跳到 新的 end value
+    // transitionBox.style.transitionDuration = '0s'; 
+    // transitionBox.style.transform = `translateX(${x}px)`; // 浏览器会立即跳到 新的 end value
     // transitionBox.style.height = '50px';    
+
+    console.log('current x,y - ', myS)
 }
 
 function onTransitionEnd(){
