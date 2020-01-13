@@ -32,6 +32,36 @@
             removeEvent: function (el, type, fn, capture) {
                 el.removeEventListener(type, fn, !!capture);
             },
+            getRect: function(el) {
+                if(el instanceof SVGAElement) {
+                    let rect = el.getBoundingClientRect();
+                    return {
+                        left: rect.left,
+                        top: rect.top,
+                        width: rect.width,
+                        height: rect.height,
+                    }
+                } else {
+                    return {
+                        left: el.offsetLeft,
+                        top: el.offsetRight,
+                        width: el.offsetWidth,
+                        height: el.offsetHeight,
+                    }
+                }
+            },
+            offset: function(el) {
+                let left = -el.offsetLeft;
+                    top  = -el.offsetTop;
+                while(el = el.offsetParent) {
+                    left -= el.offsetLeft;
+                    top -= el.offsetTop;
+                }
+                return {
+                    left: left,
+                    top: top,
+                }
+            },
             momentum: function (current, start, time, lowerMargin, wrapperSize, deceleration) {
                 var distance = current - start,
                     speed = Math.abs(distance) / time,
@@ -117,12 +147,20 @@
 		// this.distY
 		// this.directionLocked
         
+        // this.wrapperWidth
+        // this.wrapperHeight
+        // this.scrollerWidth
+        // this.scrollerHeight
+        // this.maxScrollX
+        // this.maxScrollY
+        // this.wrapperOffset
+
+
         this._init();
         this.refresh();
 
-        this.scrollTo(this.options.startX, this.options.startY);
+        this.scrollTo(this.options.startX, this.options.startY); // with animatioin
         this.enable();
-        
     }
     
     TinyScroll.prototype = {
@@ -130,7 +168,30 @@
         _init: function() {
             this._initEvents();
         },
-        refresh: function() {},
+        refresh: function() {
+            let rect = utils.getRect(this.wrapper);
+            this.wrpperHeight = rect.height;
+            this.wrapperWidth = rect.width;
+
+            rect = utils.getRect(this.scroller);
+            this.scrollerHeight = rect.height;
+            this.scrollerWidth = rect.width;
+
+            this.maxScrollX = this.wrapperWidth - this.scrollerWidth;
+            this.maxScrollY = this.wrapperHeight - this.scrollerHeight;
+            // 暂时不考虑 之滚动一个方向的情况
+
+
+            this.endTime = 0;
+            this.directionX = 0;
+            this.directionY = 0;
+
+            this.wrapperOffset = utils.offset(this.wrapper);
+
+            this._execEvent('refresh');
+
+		    this.resetPosition();
+        },
         _initEvents: function(remove) {
             let eventType = remove ? utils.removeEvent : utils.addEvent;
                 target = this.options.bindToWrapper ? this.wrapper : window;
@@ -159,6 +220,31 @@
         _transitionEnd: function(e) {},
         _execEvent: function(event) {
             console.log('execute event - ', event);
+        },
+        resetPosition(time) {
+            let x = this.x;
+                y = this.y;
+            time = time || 0;
+
+            if(x < this.maxScrollX) {
+                x = this.maxScrollX;
+            } else if( x > 0) {
+                x = 0;
+            }
+
+            if(y < this.maxScrollY) {
+                y = this.maxScrollY;
+            } else if( y > 0) {
+                y = 0;
+            }
+
+            if(x == this.x && y == this.y) {
+                return false;
+            }
+
+            this.scrollTo(x, y, time, this.options.bounceEasing);
+            
+            return true;
         },
         destroy: function() {},
         enable: function() {},

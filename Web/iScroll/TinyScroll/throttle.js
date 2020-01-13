@@ -18,7 +18,7 @@ _.throttle = function (func, wait, options) {
     // context 和 args 缓存 func 执行时需要的上下文，result 缓存 func 执行结果 
     var timeout, context, args, result;
     // 最近一次 func 被调用的时间点 
-    var previous = 0;
+    var previous = 0; // 意味着上次执行函数，实在很久很久以前了， 如果有函数调用过来就应该立即执行
     if (!options) options = {};
 
     // 创建一个延后执行的函数包裹住 func 的执行过程 
@@ -70,4 +70,41 @@ _.throttle = function (func, wait, options) {
     };
 
     return throttled;
+};
+
+
+// leading 和 trailing 的含义和 throttle的含义是一样的
+_.debounce = function (func, wait, immediate) {
+    var timeout, result;
+
+    var later = function (context, args) {
+        timeout = null;
+        if (args) result = func.apply(context, args);
+    };
+
+    var debounced = restArgs(function (args) {
+        // 每次新的尝试调用 func，会使抛弃之前等待的 func
+        if (timeout) clearTimeout(timeout);
+        // 如果允许新的调用尝试立即执行，
+        if (immediate) {
+            // 如果之前尚没有调用尝试，那么此次调用可以立马执行，否则就需要等待 
+            var callNow = !timeout;
+            // 刷新 timeout
+            timeout = setTimeout(later, wait);
+            // 如果能被立即执行，立即执行 
+            if (callNow) result = func.apply(this, args);
+        } else {
+            // 否则，这次尝试调用会延时 wait 个时间 
+            timeout = _.delay(later, wait, this, args);
+        }
+
+        return result;
+    });
+
+    debounced.cancel = function () {
+        clearTimeout(timeout);
+        timeout = null;
+    };
+
+    return debounced;
 };
