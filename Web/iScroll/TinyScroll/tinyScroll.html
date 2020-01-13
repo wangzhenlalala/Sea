@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <style>
+            body {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .wrapper {
+                position: relative;
+                width: 500px;
+                height: 500px;
+                outline: 1px solid orange;
+                overflow: auto;
+            }
+            .scroller {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: auto;
+            }
+            .scroller-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 40px;
+                user-select: none;
+            }
+            .scroller-item:nth-child(5n) {
+                background-color: #f1948a;
+            }
+
+            .scroller-item:nth-child(5n + 1) {
+                background-color: #a3e4d7;
+            }
+
+            .scroller-item:nth-child(5n + 2) {
+                background-color: #f9e79f;
+            }
+
+            .scroller-item:nth-child(5n + 3) {
+                background-color: #edbb99;
+            }
+
+            .scroller-item:nth-child(5n + 4) {
+                background-color: #aeb6bf;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <ul class="scroller">
+
+            </ul>
+        </div>
+
+        <script src="./tinyScroll.js"></script>
+        <script src="./iscroll-lite.js"></script>
+        <script src="./main.js"></script>
+    </body>
+
+</html>
