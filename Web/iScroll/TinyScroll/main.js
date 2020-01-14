@@ -4,12 +4,16 @@ let TScroll = null;
 
 function initScroll() {
     // TScroll = new TinyScroll(wrapper);
-    // let iScroll = new IScroll(wrapper, {
-    //     bounce: true,
-    //     deceleration: 0.01 // 0.0006
-    // });
-
-    TScroll = new TinyScroll(wrapper);
+    let myScroll = true;
+    if(myScroll) {
+        TScroll = new TinyScroll(wrapper);
+    } else {
+        TScroll = new IScroll(wrapper, {
+            bounce: true,
+            momentum: false,
+            // deceleration: 0.01 // 0.0006
+        });
+    }
 }
 
 function addScrollItem() {

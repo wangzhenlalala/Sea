@@ -27,7 +27,10 @@
             hasTouch: 'ontouchstart' in window,
             getTime: Date.now || function getTime () { return new Date().getTime(); },
             addEvent: function (el, type, fn, capture) {
-                el.addEventListener(type, fn, !!capture);
+                if(capture === undefined) {
+                    capture = false;
+                }
+                el.addEventListener(type, fn, capture);
             },
             removeEvent: function (el, type, fn, capture) {
                 el.removeEventListener(type, fn, !!capture);
@@ -236,10 +239,10 @@
             eventType(target, 'mouseup', this);
             
             // touch event
-            eventType(this.wrapper, 'touchstart', this);
-            eventType(target, 'touchmove', this);
-            eventType(target, 'touchcancel', this);
-            eventType(target, 'touchend', this);
+            eventType(this.wrapper, 'touchstart', this, {passive: false, capture: false});
+            eventType(target, 'touchmove', this, {passive: false, capture: false});
+            eventType(target, 'touchcancel', this, {passive: false, capture: false});
+            eventType(target, 'touchend', this, {passive: false, capture: false});
 
             // transition end 
             eventType(this.scroller, 'transitionend', this);
@@ -254,7 +257,7 @@
             this.moved = false;
             this.initiated =  utils.eventType[e.type];
             
-
+            console.log('------ start --')
             // 如果已经在transition当中了，应该停止当前的动画。
             if(this.isInTransition) {
                 this.isInTransition = false;
@@ -266,12 +269,11 @@
             let point = e.touches ? e.touches[0] : e;
             this.pointX = point.pageX; // 选择pageX的原因 ？？？？
             this.pointY = point.pageY;
-            
         },
         _move: function(e) {
             if(!this.initiated || this.initiated !== utils.eventType[e.type]) return;
             e.preventDefault();
-            console.log('-- move --', e.timeStamp);
+            
             let point = e.touches ? e.touches[0] : e,
                 deltaX = point.pageX - this.pointX,
                 deltaY = point.pageY - this.pointY,
@@ -289,7 +291,7 @@
 
             newX   = this.x + deltaX;
             newY   = this.y + deltaY;
-            // 如果两边超出了边界(boundary)
+            // 移动的过程中，如果两边超出了边界(boundary)
             if(newX > 0 || newX < this.maxScrollX) {
                 newX = this.options.bounce 
                                 ? this.x + deltaX / 3
@@ -305,14 +307,14 @@
                                     ? 0
                                     : this.maxScrollY; 
             }
-
+            console.log('-- move --', utils.getTime() - this.startTime);
             this._translate(newX, newY);
             this.startTime = utils.getTime();
+            
             
         },
         _end: function(e) {
             if(!this.initiated || this.initiated !== utils.eventType[e.type]) return;
-            console.log('-- end --', e.timeStamp);
             e.preventDefault();
 
             let point  = e.changedTouches ? e.changedTouches[0] : e,
@@ -321,22 +323,30 @@
                 newX   = this.x + deltaX,
                 newY   = this.y + deltaY,
                 now    = utils.getTime(),
+                momentumX,
+                momentumY,
+                time,
                 duration = now - this.startTime;
 
-            if(this.moved) {
+            if(!this.moved) {
                 // 可以触发一个tap/click事件
+                // return;
             };
             
             this.initiated = 0;
             this.moved = false;
             this.endTime = now;  // 为什么要设置endTime
+            this.isInTransition = false;
 
             // 松开的时候，有可能是超出边界(boundary); 如果超出边界，最终的位置就在边界的地方，但是需要一个反弹的动画
             if( this.resetPosition(this.options.bounceTime) ) {
                 return;
-            }
-            this.isInTransition = true;
-            this.scrollTo(newX, newY, duration, utils.ease.circular.style);
+            };
+            momentumY = utils.momentum(newY, this.y, duration, this.maxScrollY, this.wrapperHeight);
+            momentumX = utils.momentum(newX, this.x, duration, this.maxScrollX, this.wrapperWidth);
+            time = Math.max(momentumX.duration, momentumY.duration);
+            console.log('-- end -- y, duration', momentumY.destination, time);
+            this.scrollTo(momentumX.destination, momentumY.destination, time, utils.ease.circular.style);
         },
         _wheel(e) {},
         _key(e) {},
@@ -348,7 +358,10 @@
             this.y = y;
         },
         _transitionEnd: function(e) {
-            if(e.target !== this.scroller) return;
+            if(e.target !== this.scroller || !this.isInTransition) { // 要判断是否处在tranition当中
+                console.log('transition return branch', this.isInTransition)
+                return;
+            }
             console.log('-- transition end --');
             this.scrollerStyle.transitionDuration = 0;
             if(!this.resetPosition()) {
@@ -390,7 +403,7 @@
         enable: function() {},
         disable: function() {},
         scrollTo: function(x, y, duration, easing) {
-            console.log('scroll to duration', duration);
+            // console.log('scroll to duration', duration);
             this.isInTransition = duration > 0;
             this.scrollerStyle.transitionDuration = duration  + 'ms';
             this.scrollerStyle.transitionTimingFunction = easing;

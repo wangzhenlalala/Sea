@@ -73,7 +73,7 @@ var utils = (function () {
 			distance = Math.abs(current) + destination;
 			duration = distance / speed;
 		}
-
+        // wrapperSize / 2.5 * ( speed / 8 ) 超出时， 上下留白的长度
 		return {
 			destination: Math.round(destination),
 			duration: duration
@@ -485,7 +485,7 @@ IScroll.prototype = {
 		this.absStartY = this.y;
 		this.pointX    = point.pageX;
 		this.pointY    = point.pageY;
-
+        console.log('-- start --, startY, startTime', this.startY, this.startTime);
 		this._execEvent('beforeScrollStart');
 	},
 
@@ -498,7 +498,6 @@ IScroll.prototype = {
 		if ( this.options.preventDefault ) {	// increases performance on Android? TODO: check!
 			e.preventDefault();
 		}
-
 		var point		= e.touches ? e.touches[0] : e,
 			deltaX		= point.pageX - this.pointX,
 			deltaY		= point.pageY - this.pointY,
@@ -575,10 +574,10 @@ IScroll.prototype = {
 		if ( !this.moved ) {
 			this._execEvent('scrollStart');
 		}
-
 		this.moved = true;
 
-		this._translate(newX, newY);
+        this._translate(newX, newY);
+        
 
 /* REPLACE START: _move */
 
@@ -586,8 +585,9 @@ IScroll.prototype = {
 			this.startTime = timestamp;
 			this.startX = this.x;
 			this.startY = this.y;
-		}
-
+        }
+        
+        console.log('-- move --, startY, startTime', this.startY, this.startTime);
 /* REPLACE END: _move */
 
 	},
@@ -600,7 +600,6 @@ IScroll.prototype = {
 		if ( this.options.preventDefault && !utils.preventDefaultException(e.target, this.options.preventDefaultException) ) {
 			e.preventDefault();
 		}
-
 		var point = e.changedTouches ? e.changedTouches[0] : e,
 			momentumX,
 			momentumY,
@@ -662,14 +661,14 @@ IScroll.prototype = {
 		}
 
 // INSERT POINT: _end
-
+        console.log('-- end --, duration, newY', duration, newY);
 		if ( newX != this.x || newY != this.y ) {
 			// change easing function when scroller goes out of the boundaries
 			if ( newX > 0 || newX < this.maxScrollX || newY > 0 || newY < this.maxScrollY ) {
 				easing = utils.ease.quadratic;
 			}
 
-			this.scrollTo(newX, newY, time, easing);
+			this.scrollTo(newX, newY, time, easing); // if time is undefined, 相当于translate
 			return;
 		}
 
