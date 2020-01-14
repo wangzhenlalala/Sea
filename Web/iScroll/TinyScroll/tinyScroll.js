@@ -62,6 +62,24 @@
                     top: top,
                 }
             },
+            eventType: {
+                touchstart: 1,
+                touchmove: 1,
+                touchend: 1,
+
+                mousedown: 2,
+                mousemove: 2,
+                mouseup: 2,
+
+            },
+            ease: {
+                circular: {
+                    style: 'cubic-bezier(0.1, 0.57, 0.1, 1)',	// Not properly "circular" but this looks better, it should be (0.075, 0.82, 0.165, 1)
+                    fn: function (k) {
+                        return Math.sqrt( 1 - ( --k * k ) );
+                    }
+                },
+            },
             momentum: function (current, start, time, lowerMargin, wrapperSize, deceleration) {
                 var distance = current - start,
                     speed = Math.abs(distance) / time,
@@ -156,8 +174,8 @@
         // this.wrapperOffset
 
 
-        this._init();
-        this.refresh();
+        this._init();     // 绑定事件
+        this.refresh();   // 重新设置实例的状态
 
         this.scrollTo(this.options.startX, this.options.startY); // with animatioin
         this.enable();
@@ -211,17 +229,81 @@
             // transition end 
             eventType(this.scroller, 'transitionend', this);
         },
-        _start: function(e) {},
-        _move: function(e) {},
-        _end: function(e) {},
+        _start: function(e) {
+            // 一上来就监听了move事件，如果没有经历过start事件，是不能移动的。
+            if(this.initiated) return;
+            e.preventDefault(); // prevent browser default scroll;
+            this.moved = false;
+            this.initiated =  utils.eventType[e.type];
+            // 如果已经在transition当中了，应该停止当前的动画。
+            let point = e.touches ? e.touches[0] : e;
+                
+            this.pointX = point.pageX; // 选择pageX的原因 ？？？？
+            this.pointY = point.pageY;
+            this.startTime = utils.getTime();
+        },
+        _move: function(e) {
+            if(!this.initiated || this.initiated !== utils.eventType[e.type]) return;
+            e.preventDefault();
+            
+            let point = e.touches ? e.touches[0] : e;
+                deltaX = point.pageX - this.pointX;
+                deltaY = point.pageY - this.pointY;
+                newX   = this.x + deltaX;
+                newY   = this.y + deltaY;
+            if(Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10) {
+                this.moved = true;
+            }
+            // console.log('--- move ---', newY);
+            this.pointX = point.pageX;
+            this.pointY = point.pageY;
+            this._translate(newX, newY);
+            this.startTime = utils.getTime();
+        },
+        _end: function(e) {
+            if(!this.initiated || this.initiated !== utils.eventType[e.type]) return;
+            
+            e.preventDefault();
+
+            
+            let point  = e.changedTouches ? e.changedTouches[0] : e;
+                deltaX = point.pageX - this.pointX;
+                deltaY = point.pageY - this.pointY;
+                newX   = this.x + deltaX;
+                newY   = this.y + deltaY;
+                now    = utils.getTime();
+                duration = now - this.startTime;
+
+            if(this.moved) {
+                // 可以触发一个tap/click事件
+            };
+
+            this.initiated = 0;
+            this.moved = false;
+            this.scrollTo(newX, newY, duration, utils.ease.circular.style);
+        },
         _wheel(e) {},
         _key(e) {},
-        _translate(x, y) {},
-        _transitionEnd: function(e) {},
+        _translate(x, y) {
+            // x = Math.round(x);
+            // y = Math.round(y);
+            this.scrollerStyle['transform'] = `translate(${x}px, ${y}px) translateZ(0px)`;
+            this.x = x;
+            this.y = y;
+        },
+        _transitionEnd: function(e) {
+            if(e.target !== this.scroller) return;
+            this.scrollerStyle.transitionDuration = 0;
+            if(!this.resetPosition()) {
+                this._execEvent('scrollEnd');
+            };
+        },
         _execEvent: function(event) {
             console.log('execute event - ', event);
         },
         resetPosition(time) {
+            // 停止滚动的动画，设定其当前的位置,
+            // 如果当前的位置，不在合法的位置，调整到合适的位置
             let x = this.x;
                 y = this.y;
             time = time || 0;
@@ -249,9 +331,13 @@
         destroy: function() {},
         enable: function() {},
         disable: function() {},
-        scrollTo: function() {},
+        scrollTo: function(x, y, duration, easing) {
+            this.scrollerStyle.transitionDuration = duration  + 'ms';
+            this.scrollerStyle.transitionTimingFunction = easing;
+            this._translate(x, y);
+        },
         handleEvent(e) {
-            console.log('handle event - ', e.type);
+            // console.log('handle event - ', e.type);
             switch(e.type) {
                 case "mousedown":
                 case "touchstart":
