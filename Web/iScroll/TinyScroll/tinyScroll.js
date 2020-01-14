@@ -44,7 +44,7 @@
                 } else {
                     return {
                         left: el.offsetLeft,
-                        top: el.offsetRight,
+                        top: el.offsetTop,
                         width: el.offsetWidth,
                         height: el.offsetHeight,
                     }
@@ -61,6 +61,19 @@
                     left: left,
                     top: top,
                 }
+            },
+            getComputedPosition: function(ele) {
+                let style = window.getComputedStyle(ele, null);
+                // 通过transform： translate(x, y);的transition，ele上是具有实时的translate的位置的
+                // matrix3d(a, b, 0, 0, c, d, 0, 0, 0, 0, 1, 0, tx, ty, 0, 1)
+                // matrix(a, b, c, d, tx, ty)
+                // "matrix(1, 0, 0, 1, 0, -759) 没有单位
+                let matrix = style.transform,
+                    x,y;
+                matrix = matrix.split(")")[0].split(', ');
+                x = +(matrix[12] || matrix[4]);
+                y = +(matrix[13] || matrix[5]);
+                return {x: x, y: y};
             },
             eventType: {
                 touchstart: 1,
@@ -150,7 +163,7 @@
         this.directionX = 0;
         this.directionY = 0;
         this._events = {};
-
+        
         // this.startTime
         // this.endTime
         // this.startX
@@ -188,7 +201,7 @@
         },
         refresh: function() {
             let rect = utils.getRect(this.wrapper);
-            this.wrpperHeight = rect.height;
+            this.wrapperHeight = rect.height;
             this.wrapperWidth = rect.width;
 
             rect = utils.getRect(this.scroller);
@@ -199,7 +212,9 @@
             this.maxScrollY = this.wrapperHeight - this.scrollerHeight;
             // 暂时不考虑 之滚动一个方向的情况
 
-
+            this.hasHorizontalScroll	= this.options.scrollX && this.maxScrollX < 0;
+            this.hasVerticalScroll		= this.options.scrollY && this.maxScrollY < 0;
+            
             this.endTime = 0;
             this.directionX = 0;
             this.directionY = 0;
@@ -233,53 +248,94 @@
             // 一上来就监听了move事件，如果没有经历过start事件，是不能移动的。
             if(this.initiated) return;
             e.preventDefault(); // prevent browser default scroll;
+            this.startX = this.x;
+            this.startY = this.y;
+            this.startTime = utils.getTime();
             this.moved = false;
             this.initiated =  utils.eventType[e.type];
+            
+
             // 如果已经在transition当中了，应该停止当前的动画。
+            if(this.isInTransition) {
+                this.isInTransition = false;
+                this.scrollerStyle.transitionDuration = 0;
+                let pos = utils.getComputedPosition(this.scroller);
+                this._translate(pos.x, pos.y);
+                this._execEvent('scrollEnd');
+            }
             let point = e.touches ? e.touches[0] : e;
-                
             this.pointX = point.pageX; // 选择pageX的原因 ？？？？
             this.pointY = point.pageY;
-            this.startTime = utils.getTime();
+            
         },
         _move: function(e) {
             if(!this.initiated || this.initiated !== utils.eventType[e.type]) return;
             e.preventDefault();
-            
-            let point = e.touches ? e.touches[0] : e;
-                deltaX = point.pageX - this.pointX;
-                deltaY = point.pageY - this.pointY;
-                newX   = this.x + deltaX;
-                newY   = this.y + deltaY;
+            console.log('-- move --', e.timeStamp);
+            let point = e.touches ? e.touches[0] : e,
+                deltaX = point.pageX - this.pointX,
+                deltaY = point.pageY - this.pointY,
+                newX, newY;
+
+            deltaX = this.hasHorizontalScroll ? deltaX : 0;
+            deltaY = this.hasVerticalScroll   ? deltaY : 0;
+
             if(Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10) {
                 this.moved = true;
             }
             // console.log('--- move ---', newY);
             this.pointX = point.pageX;
             this.pointY = point.pageY;
+
+            newX   = this.x + deltaX;
+            newY   = this.y + deltaY;
+            // 如果两边超出了边界(boundary)
+            if(newX > 0 || newX < this.maxScrollX) {
+                newX = this.options.bounce 
+                                ? this.x + deltaX / 3
+                                : newX > 0
+                                    ? 0
+                                    : this.maxScrollX; 
+            }
+
+            if(newY > 0 || newY < this.maxScrollY) {
+                newY = this.options.bounce 
+                                ? this.y + deltaY / 3
+                                : newY > 0
+                                    ? 0
+                                    : this.maxScrollY; 
+            }
+
             this._translate(newX, newY);
             this.startTime = utils.getTime();
+            
         },
         _end: function(e) {
             if(!this.initiated || this.initiated !== utils.eventType[e.type]) return;
-            
+            console.log('-- end --', e.timeStamp);
             e.preventDefault();
 
-            
-            let point  = e.changedTouches ? e.changedTouches[0] : e;
-                deltaX = point.pageX - this.pointX;
-                deltaY = point.pageY - this.pointY;
-                newX   = this.x + deltaX;
-                newY   = this.y + deltaY;
-                now    = utils.getTime();
+            let point  = e.changedTouches ? e.changedTouches[0] : e,
+                deltaX = point.pageX - this.pointX,
+                deltaY = point.pageY - this.pointY,
+                newX   = this.x + deltaX,
+                newY   = this.y + deltaY,
+                now    = utils.getTime(),
                 duration = now - this.startTime;
 
             if(this.moved) {
                 // 可以触发一个tap/click事件
             };
-
+            
             this.initiated = 0;
             this.moved = false;
+            this.endTime = now;  // 为什么要设置endTime
+
+            // 松开的时候，有可能是超出边界(boundary); 如果超出边界，最终的位置就在边界的地方，但是需要一个反弹的动画
+            if( this.resetPosition(this.options.bounceTime) ) {
+                return;
+            }
+            this.isInTransition = true;
             this.scrollTo(newX, newY, duration, utils.ease.circular.style);
         },
         _wheel(e) {},
@@ -293,8 +349,10 @@
         },
         _transitionEnd: function(e) {
             if(e.target !== this.scroller) return;
+            console.log('-- transition end --');
             this.scrollerStyle.transitionDuration = 0;
             if(!this.resetPosition()) {
+                this.isInTransition = false;
                 this._execEvent('scrollEnd');
             };
         },
@@ -310,13 +368,13 @@
 
             if(x < this.maxScrollX) {
                 x = this.maxScrollX;
-            } else if( x > 0) {
+            } else if( x > 0 || !this.hasHorizontalScroll) {
                 x = 0;
             }
 
             if(y < this.maxScrollY) {
                 y = this.maxScrollY;
-            } else if( y > 0) {
+            } else if( y > 0 || !this.hasVerticalScroll) {
                 y = 0;
             }
 
@@ -332,6 +390,8 @@
         enable: function() {},
         disable: function() {},
         scrollTo: function(x, y, duration, easing) {
+            console.log('scroll to duration', duration);
+            this.isInTransition = duration > 0;
             this.scrollerStyle.transitionDuration = duration  + 'ms';
             this.scrollerStyle.transitionTimingFunction = easing;
             this._translate(x, y);

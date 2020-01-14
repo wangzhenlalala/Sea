@@ -13,7 +13,8 @@
                 width: 500px;
                 height: 500px;
                 outline: 1px solid orange;
-                overflow: auto;
+                overflow: hidden; 
+                /* 如果带有浏览器默认的滚动条 ， maxScrollX|Y 的计算会出错*/
             }
             .scroller {
                 margin: 0;

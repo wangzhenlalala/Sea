@@ -514,7 +514,8 @@ IScroll.prototype = {
 		absDistX		= Math.abs(this.distX);
 		absDistY		= Math.abs(this.distY);
 
-		// We need to move at least 10 pixels for the scrolling to initiate
+        // We need to move at least 10 pixels for the scrolling to initiate
+        // > 300 是什么意思
 		if ( timestamp - this.endTime > 300 && (absDistX < 10 && absDistY < 10) ) {
 			return;
 		}
@@ -558,7 +559,11 @@ IScroll.prototype = {
 
 		// Slow down if outside of the boundaries
 		if ( newX > 0 || newX < this.maxScrollX ) {
-			newX = this.options.bounce ? this.x + deltaX / 3 : newX > 0 ? 0 : this.maxScrollX;
+            newX = this.options.bounce 
+                    ? this.x + deltaX / 3 
+                    : newX > 0 
+                        ? 0 
+                        : this.maxScrollX;
 		}
 		if ( newY > 0 || newY < this.maxScrollY ) {
 			newY = this.options.bounce ? this.y + deltaY / 3 : newY > 0 ? 0 : this.maxScrollY;
@@ -615,7 +620,7 @@ IScroll.prototype = {
 		if ( this.resetPosition(this.options.bounceTime) ) {
 			return;
 		}
-
+        // 没有duration, easing， 相当于translate
 		this.scrollTo(newX, newY);	// ensures that the last position is rounded
 
 		// we scrolled less than 10 pixels
@@ -818,7 +823,7 @@ IScroll.prototype = {
 	scrollTo: function (x, y, time, easing) {
 		easing = easing || utils.ease.circular;
 
-		this.isInTransition = this.options.useTransition && time > 0;
+		this.isInTransition = this.options.useTransition && time > 0;  // undefined > 0 == false
 		var transitionType = this.options.useTransition && easing.style;
 		if ( !time || transitionType ) {
 				if(transitionType) {
