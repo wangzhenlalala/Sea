@@ -21,6 +21,26 @@
     click
   */
 
+  /*
+    滑动的动量动画的参数，由 开始加速的时刻的位移， 结束加速的时刻的位移，以及加速过程的时间三者来决定
+        1. startTime 开始加速的时刻
+        2. endTime 结束加速的时刻
+        3. duration 加速的总时间
+    但是怎么去界定这三个量呢？？？
+    用户手指开始接触屏幕开始，能不能看作 startTime 呢？
+    用户加速的过程，会不断的触发move事件，最后一次move事件能不能作为 endTime 呢？
+    用户手指离开屏幕，能不能看作 endTime 呢？
+
+    关键是 时间
+    * 如果滑动的很慢，就不需要动画， 直接平移就好了
+    * 短时间内快速的滑动才应该有动量动画的效果
+    * tap 的效果 start -> [move **短时间内**移动，很小很小的距离] -> end
+    * flick 的效果 start -> [move **短时间内**移动 很小的距离] -> end
+    * momentum move
+    * 
+    * 上面的 **短时间** 改如何确定呢？？？ iscroll给的是 300 ms，
+
+  */
  (function(window, document, Math) {
     let utils = (function(){
         return {
