@@ -7,7 +7,7 @@
 	pip3 install shadowsocks
 
 3. 修改openssl.py
-	/usr/local/lib/python3.6/dist-packages/crypo/openssl.py
+	/usr/local/lib/python3.6/dist-packages/shadowsocks/crytpo/openssl.py
 	cleanup -> reset
 
 4. 安装nodejs
@@ -19,13 +19,13 @@
 		npm install pm2 -g
 5. create /root/shadowsocks.json 
 	{
-		"server": "255.255.255.255",
+		"server": "45.76.243.33",
 		"server_port": 1000,
 		"local_address": "127.0.0.1",
-		"password": "*****",
+		"password": "shadowsocks@3344",
 		"timeout": 300,
 		"method": "rc4-md5"		
 	}
    create /root/shadowsocks.sh
-   		sserver -c /root/shadowsocks.sh
+   		ssserver -c /root/shadowsocks.sh
    pm2 start /root/shadowsocks.sh
