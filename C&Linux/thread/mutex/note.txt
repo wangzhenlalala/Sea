@@ -1,0 +1,36 @@
+Questions to ask:
+	Is this problem able to be parallelized?
+	How would the problem be partitioned?
+	Are communications needed?
+	Are there any data dependencies?
+	Are there synchronization needs?
+	Will load balancing be a concern?
+
+
+load -> operate -> store
+
+critical section
+
+race condition
+
+Consequently, a set of synchronization
+primitives is universal, if it provides [mutual exclusion] and the [wait ­signal facility] as
+these are sufficient to compensate the effects of arbitrary [[ interleaving of machine
+instructions]] and to avoid wasteful busy waiting.
+
+A simple example of this is a programming error where a
+critical section is not properly released and subsequent attempts to enter it result in
+waiting indefinitely. In general, a deadlock is a situation where a set of threads removed
+from execution waits for each other in a cyclic dependence: "each process is waiting for
+a condition which can only be satisfied by one of the others; but since each process
+expects one of the others to resolve the conflict, they are all unable to continue."
+
+deadlock vs livelock
+starvation
+
+nested critical sections
+
+priority inversion -> priority inheritance
+
+mutual exclusion is the basis of resource allocation in the
+context of multi­threading
