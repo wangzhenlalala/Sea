@@ -56,12 +56,14 @@ public:
     }
     void addMoney(int money)
     {
-        money_lock.lock();
+        std::lock_guard<std::mutex> lock_gurad(money_lock); // In constructor it locks the mutex
         for(int i=0; i<money; i++)
         {
+            // If some exception occurs at this point then destructor of lock_gurad will be called due to stack unwinding.
             m_money++;
         }
-        money_lock.unlock();
+        // Once function exits, then destructor of lock_gurad Object will be called.
+        // In destructor it unlocks the mutex.
     }
 
 private:
