@@ -1,4 +1,4 @@
-OBJECTS = main_event_handle.o
+OBJECTS = main_event_condition_variable.o
 CXX = g++ -std=c++11
 
 main: $(OBJECTS) 
