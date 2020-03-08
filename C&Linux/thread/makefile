@@ -1,6 +1,18 @@
-pthreadc:pthreadc.o 
-	gcc -o pthreadc pthreadc.o -L/usr/lib/i386-linux-gnu/ -lpthread
+SHELL = /bin/sh
+CC=g++
+CFLAGS=-I.
+DEPS = settings.h
+OBJ = settings.o tomato.o
+EXDIR = $(ROOT_TOMATO)/bin
+OBJDIR = $(ROOT_TOMATO)/obj
 
-pthreadc.o:pthreadc.c
-	gcc -c pthreadc.c 
-	
+$(OBJDIR)/%.o: %.cpp $(DEPS)
+    $(CC) -c -o $@ $<
+
+$(EXDIR)/tomato: $(OBJ)
+    $(CC) -o $@ $^ $(CFLAGS)
+
+clean:
+    rm -f a.out *.o
+
+all: tomato
