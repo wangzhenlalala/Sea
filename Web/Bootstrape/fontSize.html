@@ -21,11 +21,50 @@
             text alignment.
              */
         }
+
+        .btn {
+            padding: 0.375rem 0.75rem;
+            color: black;
+            background-color: transparent;
+            border: 1px solid transparent;
+            border-radius: 0.5rem;
+            transition: box-shadow .15s ease-in-out, color .15s ease-in-out;
+        }
+
+        .btn:hover {
+            color: rgb(33,37,41);
+            text-decoration: none;
+        }
+        
+        .btn:focus {
+            outline: 0;
+            color: #007bff;
+            box-shadow: 0 0 0 0.25rem rgba(0, 123, 255,0.25);
+        }
+
+        .btn:active {
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+        }
+
+        .btn:not(:disabled):active:focus {
+            box-shadow: 0 0 0 0.25rem rgba(0, 123, 255,0.25), inset 0 3px 5px rgba(0, 0, 0, .125);
+        }
+
+        .btn:disabled {
+            opacity: 0.65;
+            box-shadow: none;
+        }
+
     </style>
 </head>
 <body>
     <div class="parent">
         <div class="child">child</div>
+        <div class="container">
+            <button class="btn btn-primary">primary</button>
+            <button>danger</button>
+
+        </div>
     </div>
 </body>
 </html>
