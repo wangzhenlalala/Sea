@@ -37,7 +37,7 @@
         return false;
     }
 
-    window.utils = {
+    global.utils = {
         createShader: createShader,
         createProgram: createProgram,
         resizeCanvas: resizeCanvas

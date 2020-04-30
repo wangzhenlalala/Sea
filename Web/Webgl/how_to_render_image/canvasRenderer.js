@@ -91,28 +91,10 @@ class Render {
         gl.uniform2f(resolutionLocation, gl.canvas.width, gl.canvas.height);
     }
 
-    getImagePixels(image) {
+    getImagePixels(imageData) {
         let gl = this.gl;
         let pixelBuffer = new Uint8Array( gl.canvas.width * gl.canvas.height * 4);
-        gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
-        gl.clearColor(0, 0, 0, 0);
-        gl.clear(gl.COLOR_BUFFER_BIT);
-
-        gl.useProgram(this.program);
-        gl.bindTexture(gl.TEXTURE_2D, this.texture);
-        gl.texImage2D(
-            gl.TEXTURE_2D, 
-            0, 
-            gl.RGB, 
-            gl.canvas.width, 
-            gl.canvas.height,
-            0,
-            gl.RGB, 
-            gl.UNSIGNED_BYTE, 
-            image 
-        );
-        
-        gl.drawArrays(gl.TRIANGLES, 0, 6);
+        this.render(imageData);
         // can not read RGB data
         gl.readPixels(
             0, 0,
@@ -170,5 +152,27 @@ class Render {
         this.canvas.width = width;
         this.canvas.height = height;
         this.gl.viewport(0, 0, width, height);
+    }
+
+    render(imagedata) {
+        let gl = this.gl;
+        gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
+        gl.clearColor(0, 0, 0, 0);
+        gl.clear(gl.COLOR_BUFFER_BIT);
+
+        gl.useProgram(this.program);
+        gl.bindTexture(gl.TEXTURE_2D, this.texture);
+        gl.texImage2D(
+            gl.TEXTURE_2D, 
+            0, 
+            gl.RGB, 
+            gl.canvas.width, 
+            gl.canvas.height,
+            0,
+            gl.RGB, 
+            gl.UNSIGNED_BYTE, 
+            imagedata 
+        );
+        gl.drawArrays(gl.TRIANGLES, 0, 6);
     }
 }
