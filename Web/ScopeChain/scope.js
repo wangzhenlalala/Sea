@@ -32,3 +32,8 @@ function Component(props) {
 	rener(name, age);
 }
 
+
+
+
+
+
