@@ -46,3 +46,17 @@
                       numerator
                       (/ numerator 7.0)))
           x))
+
+
+(defun read-my-file ()
+  (with-open-file (stream "/Users/wangzhen/Documents/Wangzhen/code/Sea/Lisp/ComonLisp/chapter9/timber.txt")
+    (let ((content (read-all-objects stream (list '$eof$))))
+      (format t "~&Read ~S objects from the file"
+              (length content))
+      content)))
+
+(defun read-all-objects (stream eof-indicator)
+  (let ((obj (read stream nil eof-indicator)))
+    (cond ((eq obj eof-indicator) nil)
+          (t (cons obj
+                   (read-all-objects stream eof-indicator))))))
