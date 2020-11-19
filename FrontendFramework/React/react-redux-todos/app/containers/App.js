@@ -4,7 +4,7 @@ import { addTodo, completeTodo, setVisibilityFilter, VisibilityFilters } from '.
 import AddTodo from '../components/AddTodo'
 import TodoList from '../components/TodoList'
 import Footer from '../components/Footer'
-
+import Contacts from '../contacts/Contacts'
 class App extends Component {
   render() {
     // Injected by connect() call:
@@ -25,6 +25,7 @@ class App extends Component {
           onFilterChange={nextFilter =>
             dispatch(setVisibilityFilter(nextFilter))
           } />
+          <Contacts />
       </div>
     )
   }

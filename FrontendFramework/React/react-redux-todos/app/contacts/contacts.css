@@ -1,0 +1,19 @@
+.contacts-container {
+    width: 500px;
+    height: 400px;
+    
+}
+
+.contacts-container .contact-group {
+    width: 100%;
+    background: blue;
+    color: #fff;
+    height: 60px;
+}
+
+.contacts-container .contact-contact {
+    width: 100%;
+    background: blue;
+    color: #fff;
+    height: 40px;
+}

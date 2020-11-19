@@ -1,5 +1,6 @@
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require("html-webpack-plugin")
+process.noDeprecation = true;
 
 module.exports = {
 	devtool:"eval-source-map",
@@ -31,7 +32,14 @@ module.exports = {
         	},
         	{
         		test:/\.css$/,
-        		loader:"style-loader!css-loader"
+        		use: [
+					{
+						loader: 'style-loader'  // 可以把css放在页面上
+					},
+					{
+						loader: 'css-loader'    // 放在后面的先被解析
+					}
+			   ]
         	},
         	{
         		test:/\.(png|jpg)$/,

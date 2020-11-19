@@ -94,7 +94,27 @@ button:active {
 	    console.log(e.target.value);
 	  })
 	}
-	console.log('hellowrold')
+  console.log('hellowrold')
+  
+  setTimeout(() => {
+    console.time('first timer');
+    console.timeStamp('FIRST raf')
+    console.timeEnd('first timer');
+    requestAnimationFrame(() => {
+      console.time('first raf');
+      console.timeEnd('first raf');
+    })
+  }, 5000);
+
+  setTimeout(() => {
+      console.time('second timer');
+      console.timeStamp('SECOND raf')
+      console.timeEnd('second timer');
+      requestAnimationFrame(() => {
+        console.time('second raf');
+        console.timeEnd('second raf');
+      })
+  }, 5000);
 </script>
 </body>
 </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measure Mouse Position</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        body {
+            padding: 100px;
+            background: wheat;
+        }
+        .target {
+            width: 400px;
+            height: 2000px;
+            background: lime;
+        }
+    </style>
+</head>
+<body>
+    <div class="target">
+
+    </div>
+
+    <script>
+        let target = document.querySelector('.target');
+        target.addEventListener('click', e => {
+            console.log("from event property: ------")
+            console.log(`\t offsetX: ${e.offsetX} offsetY: ${e.offsetY}`)
+            console.log(`\t clientX: ${e.clientX} clientY: ${e.clientY}`)
+            console.log(`\t screenX: ${e.screenX} screenY: ${e.screenY}`)
+            console.log("\t ", e);
+            console.log("");
+
+            console.log("from element dimension property: ------")
+            console.log(`\t offsetLeft: ${target.offsetLeft} offsetTop: ${target.offsetTop}`);
+            console.log("");
+
+            console.log("target.getBoundingClientRect(): ------");
+            console.log("\t ", target.getBoundingClientRect());
+        })
+    </script>
+</body>
+</html>
